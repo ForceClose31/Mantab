@@ -58,8 +58,8 @@ class _topContentState extends State<topContent> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         Container(
-                          height: 50,
-                          width: 220, // Atur tinggi container
+                          height: MediaQuery.of(context).size.height * 0.06,
+                          width: MediaQuery.of(context).size.width * 0.5,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             boxShadow: [
@@ -107,22 +107,29 @@ class _topContentState extends State<topContent> {
                             _searchDomba();
                           },
                           style: ButtonStyle(
-                            minimumSize: MaterialStateProperty.all<Size>(
-                                Size(110, 60)), // Ukuran minimum tombol
+                            minimumSize:
+                                WidgetStateProperty.resolveWith((states) {
+                              final screenWidth =
+                                  MediaQuery.of(context).size.width;
+
+                              final buttonWidth = screenWidth * 0.3;
+
+                              return Size(buttonWidth, 55);
+                            }),
                             padding:
-                                MaterialStateProperty.all<EdgeInsetsGeometry>(
-                                    EdgeInsets.all(12)), // Padding tombol
-                            backgroundColor: MaterialStateProperty.all<Color>(
+                                WidgetStateProperty.all<EdgeInsetsGeometry>(
+                                    EdgeInsets.all(12)),
+                            backgroundColor: WidgetStateProperty.all<Color>(
                                 Color.fromRGBO(0, 163, 255, 1)),
-                            shape: MaterialStateProperty.all<OutlinedBorder>(
+                            shape: WidgetStateProperty.all<OutlinedBorder>(
                               RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(
                                     10), // Atur border radius di sini
                               ),
                             ),
-                            elevation: MaterialStateProperty.all<double>(
+                            elevation: WidgetStateProperty.all<double>(
                                 15), // Memberikan elevasi
-                            shadowColor: MaterialStateProperty.all<Color>(
+                            shadowColor: WidgetStateProperty.all<Color>(
                                 Colors.black.withOpacity(1)),
                           ),
                           child: Text(
@@ -229,30 +236,30 @@ class _topContentState extends State<topContent> {
                       height: 10,
                     ),
                     if (_dataBunting != null && _dataBunting!.isNotEmpty)
-                    Table(
-                      border: TableBorder.all(
-                        color: Colors.black,
-                        style: BorderStyle.solid,
-                        width: borderWidth,
+                      Table(
+                        border: TableBorder.all(
+                          color: Colors.black,
+                          style: BorderStyle.solid,
+                          width: borderWidth,
+                        ),
+                        children: [
+                          TableRow(children: [
+                            _buildTableHeader(
+                                'Tanggal', Color.fromARGB(255, 255, 104, 104)),
+                            _buildTableHeader('Urutan Bunting',
+                                Color.fromARGB(255, 255, 104, 104)),
+                          ]),
+                          if (_dataBunting != null)
+                            ..._dataBunting!.map((data) => TableRow(children: [
+                                  _buildTableText(
+                                      _formatDate(data['tanggalBunting']),
+                                      Colors.white),
+                                  _buildTableText(
+                                      data['urutanBunting'].toString(),
+                                      Colors.white),
+                                ])),
+                        ],
                       ),
-                      children: [
-                        TableRow(children: [
-                          _buildTableHeader(
-                              'Tanggal', Color.fromARGB(255, 255, 104, 104)),
-                          _buildTableHeader('Urutan Bunting',
-                              Color.fromARGB(255, 255, 104, 104)),
-                        ]),
-                        if (_dataBunting != null)
-                          ..._dataBunting!.map((data) => TableRow(children: [
-                                _buildTableText(
-                                    _formatDate(data['tanggalBunting']),
-                                    Colors.white),
-                                _buildTableText(
-                                    data['urutanBunting'].toString(),
-                                    Colors.white),
-                              ])),
-                      ],
-                    ),
                     if (_dataBunting != null && _dataBunting!.isEmpty)
                       Text(
                         'Tidak ada data',
@@ -261,7 +268,7 @@ class _topContentState extends State<topContent> {
                           color: Colors.red,
                         ),
                       ),
-                    
+
                     SizedBox(height: 20), // Spacer antara dua tabel
                     // Tabel ketiga
                     Text(
@@ -273,34 +280,34 @@ class _topContentState extends State<topContent> {
                       height: 10,
                     ),
                     if (_dataBeranak != null && _dataBeranak!.isNotEmpty)
-                    Table(
-                      border: TableBorder.all(
-                        color: Colors.black,
-                        style: BorderStyle.solid,
-                        width: borderWidth,
+                      Table(
+                        border: TableBorder.all(
+                          color: Colors.black,
+                          style: BorderStyle.solid,
+                          width: borderWidth,
+                        ),
+                        children: [
+                          TableRow(children: [
+                            _buildTableHeader(
+                                'Tanggal', Color.fromARGB(255, 255, 209, 60)),
+                            _buildTableHeader('Urutan Beranak',
+                                Color.fromARGB(255, 255, 209, 60)),
+                            _buildTableHeader('Jumlah Anak',
+                                Color.fromARGB(255, 255, 209, 60)),
+                          ]),
+                          if (_dataBeranak != null)
+                            ..._dataBeranak!.map((data) => TableRow(children: [
+                                  _buildTableText(
+                                      _formatDate(data['tanggalBeranak']),
+                                      Colors.white),
+                                  _buildTableText(
+                                      data['urutanBeranak'].toString(),
+                                      Colors.white),
+                                  _buildTableText(data['jumlahAnak'].toString(),
+                                      Colors.white),
+                                ])),
+                        ],
                       ),
-                      children: [
-                        TableRow(children: [
-                          _buildTableHeader(
-                              'Tanggal', Color.fromARGB(255, 255, 209, 60)),
-                          _buildTableHeader('Urutan Beranak',
-                              Color.fromARGB(255, 255, 209, 60)),
-                          _buildTableHeader(
-                              'Jumlah Anak', Color.fromARGB(255, 255, 209, 60)),
-                        ]),
-                        if (_dataBeranak != null)
-                          ..._dataBeranak!.map((data) => TableRow(children: [
-                                _buildTableText(
-                                    _formatDate(data['tanggalBeranak']),
-                                    Colors.white),
-                                _buildTableText(
-                                    data['urutanBeranak'].toString(),
-                                    Colors.white),
-                                _buildTableText(data['jumlahAnak'].toString(),
-                                    Colors.white),
-                              ])),
-                      ],
-                    ),
                     if (_dataBeranak != null && _dataBeranak!.isEmpty)
                       Text(
                         'Tidak ada data',
@@ -309,7 +316,6 @@ class _topContentState extends State<topContent> {
                           color: Colors.red,
                         ),
                       ),
-                    
                   ],
                 ),
               ),
@@ -319,7 +325,6 @@ class _topContentState extends State<topContent> {
       ),
     );
   }
-
 
   Widget _buildTableHeader(String text, Color tableHeader) {
     return TableCell(

@@ -1,6 +1,7 @@
 import 'package:first/providers/domba/tambah_provider.dart';
 import 'package:first/providers/domba/ubah_provider.dart';
 import 'package:first/providers/login/login_provider.dart';
+import 'package:first/providers/record/kawin_provider.dart';
 import 'package:first/screens/login/views/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => DombaProvider()),
         ChangeNotifierProvider(create: (_) => UpdateDombaProvider()),
+        ChangeNotifierProvider(create: (_) => DombaKawinProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

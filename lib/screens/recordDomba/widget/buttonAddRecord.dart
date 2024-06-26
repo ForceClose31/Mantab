@@ -29,21 +29,20 @@ class buttonAddRecord extends StatelessWidget {
                   );
                 },
                 style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all<Size>(
-                      Size(400, 55)), // Ukuran minimum tombol
-                  padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  minimumSize: WidgetStateProperty.all<Size>(Size(400, 55)),
+                  padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                       EdgeInsets.all(12)), // Padding tombol
-                  backgroundColor: MaterialStateProperty.all<Color>(
+                  backgroundColor: WidgetStateProperty.all<Color>(
                       Color.fromRGBO(0, 163, 255, 1)),
-                  shape: MaterialStateProperty.all<OutlinedBorder>(
+                  shape: WidgetStateProperty.all<OutlinedBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           10), // Atur border radius di sini
                     ),
                   ),
-                  elevation: MaterialStateProperty.all<double>(
-                      15), // Memberikan elevasi
-                  shadowColor: MaterialStateProperty.all<Color>(
+                  elevation:
+                      WidgetStateProperty.all<double>(15), // Memberikan elevasi
+                  shadowColor: WidgetStateProperty.all<Color>(
                       Colors.black.withOpacity(1)), // Warna shadow
                 ),
                 child: Text(
@@ -65,21 +64,21 @@ class buttonAddRecord extends StatelessWidget {
                   );
                 },
                 style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all<Size>(
+                  minimumSize: WidgetStateProperty.all<Size>(
                       Size(400, 55)), // Ukuran minimum tombol
-                  padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                       EdgeInsets.all(12)), // Padding tombol
-                  backgroundColor: MaterialStateProperty.all<Color>(
+                  backgroundColor: WidgetStateProperty.all<Color>(
                       Color.fromRGBO(0, 163, 255, 1)),
-                  shape: MaterialStateProperty.all<OutlinedBorder>(
+                  shape: WidgetStateProperty.all<OutlinedBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           10), // Atur border radius di sini
                     ),
                   ),
-                  elevation: MaterialStateProperty.all<double>(
-                      15), // Memberikan elevasi
-                  shadowColor: MaterialStateProperty.all<Color>(
+                  elevation:
+                      WidgetStateProperty.all<double>(15), // Memberikan elevasi
+                  shadowColor: WidgetStateProperty.all<Color>(
                       Colors.black.withOpacity(1)),
                 ),
                 child: Text(
@@ -101,21 +100,21 @@ class buttonAddRecord extends StatelessWidget {
                   );
                 },
                 style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all<Size>(
+                  minimumSize: WidgetStateProperty.all<Size>(
                       Size(400, 55)), // Ukuran minimum tombol
-                  padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                       EdgeInsets.all(12)), // Padding tombol
-                  backgroundColor: MaterialStateProperty.all<Color>(
+                  backgroundColor: WidgetStateProperty.all<Color>(
                       Color.fromRGBO(0, 163, 255, 1)),
-                  shape: MaterialStateProperty.all<OutlinedBorder>(
+                  shape: WidgetStateProperty.all<OutlinedBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           10), // Atur border radius di sini
                     ),
                   ),
-                  elevation: MaterialStateProperty.all<double>(
-                      15), // Memberikan elevasi
-                  shadowColor: MaterialStateProperty.all<Color>(
+                  elevation:
+                      WidgetStateProperty.all<double>(15), // Memberikan elevasi
+                  shadowColor: WidgetStateProperty.all<Color>(
                       Colors.black.withOpacity(1)),
                 ),
                 child: Text(
