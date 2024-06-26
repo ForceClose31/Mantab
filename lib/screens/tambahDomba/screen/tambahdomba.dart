@@ -11,297 +11,300 @@ class CreateDomba extends StatelessWidget {
     User? user = FirebaseAuth.instance.currentUser;
 
     return Scaffold(
-      body: Stack(
-        children: [
-          // Background Batik
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Image.asset(
-              'lib/images/bgbatik.png',
-              width: 430,
-              height: 341.5,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Positioned(
-            top: 25,
-            left: 20,
-            right: 20,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Image.asset(
-                    'lib/images/back.png',
-                    width: 24,
-                    height: 24,
-                  ),
-                ),
-                SizedBox(height: 10),
-              ],
-            ),
-          ),
-
-          // Title and button
-          Positioned(
-            top: 70,
-            left: 15,
-            right: 20,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Center(
-                  child: Text(
-                    'Data Domba',
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 15),
-                // Buttons
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: ((context) => CreateData()),
-                          ),
-                        );
-                      },
-                      style: ButtonStyle(
-                        minimumSize: WidgetStateProperty.all<Size>(
-                          Size(190, 55),
-                        ),
-                        padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-                          EdgeInsets.all(12),
-                        ),
-                        backgroundColor: WidgetStateProperty.all<Color>(
-                          Color.fromRGBO(0, 163, 255, 1),
-                        ),
-                        shape: WidgetStateProperty.all<OutlinedBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        elevation: WidgetStateProperty.all<double>(15),
-                        shadowColor: WidgetStateProperty.all<Color>(
-                          Colors.black.withOpacity(1),
-                        ),
-                      ),
-                      child: Text(
-                        'Tambah',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => UpdateDomba(),
-                          ),
-                        );
-                      },
-                      style: ButtonStyle(
-                        minimumSize: WidgetStateProperty.all<Size>(
-                          Size(190, 55),
-                        ),
-                        padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-                          EdgeInsets.all(12),
-                        ),
-                        backgroundColor: WidgetStateProperty.all<Color>(
-                          Color.fromRGBO(0, 163, 255, 1),
-                        ),
-                        shape: WidgetStateProperty.all<OutlinedBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        elevation: WidgetStateProperty.all<double>(15),
-                        shadowColor: WidgetStateProperty.all<Color>(
-                          Colors.black.withOpacity(1),
-                        ),
-                      ),
-                      child: Text(
-                        'Ubah',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-
-          Positioned(
-            top: 180,
-            left: 20,
-            right: 20,
-            child: Container(
-              padding: EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Color.fromRGBO(78, 59, 33, 1)),
-                color: Colors.white,
+      body: SafeArea(
+        top: true,
+        child: Stack(
+          children: [
+            Positioned(
+              top: 0,
+              left: 0,
+              child: Image.asset(
+                'lib/images/bgbatik.png',
+                width: 430,
+                height: 341.5,
+                fit: BoxFit.cover,
               ),
-              child: StreamBuilder(
-                stream: FirebaseFirestore.instance
-                    .collection('domba')
-                    .doc(user!.uid)
-                    .collection('dataDomba')
-                    .snapshots(),
-                builder: (BuildContext context,
-                    AsyncSnapshot<QuerySnapshot> snapshot) {
-                  if (snapshot.hasError) {
-                    return Text('Error: ${snapshot.error}');
-                  }
+            ),
+            Positioned(
+              top: 25,
+              left: 20,
+              right: 20,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Image.asset(
+                      'lib/images/back.png',
+                      width: 24,
+                      height: 24,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                ],
+              ),
+            ),
 
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return CircularProgressIndicator();
-                  }
-
-                  if (snapshot.data!.docs.isEmpty) {
-                    return Text('No data available');
-                  }
-
-                  return Column(
-                    mainAxisSize: MainAxisSize.min,
+            // Title and button
+            Positioned(
+              top: 70,
+              left: 15,
+              right: 20,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Center(
+                    child: Text(
+                      'Data Domba',
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 15),
+                  // Buttons
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Domba saat ini',
-                              style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromRGBO(117, 117, 117, 1),
-                              ),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: ((context) => CreateData()),
                             ),
-                          ],
+                          );
+                        },
+                        style: ButtonStyle(
+                          minimumSize:
+                              WidgetStateProperty.resolveWith((states) {
+                            final screenWidth =
+                                MediaQuery.of(context).size.width;
+
+                            final buttonWidth = screenWidth * 0.4;
+
+                            return Size(buttonWidth, 55);
+                          }),
+                          padding: WidgetStateProperty.all(EdgeInsets.all(12)),
+                          backgroundColor: WidgetStateProperty.all(
+                              Color.fromRGBO(0, 163, 255, 1)),
+                          shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          )),
+                          elevation: WidgetStateProperty.all(15),
+                          shadowColor: WidgetStateProperty.all(
+                              Colors.black.withOpacity(1)),
+                        ),
+                        child: Text(
+                          'Tambah',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
                         ),
                       ),
-                      SizedBox(height: 2),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          _buildNumberBox(
-                              snapshot.data!.docs
-                                  .where((doc) =>
-                                      doc['jenisKelamin'] ==
-                                      'SQ7e1oe2XtoQCQRYOQXe')
-                                  .length
-                                  .toString(),
-                              'Jantan'),
-                          _buildNumberBox(
-                              snapshot.data!.docs
-                                  .where((doc) =>
-                                      doc['jenisKelamin'] ==
-                                      'MJdiCLP726Un0p4A8vu2')
-                                  .length
-                                  .toString(),
-                              'Betina'),
-                          _buildNumberBox(
-                              snapshot.data!.docs
-                                  .where(
-                                      (doc) => int.parse(doc['umurDomba']) < 13)
-                                  .length
-                                  .toString(),
-                              'Anakan'),
-                        ],
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => UpdateDomba(),
+                            ),
+                          );
+                        },
+                        style: ButtonStyle(
+                          minimumSize:
+                              WidgetStateProperty.resolveWith((states) {
+                            final screenWidth =
+                                MediaQuery.of(context).size.width;
+
+                            final buttonWidth = screenWidth * 0.4;
+
+                            return Size(buttonWidth, 55);
+                          }),
+                          padding: WidgetStateProperty.all(EdgeInsets.all(12)),
+                          backgroundColor: WidgetStateProperty.all(
+                              Color.fromRGBO(0, 163, 255, 1)),
+                          shape: WidgetStateProperty.all(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          )),
+                          elevation: WidgetStateProperty.all(15),
+                          shadowColor: WidgetStateProperty.all(
+                              Colors.black.withOpacity(1)),
+                        ),
+                        child: Text(
+                          'Ubah',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                          ),
+                        ),
                       ),
                     ],
-                  );
-                },
+                  ),
+                ],
               ),
             ),
-          ),
+            Positioned(
+              top: 200,
+              left: 20,
+              right: 20,
+              child: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Color.fromRGBO(78, 59, 33, 1)),
+                  color: Colors.white,
+                ),
+                child: StreamBuilder(
+                  stream: FirebaseFirestore.instance
+                      .collection('domba')
+                      .doc(user!.uid)
+                      .collection('dataDomba')
+                      .snapshots(),
+                  builder: (BuildContext context,
+                      AsyncSnapshot<QuerySnapshot> snapshot) {
+                    if (snapshot.hasError) {
+                      return Text('Error: ${snapshot.error}');
+                    }
 
-          // Scrollable content
-          Positioned(
-            top: 350,
-            left: -15,
-            right: -15,
-            bottom: 50,
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 35),
-                child: Column(
-                  children: [
-                    StreamBuilder(
-                      stream: FirebaseFirestore.instance
-                          .collection('domba')
-                          .doc(user.uid)
-                          .collection('dataDomba')
-                          .snapshots(),
-                      builder: (BuildContext context,
-                          AsyncSnapshot<QuerySnapshot> snapshot) {
-                        if (snapshot.hasError) {
-                          return Text('Error: ${snapshot.error}');
-                        }
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return CircularProgressIndicator();
+                    }
 
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return CircularProgressIndicator();
-                        }
+                    if (snapshot.data!.docs.isEmpty) {
+                      return Text('No data available');
+                    }
 
-                        if (snapshot.data!.docs.isEmpty) {
-                          return Text('No data available');
-                        }
-
-                        // Sort the list of documents based on 'kodeDomba'
-                        List<DocumentSnapshot> sortedDocs = snapshot.data!.docs;
-                        sortedDocs.sort(
-                            (a, b) => a['kodeDomba'].compareTo(b['kodeDomba']));
-
-                        return Column(
-                          children: sortedDocs.map((DocumentSnapshot document) {
-                            Map<String, dynamic> data =
-                                document.data() as Map<String, dynamic>;
-                            return Column(
-                              children: [
-                                _buildItem(
-                                  title:
-                                      'Bobot : ${data['bobotDomba']}, Umur : ${data['umurDomba']}, Jenis Kelamin : ${data['jenisKelamin']}',
-                                  kodeDomba: data['kodeDomba'],
-                                  result1: data[
-                                      'bobotDomba'], // Specific weight value
-                                  result2:
-                                      data['umurDomba'], // Specific age value
-                                  result3: data[
-                                      'jenisKelamin'], // Specific gender value
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Domba saat ini',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(117, 117, 117, 1),
                                 ),
-                                SizedBox(height: 10),
-                              ],
-                            );
-                          }).toList(),
-                        );
-                      },
-                    ),
-                  ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 2),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            _buildNumberBox(
+                                snapshot.data!.docs
+                                    .where((doc) =>
+                                        doc['jenisKelamin'] ==
+                                        'SQ7e1oe2XtoQCQRYOQXe')
+                                    .length
+                                    .toString(),
+                                'Jantan'),
+                            _buildNumberBox(
+                                snapshot.data!.docs
+                                    .where((doc) =>
+                                        doc['jenisKelamin'] ==
+                                        'MJdiCLP726Un0p4A8vu2')
+                                    .length
+                                    .toString(),
+                                'Betina'),
+                            _buildNumberBox(
+                                snapshot.data!.docs
+                                    .where((doc) =>
+                                        int.parse(doc['umurDomba']) < 13)
+                                    .length
+                                    .toString(),
+                                'Anakan'),
+                          ],
+                        ),
+                      ],
+                    );
+                  },
                 ),
               ),
             ),
-          ),
-        ],
+
+            // Scrollable content
+            Positioned(
+              top: 370,
+              left: -15,
+              right: -15,
+              bottom: 50,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 35),
+                  child: Column(
+                    children: [
+                      StreamBuilder(
+                        stream: FirebaseFirestore.instance
+                            .collection('domba')
+                            .doc(user.uid)
+                            .collection('dataDomba')
+                            .snapshots(),
+                        builder: (BuildContext context,
+                            AsyncSnapshot<QuerySnapshot> snapshot) {
+                          if (snapshot.hasError) {
+                            return Text('Error: ${snapshot.error}');
+                          }
+
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return CircularProgressIndicator();
+                          }
+
+                          if (snapshot.data!.docs.isEmpty) {
+                            return Text('No data available');
+                          }
+
+                          // Sort the list of documents based on 'kodeDomba'
+                          List<DocumentSnapshot> sortedDocs =
+                              snapshot.data!.docs;
+                          sortedDocs.sort((a, b) =>
+                              a['kodeDomba'].compareTo(b['kodeDomba']));
+
+                          return Column(
+                            children:
+                                sortedDocs.map((DocumentSnapshot document) {
+                              Map<String, dynamic> data =
+                                  document.data() as Map<String, dynamic>;
+                              return Column(
+                                children: [
+                                  _buildItem(
+                                    title:
+                                        'Bobot : ${data['bobotDomba']}, Umur : ${data['umurDomba']}, Jenis Kelamin : ${data['jenisKelamin']}',
+                                    kodeDomba: data['kodeDomba'],
+                                    result1: data[
+                                        'bobotDomba'], // Specific weight value
+                                    result2:
+                                        data['umurDomba'], // Specific age value
+                                    result3: data[
+                                        'jenisKelamin'], // Specific gender value
+                                  ),
+                                  SizedBox(height: 10),
+                                ],
+                              );
+                            }).toList(),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: navigasi(),
     );

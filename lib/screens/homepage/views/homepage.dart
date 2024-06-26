@@ -5,7 +5,7 @@ import 'package:first/screens/ransum/screen/tambahransum.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+// import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -15,57 +15,57 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  late YoutubePlayerController _controller1;
-  late YoutubePlayerController _controller2;
-  late YoutubePlayerController _controller3;
-  late YoutubePlayerController _controller4;
-  late YoutubePlayerController _controller5;
-  final List<String> youtubeVideoIds = [
-    '9m9aqlz6Otc',
-    '0yOrZ786JSA',
-    'x0vOMsSEnPI',
-    'KGWjXjUZNkE',
-    'VnL0CJoFC7Q',
-  ];
+  // late YoutubePlayerController _controller1;
+  // late YoutubePlayerController _controller2;
+  // late YoutubePlayerController _controller3;
+  // late YoutubePlayerController _controller4;
+  // late YoutubePlayerController _controller5;
+  // final List<String> youtubeVideoIds = [
+  //   '9m9aqlz6Otc',
+  //   '0yOrZ786JSA',
+  //   'x0vOMsSEnPI',
+  //   'KGWjXjUZNkE',
+  //   'VnL0CJoFC7Q',
+  // ];
 
   @override
   void initState() {
     super.initState();
-    _controller1 = YoutubePlayerController(
-      initialVideoId: youtubeVideoIds[0],
-      flags: YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
-    );
-    _controller2 = YoutubePlayerController(
-      initialVideoId: youtubeVideoIds[1],
-      flags: YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
-    );
-    _controller3 = YoutubePlayerController(
-      initialVideoId: youtubeVideoIds[2],
-      flags: YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
-    );
-    _controller4 = YoutubePlayerController(
-      initialVideoId: youtubeVideoIds[3],
-      flags: YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
-    );
-    _controller5 = YoutubePlayerController(
-      initialVideoId: youtubeVideoIds[4],
-      flags: YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
-    );
+    // _controller1 = YoutubePlayerController(
+    //   initialVideoId: youtubeVideoIds[0],
+    //   flags: YoutubePlayerFlags(
+    //     autoPlay: false,
+    //     mute: false,
+    //   ),
+    // );
+    // _controller2 = YoutubePlayerController(
+    //   initialVideoId: youtubeVideoIds[1],
+    //   flags: YoutubePlayerFlags(
+    //     autoPlay: false,
+    //     mute: false,
+    //   ),
+    // );
+    // _controller3 = YoutubePlayerController(
+    //   initialVideoId: youtubeVideoIds[2],
+    //   flags: YoutubePlayerFlags(
+    //     autoPlay: false,
+    //     mute: false,
+    //   ),
+    // );
+    // _controller4 = YoutubePlayerController(
+    //   initialVideoId: youtubeVideoIds[3],
+    //   flags: YoutubePlayerFlags(
+    //     autoPlay: false,
+    //     mute: false,
+    //   ),
+    // );
+    // _controller5 = YoutubePlayerController(
+    //   initialVideoId: youtubeVideoIds[4],
+    //   flags: YoutubePlayerFlags(
+    //     autoPlay: false,
+    //     mute: false,
+    //   ),
+    // );
   }
 
   Widget build(BuildContext context) {
@@ -367,82 +367,82 @@ class _HomepageState extends State<Homepage> {
                               ),
                             ),
                             const SizedBox(height: 10), // Space
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  'Tips and Tricks',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                Container(
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: YoutubePlayer(
-                                    controller: _controller1,
-                                    showVideoProgressIndicator: false,
-                                    progressIndicatorColor: Colors.red,
-                                  ),
-                                ),
-                                SizedBox(height: 8),
-                                Container(
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: YoutubePlayer(
-                                    controller: _controller2,
-                                    showVideoProgressIndicator: false,
-                                    progressIndicatorColor: Colors.red,
-                                  ),
-                                ),
-                                SizedBox(height: 8),
-                                Container(
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: YoutubePlayer(
-                                    controller: _controller3,
-                                    showVideoProgressIndicator: false,
-                                    progressIndicatorColor: Colors.red,
-                                  ),
-                                ),
-                                SizedBox(height: 8),
-                                Container(
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: YoutubePlayer(
-                                    controller: _controller4,
-                                    showVideoProgressIndicator: false,
-                                    progressIndicatorColor: Colors.red,
-                                  ),
-                                ),
-                                SizedBox(height: 8),
-                                Container(
-                                  height: 200,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: YoutubePlayer(
-                                    controller: _controller5,
-                                    showVideoProgressIndicator: false,
-                                    progressIndicatorColor: Colors.red,
-                                  ),
-                                ),
-                              ],
-                            ),
+                            // Column(
+                            //   crossAxisAlignment: CrossAxisAlignment.start,
+                            //   children: [
+                            //     const Text(
+                            //       'Tips and Tricks',
+                            //       style: TextStyle(
+                            //         fontSize: 18,
+                            //         fontWeight: FontWeight.bold,
+                            //       ),
+                            //     ),
+                            //     Container(
+                            //       height: 200,
+                            //       decoration: BoxDecoration(
+                            //         color: Colors.grey[300],
+                            //         borderRadius: BorderRadius.circular(10),
+                            //       ),
+                            //       child: YoutubePlayer(
+                            //         controller: _controller1,
+                            //         showVideoProgressIndicator: false,
+                            //         progressIndicatorColor: Colors.red,
+                            //       ),
+                            //     ),
+                            //     SizedBox(height: 8),
+                            //     Container(
+                            //       height: 200,
+                            //       decoration: BoxDecoration(
+                            //         color: Colors.grey[300],
+                            //         borderRadius: BorderRadius.circular(10),
+                            //       ),
+                            //       child: YoutubePlayer(
+                            //         controller: _controller2,
+                            //         showVideoProgressIndicator: false,
+                            //         progressIndicatorColor: Colors.red,
+                            //       ),
+                            //     ),
+                            //     SizedBox(height: 8),
+                            //     Container(
+                            //       height: 200,
+                            //       decoration: BoxDecoration(
+                            //         color: Colors.grey[300],
+                            //         borderRadius: BorderRadius.circular(10),
+                            //       ),
+                            //       child: YoutubePlayer(
+                            //         controller: _controller3,
+                            //         showVideoProgressIndicator: false,
+                            //         progressIndicatorColor: Colors.red,
+                            //       ),
+                            //     ),
+                            //     SizedBox(height: 8),
+                            //     Container(
+                            //       height: 200,
+                            //       decoration: BoxDecoration(
+                            //         color: Colors.grey[300],
+                            //         borderRadius: BorderRadius.circular(10),
+                            //       ),
+                            //       child: YoutubePlayer(
+                            //         controller: _controller4,
+                            //         showVideoProgressIndicator: false,
+                            //         progressIndicatorColor: Colors.red,
+                            //       ),
+                            //     ),
+                            //     SizedBox(height: 8),
+                            //     Container(
+                            //       height: 200,
+                            //       decoration: BoxDecoration(
+                            //         color: Colors.grey[300],
+                            //         borderRadius: BorderRadius.circular(10),
+                            //       ),
+                            //       child: YoutubePlayer(
+                            //         controller: _controller5,
+                            //         showVideoProgressIndicator: false,
+                            //         progressIndicatorColor: Colors.red,
+                            //       ),
+                            //     ),
+                            //   ],
+                            // ),
                           ],
                         ),
                       ),
