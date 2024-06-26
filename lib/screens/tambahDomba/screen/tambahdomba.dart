@@ -79,22 +79,22 @@ class CreateDomba extends StatelessWidget {
                         );
                       },
                       style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all<Size>(
+                        minimumSize: WidgetStateProperty.all<Size>(
                           Size(190, 55),
                         ),
-                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                        padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                           EdgeInsets.all(12),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           Color.fromRGBO(0, 163, 255, 1),
                         ),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
+                        shape: WidgetStateProperty.all<OutlinedBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        elevation: MaterialStateProperty.all<double>(15),
-                        shadowColor: MaterialStateProperty.all<Color>(
+                        elevation: WidgetStateProperty.all<double>(15),
+                        shadowColor: WidgetStateProperty.all<Color>(
                           Colors.black.withOpacity(1),
                         ),
                       ),
@@ -116,22 +116,22 @@ class CreateDomba extends StatelessWidget {
                         );
                       },
                       style: ButtonStyle(
-                        minimumSize: MaterialStateProperty.all<Size>(
+                        minimumSize: WidgetStateProperty.all<Size>(
                           Size(190, 55),
                         ),
-                        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                        padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                           EdgeInsets.all(12),
                         ),
-                        backgroundColor: MaterialStateProperty.all<Color>(
+                        backgroundColor: WidgetStateProperty.all<Color>(
                           Color.fromRGBO(0, 163, 255, 1),
                         ),
-                        shape: MaterialStateProperty.all<OutlinedBorder>(
+                        shape: WidgetStateProperty.all<OutlinedBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        elevation: MaterialStateProperty.all<double>(15),
-                        shadowColor: MaterialStateProperty.all<Color>(
+                        elevation: WidgetStateProperty.all<double>(15),
+                        shadowColor: WidgetStateProperty.all<Color>(
                           Colors.black.withOpacity(1),
                         ),
                       ),
@@ -221,7 +221,8 @@ class CreateDomba extends StatelessWidget {
                               'Betina'),
                           _buildNumberBox(
                               snapshot.data!.docs
-                                  .where((doc) => int.parse(doc['umurDomba']) < 13)
+                                  .where(
+                                      (doc) => int.parse(doc['umurDomba']) < 13)
                                   .length
                                   .toString(),
                               'Anakan'),

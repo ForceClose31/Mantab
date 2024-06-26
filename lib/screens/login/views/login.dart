@@ -12,8 +12,7 @@ class LoginPage extends StatelessWidget {
     FirebaseAuth auth = FirebaseAuth.instance;
     try {
       UserCredential userCredential = await auth.signInWithEmailAndPassword(
-        email:
-            '${nomorAnggotaController.text}@yourdomain.com', // Gunakan nomor anggota sebagai email sementara
+        email: '${nomorAnggotaController.text}@yourdomain.com',
         password: kataSandi,
       );
 
@@ -82,7 +81,7 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'lib/images/Logo.png',
+                      'lib/images/logo.png',
                       width: 250,
                       height: 150,
                     ),
@@ -206,14 +205,14 @@ class LoginPage extends StatelessWidget {
                               _login(context);
                             },
                             style: ButtonStyle(
-                              minimumSize: MaterialStateProperty.all<Size>(
+                              minimumSize: WidgetStateProperty.all<Size>(
                                   Size(180, 60)), // Ukuran minimum tombol
                               padding:
-                                  MaterialStateProperty.all<EdgeInsetsGeometry>(
+                                  WidgetStateProperty.all<EdgeInsetsGeometry>(
                                       EdgeInsets.all(12)), // Padding tombol
-                              backgroundColor: MaterialStateProperty.all<Color>(
+                              backgroundColor: WidgetStateProperty.all<Color>(
                                   Color.fromRGBO(78, 59, 33, 1)),
-                              shape: MaterialStateProperty.all<OutlinedBorder>(
+                              shape: WidgetStateProperty.all<OutlinedBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(
                                       10), // Atur border radius di sini

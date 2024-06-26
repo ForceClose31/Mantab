@@ -18,9 +18,8 @@ class LogRegPage extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(
-                          'lib/images/bglogreg.png'), // Ubah dengan path gambar background Anda
-                      fit: BoxFit.cover, // Sesuaikan gambar dengan container
+                      image: AssetImage('lib/images/bglogreg.png'),
+                      fit: BoxFit.cover,
                     ),
                   ),
                   height: constraints.maxHeight * 0.33, // 1/3 dari tinggi layar
@@ -92,14 +91,14 @@ class LogRegPage extends StatelessWidget {
                               );
                             },
                             style: ButtonStyle(
-                              minimumSize: MaterialStateProperty.all<Size>(
+                              minimumSize: WidgetStateProperty.all<Size>(
                                   Size(180, 50)), // Ukuran minimum tombol
                               padding:
-                                  MaterialStateProperty.all<EdgeInsetsGeometry>(
+                                  WidgetStateProperty.all<EdgeInsetsGeometry>(
                                       EdgeInsets.all(12)), // Padding tombol
-                              backgroundColor: MaterialStateProperty.all<Color>(
+                              backgroundColor: WidgetStateProperty.all<Color>(
                                   Color.fromRGBO(78, 59, 33, 1)),
-                              shape: MaterialStateProperty.all<OutlinedBorder>(
+                              shape: WidgetStateProperty.all<OutlinedBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(
                                       10), // Atur border radius di sini
@@ -127,14 +126,14 @@ class LogRegPage extends StatelessWidget {
                               );
                             },
                             style: ButtonStyle(
-                              minimumSize: MaterialStateProperty.all<Size>(
+                              minimumSize: WidgetStateProperty.all<Size>(
                                   Size(180, 50)), // Ukuran minimum tombol
                               padding:
-                                  MaterialStateProperty.all<EdgeInsetsGeometry>(
+                                  WidgetStateProperty.all<EdgeInsetsGeometry>(
                                       EdgeInsets.all(12)), // Padding tombol
-                              backgroundColor: MaterialStateProperty.all<Color>(
+                              backgroundColor: WidgetStateProperty.all<Color>(
                                   Color.fromRGBO(104, 119, 68, 1)),
-                              shape: MaterialStateProperty.all<OutlinedBorder>(
+                              shape: WidgetStateProperty.all<OutlinedBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(
                                       10), // Atur border radius di sini
