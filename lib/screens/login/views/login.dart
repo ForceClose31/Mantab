@@ -1,38 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:first/screens/homepage/views/homepage.dart';
+import 'package:first/providers/login/login_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController nomorAnggotaController = TextEditingController();
   final TextEditingController kataSandiController = TextEditingController();
-
-  Future<void> _login(BuildContext context) async {
-    String kataSandi = kataSandiController.text;
-
-    FirebaseAuth auth = FirebaseAuth.instance;
-    try {
-      UserCredential userCredential = await auth.signInWithEmailAndPassword(
-        email: '${nomorAnggotaController.text}@yourdomain.com',
-        password: kataSandi,
-      );
-
-      if (userCredential.user != null) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Homepage()),
-        );
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Gagal masuk. Silakan coba lagi.')),
-        );
-      }
-    } catch (e) {
-      print('Error: $e');
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: $e')),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -200,9 +172,15 @@ class LoginPage extends StatelessWidget {
                           const SizedBox(
                             height: 30,
                           ), // Mengurangi jarak antara tombol
-                          OutlinedButton(
+                          ElevatedButton(
                             onPressed: () {
-                              _login(context);
+                              final String email =
+                                  '${nomorAnggotaController.text}@yourdomain.com';
+                              final String password = kataSandiController.text;
+
+                              context
+                                  .read<LoginProvider>()
+                                  .loginUser(context, email, password);
                             },
                             style: ButtonStyle(
                               minimumSize: WidgetStateProperty.all<Size>(

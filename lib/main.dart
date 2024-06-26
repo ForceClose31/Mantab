@@ -1,3 +1,4 @@
+import 'package:first/providers/login/login_provider.dart';
 import 'package:first/screens/login/views/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthenticationProvider()),
+        ChangeNotifierProvider(create: (_) => LoginProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
