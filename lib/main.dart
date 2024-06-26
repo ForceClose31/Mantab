@@ -10,7 +10,7 @@ import 'package:first/screens/penjadwalan/screen/penjadwalan.dart';
 import 'package:first/screens/welcome/views/logreg.dart';
 
 import 'providers/auth/authentication_provider.dart';
-import 'screens/register/views/registrasi.dart'; // Add import for AuthenticationProvider
+import 'screens/register/views/registrasi.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

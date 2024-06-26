@@ -34,35 +34,35 @@ class _HomepageState extends State<Homepage> {
     _controller1 = YoutubePlayerController(
       initialVideoId: youtubeVideoIds[0],
       flags: YoutubePlayerFlags(
-        autoPlay: true,
+        autoPlay: false,
         mute: false,
       ),
     );
     _controller2 = YoutubePlayerController(
       initialVideoId: youtubeVideoIds[1],
       flags: YoutubePlayerFlags(
-        autoPlay: true,
+        autoPlay: false,
         mute: false,
       ),
     );
     _controller3 = YoutubePlayerController(
       initialVideoId: youtubeVideoIds[2],
       flags: YoutubePlayerFlags(
-        autoPlay: true,
+        autoPlay: false,
         mute: false,
       ),
     );
     _controller4 = YoutubePlayerController(
       initialVideoId: youtubeVideoIds[3],
       flags: YoutubePlayerFlags(
-        autoPlay: true,
+        autoPlay: false,
         mute: false,
       ),
     );
     _controller5 = YoutubePlayerController(
       initialVideoId: youtubeVideoIds[4],
       flags: YoutubePlayerFlags(
-        autoPlay: true,
+        autoPlay: false,
         mute: false,
       ),
     );
@@ -158,7 +158,7 @@ class _HomepageState extends State<Homepage> {
                                                       child: CircleAvatar(
                                                         radius: 20,
                                                         backgroundImage: AssetImage(
-                                                            'lib/images/pp.png'),
+                                                            'lib/images/PP.png'),
                                                       ),
                                                     ),
                                                     Padding(
@@ -265,21 +265,8 @@ class _HomepageState extends State<Homepage> {
                                                   SizedBox(
                                                     height: 63.0,
                                                     width: 63.0,
-                                                    child: Ink.image(
-                                                      image: AssetImage(
-                                                          'lib/images/domba.png'),
-                                                      child: InkWell(
-                                                        onTap: () {
-                                                          Navigator.push(
-                                                            context,
-                                                            MaterialPageRoute(
-                                                              builder: (context) =>
-                                                                  CreateDomba(),
-                                                            ),
-                                                          );
-                                                        },
-                                                      ),
-                                                    ),
+                                                    child: Image.asset(
+                                                        'lib/images/domba.png'),
                                                   ),
                                                   Padding(
                                                     padding: EdgeInsets.only(
@@ -315,21 +302,8 @@ class _HomepageState extends State<Homepage> {
                                                   SizedBox(
                                                     height: 63.0,
                                                     width: 63.0,
-                                                    child: Ink.image(
-                                                      image: AssetImage(
-                                                          'lib/images/record.png'),
-                                                      child: InkWell(
-                                                        onTap: () {
-                                                          Navigator.push(
-                                                            context,
-                                                            MaterialPageRoute(
-                                                                builder:
-                                                                    (context) =>
-                                                                        RecordDomba()),
-                                                          );
-                                                        },
-                                                      ),
-                                                    ),
+                                                    child: Image.asset(
+                                                        'lib/images/record.png'),
                                                   ),
                                                   Padding(
                                                     padding: EdgeInsets.only(
@@ -365,21 +339,8 @@ class _HomepageState extends State<Homepage> {
                                                   SizedBox(
                                                     height: 63.0,
                                                     width: 63.0,
-                                                    child: Ink.image(
-                                                      image: AssetImage(
-                                                          'lib/images/ransum.png'),
-                                                      child: InkWell(
-                                                        onTap: () {
-                                                          Navigator.push(
-                                                            context,
-                                                            MaterialPageRoute(
-                                                                builder:
-                                                                    (context) =>
-                                                                        CreateRansum()),
-                                                          );
-                                                        },
-                                                      ),
-                                                    ),
+                                                    child: Image.asset(
+                                                        'lib/images/ransum.png'),
                                                   ),
                                                   Padding(
                                                     padding: EdgeInsets.only(
@@ -424,7 +385,7 @@ class _HomepageState extends State<Homepage> {
                                   ),
                                   child: YoutubePlayer(
                                     controller: _controller1,
-                                    showVideoProgressIndicator: true,
+                                    showVideoProgressIndicator: false,
                                     progressIndicatorColor: Colors.red,
                                   ),
                                 ),
@@ -437,7 +398,7 @@ class _HomepageState extends State<Homepage> {
                                   ),
                                   child: YoutubePlayer(
                                     controller: _controller2,
-                                    showVideoProgressIndicator: true,
+                                    showVideoProgressIndicator: false,
                                     progressIndicatorColor: Colors.red,
                                   ),
                                 ),
@@ -450,7 +411,7 @@ class _HomepageState extends State<Homepage> {
                                   ),
                                   child: YoutubePlayer(
                                     controller: _controller3,
-                                    showVideoProgressIndicator: true,
+                                    showVideoProgressIndicator: false,
                                     progressIndicatorColor: Colors.red,
                                   ),
                                 ),
@@ -463,7 +424,7 @@ class _HomepageState extends State<Homepage> {
                                   ),
                                   child: YoutubePlayer(
                                     controller: _controller4,
-                                    showVideoProgressIndicator: true,
+                                    showVideoProgressIndicator: false,
                                     progressIndicatorColor: Colors.red,
                                   ),
                                 ),
@@ -476,7 +437,7 @@ class _HomepageState extends State<Homepage> {
                                   ),
                                   child: YoutubePlayer(
                                     controller: _controller5,
-                                    showVideoProgressIndicator: true,
+                                    showVideoProgressIndicator: false,
                                     progressIndicatorColor: Colors.red,
                                   ),
                                 ),
