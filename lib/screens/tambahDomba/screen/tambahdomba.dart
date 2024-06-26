@@ -358,13 +358,13 @@ class CreateDomba extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 20), // Spasi antara kode domba dan judul
+          SizedBox(width: 20),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Bobot : $result1', // Specific weight value
+                  'Bobot : $result1 kg',
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -373,7 +373,7 @@ class CreateDomba extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Umur : $result2', // Specific age value
+                  'Umur : $result2 bulan',
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -382,7 +382,7 @@ class CreateDomba extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  'Jenis Kelamin : ${isJantan ? 'Jantan' : 'Betina'}', // Tampilkan Jantan/Betina sesuai jenis kelamin
+                  'Jenis Kelamin : ${isJantan ? 'Jantan' : 'Betina'}',
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,

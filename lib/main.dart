@@ -1,4 +1,5 @@
 import 'package:first/providers/domba/tambah_provider.dart';
+import 'package:first/providers/domba/ubah_provider.dart';
 import 'package:first/providers/login/login_provider.dart';
 import 'package:first/screens/login/views/login.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => AuthenticationProvider()),
         ChangeNotifierProvider(create: (_) => LoginProvider()),
         ChangeNotifierProvider(create: (_) => DombaProvider()),
+        ChangeNotifierProvider(create: (_) => UpdateDombaProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
