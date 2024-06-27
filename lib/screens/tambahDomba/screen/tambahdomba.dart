@@ -362,32 +362,44 @@ class CreateDomba extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 5,
+                ),
                 Text(
                   'Bobot : $result1 kg',
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                     height: 1,
                   ),
+                ),
+                SizedBox(
+                  height: 5,
                 ),
                 Text(
                   'Umur : $result2 bulan',
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                     height: 1,
                   ),
                 ),
+                SizedBox(
+                  height: 5,
+                ),
                 Text(
                   'Jenis Kelamin : ${isJantan ? 'Jantan' : 'Betina'}',
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
                     height: 1,
                   ),
+                ),
+                SizedBox(
+                  height: 5,
                 ),
               ],
             ),

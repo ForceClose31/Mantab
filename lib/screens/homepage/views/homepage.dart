@@ -1,11 +1,12 @@
 import 'package:first/screens/navigasi/navigasi.dart';
+import 'package:first/screens/ransum/screen/tambahransum.dart';
 import 'package:first/screens/recordDomba/screen/recordDomba.dart';
 import 'package:first/screens/tambahDomba/screen/tambahdomba.dart';
-import 'package:first/screens/ransum/screen/tambahransum.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -15,57 +16,35 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  // late YoutubePlayerController _controller1;
-  // late YoutubePlayerController _controller2;
-  // late YoutubePlayerController _controller3;
-  // late YoutubePlayerController _controller4;
-  // late YoutubePlayerController _controller5;
-  // final List<String> youtubeVideoIds = [
-  //   '9m9aqlz6Otc',
-  //   '0yOrZ786JSA',
-  //   'x0vOMsSEnPI',
-  //   'KGWjXjUZNkE',
-  //   'VnL0CJoFC7Q',
-  // ];
+  final List<String> youtubeVideoIds = [
+    '9m9aqlz6Otc',
+    '0yOrZ786JSA',
+    'x0vOMsSEnPI',
+    'KGWjXjUZNkE',
+    'VnL0CJoFC7Q',
+  ];
+  late List<YoutubePlayerController> _controllers;
 
   @override
   void initState() {
     super.initState();
-    // _controller1 = YoutubePlayerController(
-    //   initialVideoId: youtubeVideoIds[0],
-    //   flags: YoutubePlayerFlags(
-    //     autoPlay: false,
-    //     mute: false,
-    //   ),
-    // );
-    // _controller2 = YoutubePlayerController(
-    //   initialVideoId: youtubeVideoIds[1],
-    //   flags: YoutubePlayerFlags(
-    //     autoPlay: false,
-    //     mute: false,
-    //   ),
-    // );
-    // _controller3 = YoutubePlayerController(
-    //   initialVideoId: youtubeVideoIds[2],
-    //   flags: YoutubePlayerFlags(
-    //     autoPlay: false,
-    //     mute: false,
-    //   ),
-    // );
-    // _controller4 = YoutubePlayerController(
-    //   initialVideoId: youtubeVideoIds[3],
-    //   flags: YoutubePlayerFlags(
-    //     autoPlay: false,
-    //     mute: false,
-    //   ),
-    // );
-    // _controller5 = YoutubePlayerController(
-    //   initialVideoId: youtubeVideoIds[4],
-    //   flags: YoutubePlayerFlags(
-    //     autoPlay: false,
-    //     mute: false,
-    //   ),
-    // );
+    _controllers = youtubeVideoIds
+        .map((videoId) => YoutubePlayerController(
+              initialVideoId: videoId,
+              flags: YoutubePlayerFlags(
+                autoPlay: false,
+                mute: false,
+              ),
+            ))
+        .toList();
+  }
+
+  @override
+  void dispose() {
+    _controllers.forEach((controller) {
+      controller.dispose();
+    });
+    super.dispose();
   }
 
   Widget build(BuildContext context) {
@@ -79,7 +58,6 @@ class _HomepageState extends State<Homepage> {
               [
                 Stack(
                   children: [
-                    // Background Image
                     Positioned(
                       top: 0,
                       left: 0,
@@ -95,9 +73,7 @@ class _HomepageState extends State<Homepage> {
                       child: Center(
                         child: Column(
                           children: [
-                            const SizedBox(
-                              height: 33.0,
-                            ),
+                            const SizedBox(height: 33.0),
                             Container(
                               width: 395,
                               height: 91,
@@ -109,8 +85,7 @@ class _HomepageState extends State<Homepage> {
                                     color: Color.fromRGBO(0, 0, 0, 0.25),
                                     spreadRadius: 0,
                                     blurRadius: 4,
-                                    offset: Offset(
-                                        0, 4), // Perpindahan bayangan (x, y)
+                                    offset: Offset(0, 4),
                                   ),
                                 ],
                               ),
@@ -199,7 +174,7 @@ class _HomepageState extends State<Homepage> {
                                 },
                               ),
                             ),
-                            const SizedBox(height: 20), // Space
+                            const SizedBox(height: 20),
                             Container(
                               width: 395,
                               height: 147,
@@ -209,10 +184,8 @@ class _HomepageState extends State<Homepage> {
                                   begin: Alignment.topCenter,
                                   end: Alignment.bottomCenter,
                                   colors: [
-                                    Color.fromRGBO(
-                                        94, 68, 55, 1), // Warna akhir (putih)
-                                    Color.fromRGBO(
-                                        104, 119, 68, 1), // Warna awal (RGBA)
+                                    Color.fromRGBO(94, 68, 55, 1),
+                                    Color.fromRGBO(104, 119, 68, 1),
                                   ],
                                   stops: [0.0, 0.8],
                                 ),
@@ -221,8 +194,7 @@ class _HomepageState extends State<Homepage> {
                                     color: Color.fromRGBO(0, 0, 0, 0.25),
                                     spreadRadius: 0,
                                     blurRadius: 4,
-                                    offset: Offset(
-                                        0, 4), // Perpindahan bayangan (x, y)
+                                    offset: Offset(0, 4),
                                   ),
                                 ],
                               ),
@@ -366,83 +338,59 @@ class _HomepageState extends State<Homepage> {
                                 ],
                               ),
                             ),
-                            const SizedBox(height: 10), // Space
-                            // Column(
-                            //   crossAxisAlignment: CrossAxisAlignment.start,
-                            //   children: [
-                            //     const Text(
-                            //       'Tips and Tricks',
-                            //       style: TextStyle(
-                            //         fontSize: 18,
-                            //         fontWeight: FontWeight.bold,
-                            //       ),
-                            //     ),
-                            //     Container(
-                            //       height: 200,
-                            //       decoration: BoxDecoration(
-                            //         color: Colors.grey[300],
-                            //         borderRadius: BorderRadius.circular(10),
-                            //       ),
-                            //       child: YoutubePlayer(
-                            //         controller: _controller1,
-                            //         showVideoProgressIndicator: false,
-                            //         progressIndicatorColor: Colors.red,
-                            //       ),
-                            //     ),
-                            //     SizedBox(height: 8),
-                            //     Container(
-                            //       height: 200,
-                            //       decoration: BoxDecoration(
-                            //         color: Colors.grey[300],
-                            //         borderRadius: BorderRadius.circular(10),
-                            //       ),
-                            //       child: YoutubePlayer(
-                            //         controller: _controller2,
-                            //         showVideoProgressIndicator: false,
-                            //         progressIndicatorColor: Colors.red,
-                            //       ),
-                            //     ),
-                            //     SizedBox(height: 8),
-                            //     Container(
-                            //       height: 200,
-                            //       decoration: BoxDecoration(
-                            //         color: Colors.grey[300],
-                            //         borderRadius: BorderRadius.circular(10),
-                            //       ),
-                            //       child: YoutubePlayer(
-                            //         controller: _controller3,
-                            //         showVideoProgressIndicator: false,
-                            //         progressIndicatorColor: Colors.red,
-                            //       ),
-                            //     ),
-                            //     SizedBox(height: 8),
-                            //     Container(
-                            //       height: 200,
-                            //       decoration: BoxDecoration(
-                            //         color: Colors.grey[300],
-                            //         borderRadius: BorderRadius.circular(10),
-                            //       ),
-                            //       child: YoutubePlayer(
-                            //         controller: _controller4,
-                            //         showVideoProgressIndicator: false,
-                            //         progressIndicatorColor: Colors.red,
-                            //       ),
-                            //     ),
-                            //     SizedBox(height: 8),
-                            //     Container(
-                            //       height: 200,
-                            //       decoration: BoxDecoration(
-                            //         color: Colors.grey[300],
-                            //         borderRadius: BorderRadius.circular(10),
-                            //       ),
-                            //       child: YoutubePlayer(
-                            //         controller: _controller5,
-                            //         showVideoProgressIndicator: false,
-                            //         progressIndicatorColor: Colors.red,
-                            //       ),
-                            //     ),
-                            //   ],
-                            // ),
+                            const SizedBox(height: 10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Tips and Tricks',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                ..._controllers.asMap().entries.map(
+                                  (entry) {
+                                    int index = entry.key;
+                                    YoutubePlayerController controller =
+                                        entry.value;
+                                    return VisibilityDetector(
+                                      key: Key('youtube-player-$index'),
+                                      onVisibilityChanged: (info) {
+                                        if (info.visibleFraction == 0) {
+                                          controller.pause();
+                                        }
+                                      },
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            height: 200,
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(20.0),
+                                              // border: Radius.circular(radius),
+                                              color: Colors.grey[300],
+                                            ),
+                                            child: YoutubePlayer(
+                                              controller: controller,
+                                              showVideoProgressIndicator: false,
+                                              progressIndicatorColor:
+                                                  Colors.red,
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                          )
+                                        ],
+                                      ),
+                                    );
+                                  },
+                                ).toList(),
+                              ],
+                            ),
                           ],
                         ),
                       ),

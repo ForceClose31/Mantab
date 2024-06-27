@@ -11,7 +11,6 @@ import 'package:first/screens/homepage/views/homepage.dart';
 import 'package:first/screens/informasi/screen/maininformation.dart';
 import 'package:first/screens/penjadwalan/screen/penjadwalan.dart';
 import 'package:first/screens/welcome/views/logreg.dart';
-
 import 'providers/auth/authentication_provider.dart';
 import 'screens/register/views/registrasi.dart';
 

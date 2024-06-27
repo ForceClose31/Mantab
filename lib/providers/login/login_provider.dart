@@ -19,7 +19,7 @@ class LoginProvider with ChangeNotifier {
     } catch (e) {
       print('Error: $e');
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: $e')),
+        SnackBar(content: Text('Masukkan data dengan benar.')),
       );
     }
   }

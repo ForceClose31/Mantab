@@ -6,7 +6,7 @@ class navigasi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      elevation: 8,
+      elevation: 20,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -17,7 +17,10 @@ class navigasi extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/home');
                 },
-                icon: ImageIcon(AssetImage('lib/images/home.png')),
+                icon: Image.asset(
+                  'lib/images/home.png',
+                  color: Color.fromARGB(255, 50, 96, 51),
+                ),
                 tooltip: 'Home',
               ),
             ],
@@ -29,7 +32,10 @@ class navigasi extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/schedule');
                 },
-                icon: ImageIcon(AssetImage('lib/images/schedule.png')),
+                icon: Image.asset(
+                  'lib/images/schedule.png',
+                  color: Color.fromARGB(255, 50, 96, 51),
+                ),
                 tooltip: 'Schedule',
               ),
             ],
@@ -41,7 +47,10 @@ class navigasi extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/information');
                 },
-                icon: ImageIcon(AssetImage('lib/images/info.png')),
+                icon: Image.asset(
+                  'lib/images/info.png',
+                  color: Color.fromARGB(255, 50, 96, 51),
+                ),
                 tooltip: 'Information',
               ),
             ],
@@ -53,7 +62,10 @@ class navigasi extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacementNamed(context, '/profile');
                 },
-                icon: ImageIcon(AssetImage('lib/images/profile.png')),
+                icon: Image.asset(
+                  'lib/images/profile.png',
+                  color: Color.fromARGB(255, 50, 96, 51),
+                ),
                 tooltip: 'Profile',
               ),
             ],
