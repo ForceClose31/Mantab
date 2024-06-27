@@ -25,7 +25,7 @@ class LoginPage extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  height: constraints.maxHeight * 0.3,
+                  height: constraints.maxHeight * 0.35,
                   child: const Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -45,7 +45,7 @@ class LoginPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 100,
+                  top: 200,
                   left: 20,
                   right: 20,
                 ),

@@ -48,8 +48,8 @@ class _PenjadwalanState extends State<Penjadwalan> {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    double minButtonWidth = screenWidth * 0.13; 
-    double minButtonHeight = screenHeight * 0.11; 
+    double minButtonWidth = screenWidth * 0.11;
+    double minButtonHeight = screenHeight * 0.11;
     return Scaffold(
       body: Stack(
         children: [
@@ -70,8 +70,8 @@ class _PenjadwalanState extends State<Penjadwalan> {
           //Title and button
           Positioned(
             top: 220,
-            left: 15,
-            right: 20,
+            left: 10,
+            right: 10,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -92,9 +92,10 @@ class _PenjadwalanState extends State<Penjadwalan> {
                               color: Color.fromRGBO(104, 119, 68,
                                   1)), // Atur border dengan warna hijau
                         ),
-                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        minimumSize: Size(minButtonWidth,
+                            minButtonHeight), // Atur ukuran minimum tombol
                         padding: EdgeInsets.symmetric(
-                            horizontal: 10), // Atur padding tombol
+                            horizontal: 0), // Atur padding tombol
                         textStyle:
                             TextStyle(fontSize: 12), // Atur gaya teks tombol
                         backgroundColor: Colors
@@ -118,9 +119,10 @@ class _PenjadwalanState extends State<Penjadwalan> {
                               color: Color.fromRGBO(104, 119, 68,
                                   1)), // Atur border dengan warna hijau
                         ),
-                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        minimumSize: Size(minButtonWidth,
+                            minButtonHeight), // Atur ukuran minimum tombol
                         padding: EdgeInsets.symmetric(
-                            horizontal: 10), // Atur padding tombol
+                            horizontal: 0), // Atur padding tombol
                         textStyle:
                             TextStyle(fontSize: 12), // Atur gaya teks tombol
                         backgroundColor: Colors
@@ -144,9 +146,10 @@ class _PenjadwalanState extends State<Penjadwalan> {
                               color: Color.fromRGBO(104, 119, 68,
                                   1)), // Atur border dengan warna hijau
                         ),
-                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        minimumSize: Size(minButtonWidth,
+                            minButtonHeight), // Atur ukuran minimum tombol
                         padding: EdgeInsets.symmetric(
-                            horizontal: 10), // Atur padding tombol
+                            horizontal: 0), // Atur padding tombol
                         textStyle:
                             TextStyle(fontSize: 12), // Atur gaya teks tombol
                         backgroundColor: Colors
@@ -170,9 +173,10 @@ class _PenjadwalanState extends State<Penjadwalan> {
                               color: Color.fromRGBO(104, 119, 68,
                                   1)), // Atur border dengan warna hijau
                         ),
-                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        minimumSize: Size(minButtonWidth,
+                            minButtonHeight), // Atur ukuran minimum tombol
                         padding: EdgeInsets.symmetric(
-                            horizontal: 10), // Atur padding tombol
+                            horizontal: 0), // Atur padding tombol
                         textStyle:
                             TextStyle(fontSize: 12), // Atur gaya teks tombol
                         backgroundColor: Colors
@@ -196,9 +200,10 @@ class _PenjadwalanState extends State<Penjadwalan> {
                               color: Color.fromRGBO(104, 119, 68,
                                   1)), // Atur border dengan warna hijau
                         ),
-                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        minimumSize: Size(minButtonWidth,
+                            minButtonHeight), // Atur ukuran minimum tombol
                         padding: EdgeInsets.symmetric(
-                            horizontal: 10), // Atur padding tombol
+                            horizontal: 0), // Atur padding tombol
                         textStyle:
                             TextStyle(fontSize: 12), // Atur gaya teks tombol
                         backgroundColor: Colors
@@ -222,9 +227,10 @@ class _PenjadwalanState extends State<Penjadwalan> {
                               color: Color.fromRGBO(104, 119, 68,
                                   1)), // Atur border dengan warna hijau
                         ),
-                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        minimumSize: Size(minButtonWidth,
+                            minButtonHeight), // Atur ukuran minimum tombol
                         padding: EdgeInsets.symmetric(
-                            horizontal: 10), // Atur padding tombol
+                            horizontal: 0), // Atur padding tombol
                         textStyle:
                             TextStyle(fontSize: 12), // Atur gaya teks tombol
                         backgroundColor: Colors
@@ -248,9 +254,10 @@ class _PenjadwalanState extends State<Penjadwalan> {
                               color: Color.fromRGBO(104, 119, 68,
                                   1)), // Atur border dengan warna hijau
                         ),
-                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        minimumSize: Size(minButtonWidth,
+                            minButtonHeight), // Atur ukuran minimum tombol
                         padding: EdgeInsets.symmetric(
-                            horizontal: 10), // Atur padding tombol
+                            horizontal: 0), // Atur padding tombol
                         textStyle:
                             TextStyle(fontSize: 12), // Atur gaya teks tombol
                         backgroundColor: Colors
@@ -369,7 +376,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
 
   Widget _buildItem({
     required String result1,
-    required int time,
+    required String time,
   }) {
     return Container(
       width: double.infinity,
