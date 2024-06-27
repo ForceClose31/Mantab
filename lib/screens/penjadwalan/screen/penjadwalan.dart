@@ -45,9 +45,13 @@ class _PenjadwalanState extends State<Penjadwalan> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    double minButtonWidth = screenWidth * 0.13; 
+    double minButtonHeight = screenHeight * 0.11; 
     return Scaffold(
       body: Stack(
-
         children: [
           // Bg Batik
           Positioned(
@@ -65,189 +69,203 @@ class _PenjadwalanState extends State<Penjadwalan> {
 
           //Title and button
           Positioned(
-      top: 220,
-      left: 15,
-      right: 20,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          //Tombol
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  changeSelectedDay('senin');
-                  getData('senin');
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
-                    side: BorderSide(
-                        color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
-                  ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
-                  backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
+            top: 220,
+            left: 15,
+            right: 20,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                //Tombol
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        changeSelectedDay('senin');
+                        getData('senin');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10), // Atur radius sesuai keinginan
+                          side: BorderSide(
+                              color: Color.fromRGBO(104, 119, 68,
+                                  1)), // Atur border dengan warna hijau
+                        ),
+                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10), // Atur padding tombol
+                        textStyle:
+                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                        backgroundColor: Colors
+                            .white, // Atur warna latar belakang menjadi putih
+                      ),
+                      child: Text('Sen',
+                          style: TextStyle(
+                              color: Color.fromRGBO(104, 119, 68, 1))),
+                    ),
+                    SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: () {
+                        changeSelectedDay('selasa');
+                        getData('selasa');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10), // Atur radius sesuai keinginan
+                          side: BorderSide(
+                              color: Color.fromRGBO(104, 119, 68,
+                                  1)), // Atur border dengan warna hijau
+                        ),
+                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10), // Atur padding tombol
+                        textStyle:
+                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                        backgroundColor: Colors
+                            .white, // Atur warna latar belakang menjadi putih
+                      ),
+                      child: Text('Sel',
+                          style: TextStyle(
+                              color: Color.fromRGBO(104, 119, 68, 1))),
+                    ),
+                    SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: () {
+                        changeSelectedDay('rabu');
+                        getData('rabu');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10), // Atur radius sesuai keinginan
+                          side: BorderSide(
+                              color: Color.fromRGBO(104, 119, 68,
+                                  1)), // Atur border dengan warna hijau
+                        ),
+                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10), // Atur padding tombol
+                        textStyle:
+                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                        backgroundColor: Colors
+                            .white, // Atur warna latar belakang menjadi putih
+                      ),
+                      child: Text('Rab',
+                          style: TextStyle(
+                              color: Color.fromRGBO(104, 119, 68, 1))),
+                    ),
+                    SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: () {
+                        changeSelectedDay('kamis');
+                        getData('kamis');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10), // Atur radius sesuai keinginan
+                          side: BorderSide(
+                              color: Color.fromRGBO(104, 119, 68,
+                                  1)), // Atur border dengan warna hijau
+                        ),
+                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10), // Atur padding tombol
+                        textStyle:
+                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                        backgroundColor: Colors
+                            .white, // Atur warna latar belakang menjadi putih
+                      ),
+                      child: Text('Kam',
+                          style: TextStyle(
+                              color: Color.fromRGBO(104, 119, 68, 1))),
+                    ),
+                    SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: () {
+                        changeSelectedDay('jumat');
+                        getData('jumat');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10), // Atur radius sesuai keinginan
+                          side: BorderSide(
+                              color: Color.fromRGBO(104, 119, 68,
+                                  1)), // Atur border dengan warna hijau
+                        ),
+                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10), // Atur padding tombol
+                        textStyle:
+                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                        backgroundColor: Colors
+                            .white, // Atur warna latar belakang menjadi putih
+                      ),
+                      child: Text('Jum',
+                          style: TextStyle(
+                              color: Color.fromRGBO(104, 119, 68, 1))),
+                    ),
+                    SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: () {
+                        changeSelectedDay('sabtu');
+                        getData('sabtu');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10), // Atur radius sesuai keinginan
+                          side: BorderSide(
+                              color: Color.fromRGBO(104, 119, 68,
+                                  1)), // Atur border dengan warna hijau
+                        ),
+                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10), // Atur padding tombol
+                        textStyle:
+                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                        backgroundColor: Colors
+                            .white, // Atur warna latar belakang menjadi putih
+                      ),
+                      child: Text('Sab',
+                          style: TextStyle(
+                              color: Color.fromRGBO(104, 119, 68, 1))),
+                    ),
+                    SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: () {
+                        changeSelectedDay('minggu');
+                        getData('minggu');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10), // Atur radius sesuai keinginan
+                          side: BorderSide(
+                              color: Color.fromRGBO(104, 119, 68,
+                                  1)), // Atur border dengan warna hijau
+                        ),
+                        minimumSize: Size(minButtonWidth, minButtonHeight), // Atur ukuran minimum tombol
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10), // Atur padding tombol
+                        textStyle:
+                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                        backgroundColor: Colors
+                            .white, // Atur warna latar belakang menjadi putih
+                      ),
+                      child: Text('Min',
+                          style: TextStyle(
+                              color: Color.fromRGBO(104, 119, 68, 1))),
+                    ),
+                  ],
                 ),
-                child: Text('Sen',
-                    style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
-              ),
-              SizedBox(width: 12),
-              ElevatedButton(
-                onPressed: () {
-                  changeSelectedDay('selasa');
-                  getData('selasa');
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
-                    side: BorderSide(
-                        color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
-                  ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
-                  backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
-                ),
-                child: Text('Sel',
-                    style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
-              ),
-              SizedBox(width: 12),
-              ElevatedButton(
-                onPressed: () {
-                  changeSelectedDay('rabu');
-                  getData('rabu');
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
-                    side: BorderSide(
-                        color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
-                  ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
-                  backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
-                ),
-                child: Text('Rab',
-                    style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
-              ),
-              SizedBox(width: 12),
-              ElevatedButton(
-                onPressed: () {
-                  changeSelectedDay('kamis');
-                  getData('kamis');
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
-                    side: BorderSide(
-                        color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
-                  ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
-                  backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
-                ),
-                child: Text('Kam',
-                    style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
-              ),
-              SizedBox(width: 12),
-              ElevatedButton(
-                onPressed: () {
-                  changeSelectedDay('jumat');
-                  getData('jumat');
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
-                    side: BorderSide(
-                        color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
-                  ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
-                  backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
-                ),
-                child: Text('Jum',
-                    style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
-              ),
-              SizedBox(width: 12),
-              ElevatedButton(
-                onPressed: () {
-                  changeSelectedDay('sabtu');
-                  getData('sabtu');
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
-                    side: BorderSide(
-                        color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
-                  ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
-                  backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
-                ),
-                child: Text('Sab',
-                    style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
-              ),
-              SizedBox(width: 12),
-              ElevatedButton(
-                onPressed: () {
-                  changeSelectedDay('minggu');
-                  getData('minggu');
-                },
-                style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
-                    side: BorderSide(
-                        color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
-                  ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
-                  padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
-                  backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
-                ),
-                child: Text('Min',
-                    style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
-              ),
-            ],
+                SizedBox(height: 20),
+              ],
+            ),
           ),
-          SizedBox(height: 20),
-        ],
-      ),
-    ),
 
           Positioned(
             top: 340,
@@ -351,12 +369,12 @@ class _PenjadwalanState extends State<Penjadwalan> {
 
   Widget _buildItem({
     required String result1,
-    required int time, 
+    required int time,
   }) {
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      margin: EdgeInsets.only(bottom: 5),
+      margin: EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
@@ -392,4 +410,3 @@ class _PenjadwalanState extends State<Penjadwalan> {
     );
   }
 }
-

@@ -71,7 +71,9 @@ class RecordDomba extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
                                 child: Image.asset(
                                   'lib/images/back.png',
                                   width: 24,

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class cardHari extends StatelessWidget {
-  const cardHari({
+class CardHari extends StatelessWidget {
+  const CardHari({
     super.key,
   });
 
@@ -29,9 +29,14 @@ class cardHari extends StatelessWidget {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+    double minButtonWidth = screenWidth * 0.1; // Adjust the width as needed
+    double minButtonHeight = screenHeight * 0.1; // Adjust the height as needed
+
     return Positioned(
       top: 220,
       left: 15,
@@ -39,7 +44,7 @@ class cardHari extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          //Tombol
+          // Tombol
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -55,7 +60,7 @@ class cardHari extends StatelessWidget {
                         color: Color.fromRGBO(
                             104, 119, 68, 1)), // Atur border dengan warna hijau
                   ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
+                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
                   padding: EdgeInsets.symmetric(
                       horizontal: 10), // Atur padding tombol
                   textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
@@ -78,7 +83,7 @@ class cardHari extends StatelessWidget {
                         color: Color.fromRGBO(
                             104, 119, 68, 1)), // Atur border dengan warna hijau
                   ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
+                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
                   padding: EdgeInsets.symmetric(
                       horizontal: 10), // Atur padding tombol
                   textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
@@ -101,7 +106,7 @@ class cardHari extends StatelessWidget {
                         color: Color.fromRGBO(
                             104, 119, 68, 1)), // Atur border dengan warna hijau
                   ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
+                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
                   padding: EdgeInsets.symmetric(
                       horizontal: 10), // Atur padding tombol
                   textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
@@ -124,7 +129,7 @@ class cardHari extends StatelessWidget {
                         color: Color.fromRGBO(
                             104, 119, 68, 1)), // Atur border dengan warna hijau
                   ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
+                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
                   padding: EdgeInsets.symmetric(
                       horizontal: 10), // Atur padding tombol
                   textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
@@ -147,7 +152,7 @@ class cardHari extends StatelessWidget {
                         color: Color.fromRGBO(
                             104, 119, 68, 1)), // Atur border dengan warna hijau
                   ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
+                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
                   padding: EdgeInsets.symmetric(
                       horizontal: 10), // Atur padding tombol
                   textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
@@ -170,7 +175,7 @@ class cardHari extends StatelessWidget {
                         color: Color.fromRGBO(
                             104, 119, 68, 1)), // Atur border dengan warna hijau
                   ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
+                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
                   padding: EdgeInsets.symmetric(
                       horizontal: 10), // Atur padding tombol
                   textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
@@ -193,7 +198,7 @@ class cardHari extends StatelessWidget {
                         color: Color.fromRGBO(
                             104, 119, 68, 1)), // Atur border dengan warna hijau
                   ),
-                  minimumSize: Size(18, 90), // Atur ukuran minimum tombol
+                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
                   padding: EdgeInsets.symmetric(
                       horizontal: 10), // Atur padding tombol
                   textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
@@ -211,4 +216,3 @@ class cardHari extends StatelessWidget {
     );
   }
 }
-

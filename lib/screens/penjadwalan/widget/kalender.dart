@@ -54,8 +54,8 @@ class kalender extends StatelessWidget {
                 children: [
                   Container(
                     alignment: Alignment.center,
-                    height: 30,
-                    width: 300,
+                    height: MediaQuery.of(context).size.height * 0.035,
+                    width: MediaQuery.of(context).size.width * 0.7,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Color.fromRGBO(104, 119, 68, 1),
@@ -71,8 +71,8 @@ class kalender extends StatelessWidget {
                   SizedBox(height: 5),
                   Container(
                     alignment: Alignment.center,
-                    height: 30,
-                    width: 300,
+                    height: MediaQuery.of(context).size.height * 0.035,
+                    width: MediaQuery.of(context).size.width * 0.7,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: Color.fromRGBO(104, 119, 68, 1),
