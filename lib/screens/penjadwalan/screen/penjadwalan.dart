@@ -309,8 +309,8 @@ class _PenjadwalanState extends State<Penjadwalan> {
 
           Positioned(
             top: 400,
-            left: -15,
-            right: -15,
+            left: -20,
+            right: -20,
             bottom: 50,
             child: SingleChildScrollView(
               child: Padding(
@@ -379,8 +379,8 @@ class _PenjadwalanState extends State<Penjadwalan> {
     required String time,
   }) {
     return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      width: MediaQuery.of(context).size.width * 1,
+      padding: EdgeInsets.only(top: 20, bottom: 20, left: 20),
       margin: EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -400,15 +400,31 @@ class _PenjadwalanState extends State<Penjadwalan> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '$time        $result1',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    height: 1,
-                  ),
-                ),
+                Row(
+                  children: [
+                    Text(
+                      '$time',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        height: 1,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    Text(
+                      '$result1',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black,
+                        height: 1,
+                      ),
+                    )
+                  ],
+                )
               ],
             ),
           ),

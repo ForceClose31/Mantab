@@ -42,14 +42,13 @@ class CreateDomba extends StatelessWidget {
                       height: 24,
                     ),
                   ),
-                  SizedBox(height: 10),
                 ],
               ),
             ),
 
             // Title and button
             Positioned(
-              top: 70,
+              top: 60,
               left: 15,
               right: 20,
               child: Column(
@@ -405,7 +404,7 @@ class CreateDomba extends StatelessWidget {
           width: 60,
           height: 60,
           decoration: BoxDecoration(
-            color: Color.fromRGBO(254, 203, 1, 1),
+            color: Color.fromRGBO(31, 98, 54, 1),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Center(

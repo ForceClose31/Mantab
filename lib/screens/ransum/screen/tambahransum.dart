@@ -172,13 +172,18 @@ class _CreateRansumState extends State<CreateRansum> {
                           shrinkWrap: true,
                           childAspectRatio: (171 / 22),
                           children: [
-                            _buildNumberBox('Tumpi jagung : ', totalResults[0]),
-                            _buildNumberBox('Rumput gajah : ', totalResults[1]),
-                            _buildNumberBox('Ampas tebu : ', totalResults[2]),
-                            _buildNumberBox('Molases : ', totalResults[3]),
-                            _buildNumberBox(
-                                'Rumput lapang : ', totalResults[4]),
-                            _buildNumberBox('Bekatul : ', totalResults[5]),
+                            _buildNumberBox('Tumpi jagung : ', totalResults[0],
+                                Color.fromRGBO(159, 131, 19, 1)),
+                            _buildNumberBox('Rumput gajah : ', totalResults[1],
+                                Color.fromRGBO(32, 113, 26, 1)),
+                            _buildNumberBox('Ampas tebu : ', totalResults[2],
+                                Color.fromRGBO(33, 73, 121, 1)),
+                            _buildNumberBox('Molases : ', totalResults[3],
+                                Color.fromRGBO(139, 121, 47, 1)),
+                            _buildNumberBox('Rumput lapang : ', totalResults[4],
+                                Color.fromRGBO(13, 71, 35, 1)),
+                            _buildNumberBox('Bekatul : ', totalResults[5],
+                                Color.fromRGBO(111, 92, 12, 1)),
                           ],
                         );
                       },
@@ -196,7 +201,8 @@ class _CreateRansumState extends State<CreateRansum> {
               bottom: 50,
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 35),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 35, vertical: 20),
                   child: Column(
                     children: [
                       StreamBuilder(
@@ -310,8 +316,8 @@ class _CreateRansumState extends State<CreateRansum> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: 65,
-            height: 65,
+            width: MediaQuery.of(context).size.width * 0.15,
+            height: MediaQuery.of(context).size.height * 0.07,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(5),
@@ -345,6 +351,9 @@ class _CreateRansumState extends State<CreateRansum> {
                     height: 1,
                   ),
                 ),
+                SizedBox(
+                  height: 3,
+                ),
                 Text(
                   'Tumpi jagung : ${result2Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
                   style: TextStyle(
@@ -353,6 +362,9 @@ class _CreateRansumState extends State<CreateRansum> {
                     color: Colors.black,
                     height: 1,
                   ),
+                ),
+                SizedBox(
+                  height: 3,
                 ),
                 Text(
                   'Rumput gajah : ${result3Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
@@ -363,6 +375,9 @@ class _CreateRansumState extends State<CreateRansum> {
                     height: 1,
                   ),
                 ),
+                SizedBox(
+                  height: 3,
+                ),
                 Text(
                   'Ampas tebu : ${result4Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
                   style: TextStyle(
@@ -371,6 +386,9 @@ class _CreateRansumState extends State<CreateRansum> {
                     color: Colors.black,
                     height: 1,
                   ),
+                ),
+                SizedBox(
+                  height: 3,
                 ),
                 Text(
                   'Molases : ${result5Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
@@ -381,6 +399,9 @@ class _CreateRansumState extends State<CreateRansum> {
                     height: 1,
                   ),
                 ),
+                SizedBox(
+                  height: 3,
+                ),
                 Text(
                   'Rumput lapang : ${result6Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
                   style: TextStyle(
@@ -389,6 +410,9 @@ class _CreateRansumState extends State<CreateRansum> {
                     color: Colors.black,
                     height: 1,
                   ),
+                ),
+                SizedBox(
+                  height: 3,
                 ),
                 Text(
                   'Bekatul : ${result7Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
@@ -407,12 +431,12 @@ class _CreateRansumState extends State<CreateRansum> {
     );
   }
 
-  Widget _buildNumberBox(String title, double value) {
+  Widget _buildNumberBox(String title, double value, colors) {
     return Container(
       width: 171,
       height: 32,
       decoration: BoxDecoration(
-        color: Color.fromRGBO(254, 203, 1, 1),
+        color: colors,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
@@ -423,7 +447,7 @@ class _CreateRansumState extends State<CreateRansum> {
             style: TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: const Color.fromARGB(255, 255, 255, 255),
               overflow: TextOverflow.ellipsis,
             ),
           ),
@@ -432,7 +456,7 @@ class _CreateRansumState extends State<CreateRansum> {
             style: TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: const Color.fromARGB(255, 255, 255, 255),
             ),
           ),
         ],

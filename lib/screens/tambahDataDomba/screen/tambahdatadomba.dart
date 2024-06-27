@@ -50,7 +50,6 @@ class _CreateDataState extends State<CreateData> {
                       height: 24,
                     ),
                   ),
-                  SizedBox(height: 20),
                   Center(
                     child: Text(
                       'Tambah Data Domba',
