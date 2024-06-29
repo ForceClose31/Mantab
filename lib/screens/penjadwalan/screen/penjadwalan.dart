@@ -280,7 +280,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
             right: 20,
             child: Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              padding: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
               margin: EdgeInsets.only(bottom: 5),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -380,7 +380,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
   }) {
     return Container(
       width: MediaQuery.of(context).size.width * 1,
-      padding: EdgeInsets.only(top: 20, bottom: 20, left: 20),
+      padding: EdgeInsets.only(top: 20, bottom: 20, left: 10),
       margin: EdgeInsets.only(bottom: 15),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -405,7 +405,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                     Text(
                       '$time',
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                         height: 1,
@@ -417,7 +417,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                     Text(
                       '$result1',
                       style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 12,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                         height: 1,

@@ -132,7 +132,7 @@ class _DombaChildState extends State<DombaChild> {
                             var dropdownItems = snapshot.data!.docs
                                 .map((doc) => DropdownMenuItem<String>(
                                       value: doc['kodeDomba'],
-                                      child: Text(doc['kodeDomba']),
+                                      child: Text('   ${doc['kodeDomba']}'),
                                     ))
                                 .toList();
 
@@ -218,6 +218,7 @@ class _DombaChildState extends State<DombaChild> {
                                           Color.fromRGBO(117, 117, 117, 100))),
                               textAlign: TextAlign
                                   .left, // Teks dalam TextField menjadi rata kiri
+                              keyboardType: TextInputType.number,
                             ),
                           ],
                         ),
@@ -233,7 +234,7 @@ class _DombaChildState extends State<DombaChild> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Text(
-                            'Urutan Beranak Ke-Berapa',
+                            'Tanggal Beranak',
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
@@ -353,6 +354,26 @@ class _DombaChildState extends State<DombaChild> {
     String urutanBeranak = _urutanController.text.trim();
     DateTime? tanggalBeranak = _selectedDate;
 
+    if (kodeDomba == null) {
+      _showSnackbar('Kode domba harus dipilih');
+      return;
+    }
+
+    if (urutanBeranak.isEmpty) {
+      _showSnackbar('Urutan beranak harus diisi');
+      return;
+    }
+
+    if (int.tryParse(urutanBeranak) == null) {
+      _showSnackbar('Urutan beranak harus berupa angka');
+      return;
+    }
+
+    if (tanggalBeranak == null) {
+      _showSnackbar('Tanggal beranak harus dipilih');
+      return;
+    }
+
     Map<String, dynamic> dataBeranak = {
       'kodeDomba': kodeDomba,
       'urutanBeranak': urutanBeranak,
@@ -369,6 +390,16 @@ class _DombaChildState extends State<DombaChild> {
       Navigator.pop(context);
     }).catchError((error) {
       print('Error: $error');
+      _showSnackbar('Terjadi kesalahan saat menyimpan data');
     });
+  }
+
+  void _showSnackbar(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+        duration: Duration(seconds: 3),
+      ),
+    );
   }
 }
