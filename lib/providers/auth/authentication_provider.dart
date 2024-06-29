@@ -25,7 +25,6 @@ class AuthenticationProvider with ChangeNotifier {
         errorMessage = 'Nomor anggota sudah digunakan, gunakan nomor lainnya.';
       }
 
-      // Menggunakan SchedulerBinding untuk memastikan ScaffoldMessenger berfungsi dengan benar
       WidgetsBinding.instance.addPostFrameCallback((_) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(errorMessage)),

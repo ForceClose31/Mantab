@@ -8,6 +8,9 @@ class UpdateDombaService {
     required String docId,
     required String bobotBaru,
   }) async {
+     if (!isValidNumber(bobotBaru)) {
+      throw Exception('Bobot Domba hanya boleh angka');
+    }
     try {
       await _firestore
           .collection('domba')
@@ -21,5 +24,9 @@ class UpdateDombaService {
       print('Error update bobot domba: $e');
       throw e;
     }
+  }
+  bool isValidNumber(String value) {
+    String pattern = r'^[0-9]+$';
+    return RegExp(pattern).hasMatch(value);
   }
 }

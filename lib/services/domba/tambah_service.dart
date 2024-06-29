@@ -10,6 +10,18 @@ class DombaService {
     required String umurDomba,
     required String jenisKelamin,
   }) async {
+    if (!isValidNumber(kodeDomba)) {
+      throw Exception('Kode Domba hanya boleh angka');
+    }
+
+    if (!isValidNumber(bobotDomba)) {
+      throw Exception('Bobot Domba hanya boleh angka');
+    }
+
+    if (!isValidNumber(umurDomba)) {
+      throw Exception('Umur Domba hanya boleh angka');
+    }
+
     try {
       await _firestore
           .collection('domba')
@@ -25,5 +37,10 @@ class DombaService {
       print('Error tambah data domba: $e');
       throw e;
     }
+  }
+
+  bool isValidNumber(String value) {
+    String pattern = r'^[0-9]+$';
+    return RegExp(pattern).hasMatch(value);
   }
 }

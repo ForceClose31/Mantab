@@ -21,9 +21,17 @@ class UpdateDombaProvider with ChangeNotifier {
       );
       Navigator.pop(context);
     } catch (e) {
-      print('Error update data domba: $e');
+      print('Error tambah data domba: $e');
+      String errorMessage;
+
+      if (e.toString().contains('Bobot Domba hanya boleh angka')) {
+        errorMessage = 'Bobot Domba hanya boleh angka';
+      } else {
+        errorMessage = 'Gagal menambah data domba: $e';
+      }
+
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Gagal mengubah data domba: $e')),
+        SnackBar(content: Text(errorMessage)),
       );
     }
   }
