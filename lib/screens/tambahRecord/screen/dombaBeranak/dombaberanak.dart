@@ -122,7 +122,7 @@ class _DombaChildState extends State<DombaChild> {
                               .doc(user!.uid)
                               .collection('dataDomba')
                               .where('jenisKelamin',
-                                  isEqualTo: 'SQ7e1oe2XtoQCQRYOQXe')
+                                  isNotEqualTo: 'SQ7e1oe2XtoQCQRYOQXe')
                               .snapshots(),
                           builder: (context, snapshot) {
                             if (!snapshot.hasData) {

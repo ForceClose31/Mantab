@@ -509,9 +509,9 @@ class _topContentState extends State<topContent> {
 
     // Logika untuk menentukan teks jenis kelamin
     if (value == 'MJdiCLP726Un0p4A8vu2') {
-      jenisKelaminText = 'Jantan';
-    } else if (value == 'SQ7e1oe2XtoQCQRYOQXe') {
       jenisKelaminText = 'Betina';
+    } else if (value == 'SQ7e1oe2XtoQCQRYOQXe') {
+      jenisKelaminText = 'Jantan';
     } else {
       jenisKelaminText =
           value; // Jika tidak sesuai dengan kriteria di atas, tampilkan nilai langsung
