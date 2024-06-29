@@ -274,8 +274,8 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                     final String password =
                                         kataSandiController.text;
                                     final String nama = namaController.text;
-                                    final int nomorAnggota =
-                                        int.parse(nomorAnggotaController.text);
+                                    final String nomorAnggota =
+                                        nomorAnggotaController.text;
 
                                     context
                                         .read<AuthenticationProvider>()

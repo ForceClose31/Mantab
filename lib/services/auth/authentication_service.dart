@@ -7,7 +7,24 @@ class AuthenticationService {
 
   // ignore: body_might_complete_normally_nullable
   Future<User?> registerUser(
-      String email, String password, String nama, int nomorAnggota) async {
+      String email, String password, String nama, String nomorAnggota) async {
+    if (!isValidEmail(email)) {
+      throw Exception('Email tidak valid');
+    }
+
+    if (!isValidPassword(password)) {
+      throw Exception(
+          'Password harus minimal 8 karakter, terdiri dari huruf, angka, dan simbol');
+    }
+
+    if (!isValidNomorAnggota(nomorAnggota)) {
+      throw Exception('Nomor Anggota hanya boleh angka');
+    }
+
+    if (!isValidNama(nama)) {
+      throw Exception('Nama hanya boleh terdiri dari huruf');
+    }
+
     try {
       UserCredential userCredential =
           await _auth.createUserWithEmailAndPassword(
@@ -48,8 +65,29 @@ class AuthenticationService {
         return userCredential.user;
       }
     } catch (e) {
-      print('Error: $e');
+      print('Masukkan data dengan benar: $e'); // Modifikasi pesan log
       rethrow;
     }
+  }
+
+  bool isValidEmail(String email) {
+    String emailPattern = r'^[^@]+@[^@]+\.[^@]+';
+    return RegExp(emailPattern).hasMatch(email);
+  }
+
+  bool isValidPassword(String password) {
+    String passwordPattern =
+        r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+|~=`{}\[\]:";\/<>?,./]).{8,}$';
+    return RegExp(passwordPattern).hasMatch(password);
+  }
+
+  bool isValidNomorAnggota(String nomorAnggota) {
+    String nomorPattern = r'^[0-9]+$';
+    return RegExp(nomorPattern).hasMatch(nomorAnggota);
+  }
+
+  bool isValidNama(String nama) {
+    String namaPattern = r'^[a-zA-Z]+$';
+    return RegExp(namaPattern).hasMatch(nama);
   }
 }

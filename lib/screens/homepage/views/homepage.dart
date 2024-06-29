@@ -5,8 +5,8 @@ import 'package:first/screens/tambahDomba/screen/tambahdomba.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:visibility_detector/visibility_detector.dart';
+// import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+// import 'package:visibility_detector/visibility_detector.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -16,34 +16,34 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  final List<String> youtubeVideoIds = [
-    '9m9aqlz6Otc',
-    '0yOrZ786JSA',
-    'x0vOMsSEnPI',
-    'KGWjXjUZNkE',
-    'VnL0CJoFC7Q',
-  ];
-  late List<YoutubePlayerController> _controllers;
+  // final List<String> youtubeVideoIds = [
+  //   '9m9aqlz6Otc',
+  //   '0yOrZ786JSA',
+  //   'x0vOMsSEnPI',
+  //   'KGWjXjUZNkE',
+  //   'VnL0CJoFC7Q',
+  // ];
+  // late List<YoutubePlayerController> _controllers;
 
   @override
   void initState() {
     super.initState();
-    _controllers = youtubeVideoIds
-        .map((videoId) => YoutubePlayerController(
-              initialVideoId: videoId,
-              flags: YoutubePlayerFlags(
-                autoPlay: false,
-                mute: false,
-              ),
-            ))
-        .toList();
+    // _controllers = youtubeVideoIds
+    //     .map((videoId) => YoutubePlayerController(
+    //           initialVideoId: videoId,
+    //           flags: YoutubePlayerFlags(
+    //             autoPlay: false,
+    //             mute: false,
+    //           ),
+    //         ))
+    //     .toList();
   }
 
   @override
   void dispose() {
-    _controllers.forEach((controller) {
-      controller.dispose();
-    });
+    // _controllers.forEach((controller) {
+    //   controller.dispose();
+    // });
     super.dispose();
   }
 
@@ -352,43 +352,43 @@ class _HomepageState extends State<Homepage> {
                                 SizedBox(
                                   height: 10,
                                 ),
-                                ..._controllers.asMap().entries.map(
-                                  (entry) {
-                                    int index = entry.key;
-                                    YoutubePlayerController controller =
-                                        entry.value;
-                                    return VisibilityDetector(
-                                      key: Key('youtube-player-$index'),
-                                      onVisibilityChanged: (info) {
-                                        if (info.visibleFraction == 0) {
-                                          controller.pause();
-                                        }
-                                      },
-                                      child: Column(
-                                        children: [
-                                          Container(
-                                            height: 200,
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20.0),
-                                              // border: Radius.circular(radius),
-                                              color: Colors.grey[300],
-                                            ),
-                                            child: YoutubePlayer(
-                                              controller: controller,
-                                              showVideoProgressIndicator: false,
-                                              progressIndicatorColor:
-                                                  Colors.red,
-                                            ),
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          )
-                                        ],
-                                      ),
-                                    );
-                                  },
-                                ).toList(),
+                                // ..._controllers.asMap().entries.map(
+                                //   (entry) {
+                                //     int index = entry.key;
+                                //     YoutubePlayerController controller =
+                                //         entry.value;
+                                //     return VisibilityDetector(
+                                //       key: Key('youtube-player-$index'),
+                                //       onVisibilityChanged: (info) {
+                                //         if (info.visibleFraction == 0) {
+                                //           controller.pause();
+                                //         }
+                                //       },
+                                //       child: Column(
+                                //         children: [
+                                //           Container(
+                                //             height: 200,
+                                //             decoration: BoxDecoration(
+                                //               borderRadius:
+                                //                   BorderRadius.circular(20.0),
+                                //               // border: Radius.circular(radius),
+                                //               color: Colors.grey[300],
+                                //             ),
+                                //             child: YoutubePlayer(
+                                //               controller: controller,
+                                //               showVideoProgressIndicator: false,
+                                //               progressIndicatorColor:
+                                //                   Colors.red,
+                                //             ),
+                                //           ),
+                                //           SizedBox(
+                                //             height: 20,
+                                //           )
+                                //         ],
+                                //       ),
+                                //     );
+                                //   },
+                                // ).toList(),
                               ],
                             ),
                           ],
