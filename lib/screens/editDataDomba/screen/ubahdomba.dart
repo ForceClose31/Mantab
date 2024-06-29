@@ -96,9 +96,8 @@ class _UpdateDombaState extends State<UpdateDomba> {
 
                         var dropdownItems = snapshot.data!.docs
                             .map((doc) => DropdownMenuItem<String>(
-                                  value: doc.id,
-                                  child: Text(doc['kodeDomba']),
-                                ))
+                                value: doc.id,
+                                child: Text('   ${doc['kodeDomba']}')))
                             .toList();
 
                         return DropdownButton<String>(
@@ -246,13 +245,13 @@ class _UpdateDombaState extends State<UpdateDomba> {
                   _updateDataDomba(context);
                 },
                 style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all<Size>(Size(180, 60)),
-                  padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  minimumSize: WidgetStateProperty.all<Size>(Size(180, 60)),
+                  padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                     EdgeInsets.all(12),
                   ),
-                  backgroundColor: MaterialStateProperty.all<Color>(
+                  backgroundColor: WidgetStateProperty.all<Color>(
                       Color.fromRGBO(104, 119, 68, 1)),
-                  shape: MaterialStateProperty.all<OutlinedBorder>(
+                  shape: WidgetStateProperty.all<OutlinedBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),

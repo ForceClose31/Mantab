@@ -129,9 +129,8 @@ class _DombaHamilState extends State<DombaHamil> {
 
                             var dropdownItems = snapshot.data!.docs
                                 .map((doc) => DropdownMenuItem<String>(
-                                      value: doc['kodeDomba'],
-                                      child: Text(doc['kodeDomba']),
-                                    ))
+                                    value: doc['kodeDomba'],
+                                    child: Text('   ${doc['kodeDomba']}')))
                                 .toList();
 
                             return DropdownButton<String>(
@@ -249,13 +248,13 @@ class _DombaHamilState extends State<DombaHamil> {
                   _saveDataToFirestore();
                 },
                 style: ButtonStyle(
-                  minimumSize: MaterialStateProperty.all<Size>(
+                  minimumSize: WidgetStateProperty.all<Size>(
                       Size(180, 60)), // Ukuran minimum tombol
-                  padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                       EdgeInsets.all(12)), // Padding tombol
-                  backgroundColor: MaterialStateProperty.all<Color>(
+                  backgroundColor: WidgetStateProperty.all<Color>(
                       Color.fromRGBO(104, 119, 68, 1)),
-                  shape: MaterialStateProperty.all<OutlinedBorder>(
+                  shape: WidgetStateProperty.all<OutlinedBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
                           10), // Atur border radius di sini

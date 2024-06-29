@@ -130,9 +130,8 @@ class _DombaKawinState extends State<DombaKawin> {
 
                             var dropdownItems = snapshot.data!.docs
                                 .map((doc) => DropdownMenuItem<String>(
-                                      value: doc['kodeDomba'],
-                                      child: Text(doc['kodeDomba']),
-                                    ))
+                                    value: doc['kodeDomba'],
+                                    child: Text('   ${doc['kodeDomba']}')))
                                 .toList();
 
                             return DropdownButton<String>(
