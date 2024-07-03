@@ -1,6 +1,6 @@
 # Mantab Aplication Mobile
 
-A new Flutter project.
+Application for farmer.
 
 ## Getting Started
 
