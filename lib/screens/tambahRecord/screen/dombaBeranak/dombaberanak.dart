@@ -21,7 +21,7 @@ class _DombaChildState extends State<DombaChild> {
       child: Scaffold(
         body: Stack(
           children: [
-            // Background Image
+            
             Positioned(
               top: 0,
               left: 0,
@@ -34,7 +34,7 @@ class _DombaChildState extends State<DombaChild> {
             ),
 
             Positioned(
-              top: 20, // Atur posisi teks header di sini
+              top: 20, 
               left: 20,
               right: 20,
               child: Column(
@@ -45,9 +45,9 @@ class _DombaChildState extends State<DombaChild> {
                       Navigator.pop(context);
                     },
                     child: Image.asset(
-                      'lib/images/back.png', // Ganti dengan path gambar Anda
+                      'lib/images/back.png', 
                       width:
-                          24, // Sesuaikan ukuran gambar dengan kebutuhan Anda
+                          24, 
                       height: 24,
                     ),
                   ),
@@ -66,7 +66,7 @@ class _DombaChildState extends State<DombaChild> {
             ),
 
             Positioned(
-              top: 100, // Atur posisi kotak informasi domba di sini
+              top: 100, 
               left: 20,
               right: 20,
               child: Container(
@@ -75,15 +75,15 @@ class _DombaChildState extends State<DombaChild> {
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                       color: Color.fromRGBO(
-                          104, 119, 69, 1)), // Warna outline hijau
-                  color: Colors.white, // Warna latar belakang putih
+                          104, 119, 69, 1)), 
+                  color: Colors.white, 
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(
-                          bottom: 10), // Tambahkan margin bawah
+                          bottom: 10), 
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -101,7 +101,7 @@ class _DombaChildState extends State<DombaChild> {
                       height: 10,
                     ),
                     Container(
-                      height: 55, // Atur tinggi container
+                      height: 55, 
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
@@ -113,7 +113,7 @@ class _DombaChildState extends State<DombaChild> {
                             offset: Offset(0, 4),
                           ),
                         ],
-                        color: Colors.white, // Warna latar belakang putih
+                        color: Colors.white, 
                       ),
                       child: Center(
                         child: StreamBuilder<QuerySnapshot>(
@@ -168,7 +168,7 @@ class _DombaChildState extends State<DombaChild> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
-                          bottom: 10), // Tambahkan margin bawah
+                          bottom: 10), 
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -186,7 +186,7 @@ class _DombaChildState extends State<DombaChild> {
                       height: 10,
                     ),
                     Container(
-                      height: 55, // Atur tinggi container
+                      height: 55, 
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
@@ -198,7 +198,7 @@ class _DombaChildState extends State<DombaChild> {
                             offset: Offset(0, 4),
                           ),
                         ],
-                        color: Colors.white, // Warna latar belakang putih
+                        color: Colors.white, 
                       ),
                       child: Center(
                         child: Column(
@@ -217,7 +217,7 @@ class _DombaChildState extends State<DombaChild> {
                                       color:
                                           Color.fromRGBO(117, 117, 117, 100))),
                               textAlign: TextAlign
-                                  .left, // Teks dalam TextField menjadi rata kiri
+                                  .left, 
                               keyboardType: TextInputType.number,
                             ),
                           ],
@@ -229,7 +229,7 @@ class _DombaChildState extends State<DombaChild> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
-                          bottom: 10), // Tambahkan margin bawah
+                          bottom: 10), 
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -247,7 +247,7 @@ class _DombaChildState extends State<DombaChild> {
                       height: 10,
                     ),
                     Container(
-                      height: 55, // Atur tinggi container
+                      height: 55, 
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
@@ -259,7 +259,7 @@ class _DombaChildState extends State<DombaChild> {
                             offset: Offset(0, 4),
                           ),
                         ],
-                        color: Colors.white, // Warna latar belakang putih
+                        color: Colors.white, 
                       ),
                       child: Center(
                         child: GestureDetector(
@@ -302,7 +302,7 @@ class _DombaChildState extends State<DombaChild> {
               ),
             ),
 
-            // Tombol Simpan
+            
             Positioned(
               top: 500,
               left: 40,
@@ -313,15 +313,15 @@ class _DombaChildState extends State<DombaChild> {
                 },
                 style: ButtonStyle(
                   minimumSize: WidgetStateProperty.all<Size>(
-                      Size(180, 60)), // Ukuran minimum tombol
+                      Size(180, 60)), 
                   padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-                      EdgeInsets.all(12)), // Padding tombol
+                      EdgeInsets.all(12)), 
                   backgroundColor: WidgetStateProperty.all<Color>(
                       Color.fromRGBO(104, 119, 68, 1)),
                   shape: WidgetStateProperty.all<OutlinedBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
-                          10), // Atur border radius di sini
+                          10), 
                     ),
                   ),
                 ),
@@ -329,7 +329,7 @@ class _DombaChildState extends State<DombaChild> {
                   'Ubah Data Domba',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 18 // Ubah warna teks menjadi putih
+                      fontSize: 18 
                       ),
                 ),
               ),

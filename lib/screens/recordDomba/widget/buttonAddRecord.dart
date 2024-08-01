@@ -17,7 +17,7 @@ class buttonAddRecord extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          //Tombol
+          
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -31,25 +31,25 @@ class buttonAddRecord extends StatelessWidget {
                 style: ButtonStyle(
                   minimumSize: WidgetStateProperty.all<Size>(Size(400, 55)),
                   padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-                      EdgeInsets.all(12)), // Padding tombol
+                      EdgeInsets.all(12)), 
                   backgroundColor: WidgetStateProperty.all<Color>(
                       Color.fromRGBO(0, 163, 255, 1)),
                   shape: WidgetStateProperty.all<OutlinedBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
-                          10), // Atur border radius di sini
+                          10), 
                     ),
                   ),
                   elevation:
-                      WidgetStateProperty.all<double>(15), // Memberikan elevasi
+                      WidgetStateProperty.all<double>(15), 
                   shadowColor: WidgetStateProperty.all<Color>(
-                      Colors.black.withOpacity(1)), // Warna shadow
+                      Colors.black.withOpacity(1)), 
                 ),
                 child: Text(
                   'Tambah Domba Kawin',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18, // Ubah warna teks menjadi putih
+                    fontSize: 18, 
                   ),
                 ),
               ),
@@ -65,19 +65,19 @@ class buttonAddRecord extends StatelessWidget {
                 },
                 style: ButtonStyle(
                   minimumSize: WidgetStateProperty.all<Size>(
-                      Size(400, 55)), // Ukuran minimum tombol
+                      Size(400, 55)), 
                   padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-                      EdgeInsets.all(12)), // Padding tombol
+                      EdgeInsets.all(12)), 
                   backgroundColor: WidgetStateProperty.all<Color>(
                       Color.fromRGBO(0, 163, 255, 1)),
                   shape: WidgetStateProperty.all<OutlinedBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
-                          10), // Atur border radius di sini
+                          10), 
                     ),
                   ),
                   elevation:
-                      WidgetStateProperty.all<double>(15), // Memberikan elevasi
+                      WidgetStateProperty.all<double>(15), 
                   shadowColor: WidgetStateProperty.all<Color>(
                       Colors.black.withOpacity(1)),
                 ),
@@ -85,7 +85,7 @@ class buttonAddRecord extends StatelessWidget {
                   'Tambah Domba Bunting',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18, // Ubah warna teks menjadi putih
+                    fontSize: 18, 
                   ),
                 ),
               ),
@@ -101,19 +101,19 @@ class buttonAddRecord extends StatelessWidget {
                 },
                 style: ButtonStyle(
                   minimumSize: WidgetStateProperty.all<Size>(
-                      Size(400, 55)), // Ukuran minimum tombol
+                      Size(400, 55)), 
                   padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-                      EdgeInsets.all(12)), // Padding tombol
+                      EdgeInsets.all(12)), 
                   backgroundColor: WidgetStateProperty.all<Color>(
                       Color.fromRGBO(0, 163, 255, 1)),
                   shape: WidgetStateProperty.all<OutlinedBorder>(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(
-                          10), // Atur border radius di sini
+                          10), 
                     ),
                   ),
                   elevation:
-                      WidgetStateProperty.all<double>(15), // Memberikan elevasi
+                      WidgetStateProperty.all<double>(15), 
                   shadowColor: WidgetStateProperty.all<Color>(
                       Colors.black.withOpacity(1)),
                 ),
@@ -121,7 +121,7 @@ class buttonAddRecord extends StatelessWidget {
                   'Tambah Domba Beranak',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 18, // Ubah warna teks menjadi putih
+                    fontSize: 18, 
                   ),
                 ),
               ),

@@ -18,7 +18,7 @@ class CardHari extends StatelessWidget {
           var jadwalData = jadwalSnapshot.docs;
           jadwalData.sort((a, b) => a['jam'].compareTo(b['jam']));
 
-          // Lakukan proses data sesuai kebutuhan
+          
           for (var jadwal in jadwalData) {
             var jam = jadwal['jam'];
             var kegiatan = jadwal['kegiatan'];
@@ -34,8 +34,8 @@ class CardHari extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    double minButtonWidth = screenWidth * 0.1; // Adjust the width as needed
-    double minButtonHeight = screenHeight * 0.1; // Adjust the height as needed
+    double minButtonWidth = screenWidth * 0.1; 
+    double minButtonHeight = screenHeight * 0.1; 
 
     return Positioned(
       top: 220,
@@ -44,7 +44,7 @@ class CardHari extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // Tombol
+          
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -55,17 +55,17 @@ class CardHari extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
+                        10), 
                     side: BorderSide(
                         color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
+                            104, 119, 68, 1)), 
                   ),
-                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
+                  minimumSize: Size(minButtonWidth, minButtonHeight), 
                   padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
+                      horizontal: 10), 
+                  textStyle: TextStyle(fontSize: 12), 
                   backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
+                      Colors.white, 
                 ),
                 child: Text('Sen',
                     style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
@@ -78,17 +78,17 @@ class CardHari extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
+                        10), 
                     side: BorderSide(
                         color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
+                            104, 119, 68, 1)), 
                   ),
-                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
+                  minimumSize: Size(minButtonWidth, minButtonHeight), 
                   padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
+                      horizontal: 10), 
+                  textStyle: TextStyle(fontSize: 12), 
                   backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
+                      Colors.white, 
                 ),
                 child: Text('Sel',
                     style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
@@ -101,17 +101,17 @@ class CardHari extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
+                        10), 
                     side: BorderSide(
                         color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
+                            104, 119, 68, 1)), 
                   ),
-                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
+                  minimumSize: Size(minButtonWidth, minButtonHeight), 
                   padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
+                      horizontal: 10), 
+                  textStyle: TextStyle(fontSize: 12), 
                   backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
+                      Colors.white, 
                 ),
                 child: Text('Rab',
                     style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
@@ -124,17 +124,17 @@ class CardHari extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
+                        10), 
                     side: BorderSide(
                         color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
+                            104, 119, 68, 1)), 
                   ),
-                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
+                  minimumSize: Size(minButtonWidth, minButtonHeight), 
                   padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
+                      horizontal: 10), 
+                  textStyle: TextStyle(fontSize: 12), 
                   backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
+                      Colors.white, 
                 ),
                 child: Text('Kam',
                     style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
@@ -147,17 +147,17 @@ class CardHari extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
+                        10), 
                     side: BorderSide(
                         color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
+                            104, 119, 68, 1)), 
                   ),
-                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
+                  minimumSize: Size(minButtonWidth, minButtonHeight), 
                   padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
+                      horizontal: 10), 
+                  textStyle: TextStyle(fontSize: 12), 
                   backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
+                      Colors.white, 
                 ),
                 child: Text('Jum',
                     style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
@@ -170,17 +170,17 @@ class CardHari extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
+                        10), 
                     side: BorderSide(
                         color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
+                            104, 119, 68, 1)), 
                   ),
-                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
+                  minimumSize: Size(minButtonWidth, minButtonHeight), 
                   padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
+                      horizontal: 10), 
+                  textStyle: TextStyle(fontSize: 12), 
                   backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
+                      Colors.white, 
                 ),
                 child: Text('Sab',
                     style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),
@@ -193,17 +193,17 @@ class CardHari extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
-                        10), // Atur radius sesuai keinginan
+                        10), 
                     side: BorderSide(
                         color: Color.fromRGBO(
-                            104, 119, 68, 1)), // Atur border dengan warna hijau
+                            104, 119, 68, 1)), 
                   ),
-                  minimumSize: Size(minButtonWidth, minButtonHeight), // Ukuran minimum tombol responsif
+                  minimumSize: Size(minButtonWidth, minButtonHeight), 
                   padding: EdgeInsets.symmetric(
-                      horizontal: 10), // Atur padding tombol
-                  textStyle: TextStyle(fontSize: 12), // Atur gaya teks tombol
+                      horizontal: 10), 
+                  textStyle: TextStyle(fontSize: 12), 
                   backgroundColor:
-                      Colors.white, // Atur warna latar belakang menjadi putih
+                      Colors.white, 
                 ),
                 child: Text('Min',
                     style: TextStyle(color: Color.fromRGBO(104, 119, 68, 1))),

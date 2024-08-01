@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                               children: [
                                 const Padding(
                                   padding: EdgeInsets.only(
-                                      bottom: 10), // Tambahkan margin bawah
+                                      bottom: 10), 
                                   child: Text(
                                     'Nomor Anggota Kelompok',
                                     style: TextStyle(
@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                 ),
                                 Container(
-                                  height: 55, // Atur tinggi container
+                                  height: 55, 
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     boxShadow: [
@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     ],
                                     color: Colors
-                                        .white, // Warna latar belakang putih
+                                        .white, 
                                   ),
                                   child: Center(
                                     child: Column(
@@ -126,7 +126,7 @@ class _LoginPageState extends State<LoginPage> {
                                                   color: Color.fromRGBO(
                                                       117, 117, 117, 100))),
                                           textAlign: TextAlign
-                                              .left, // Teks dalam TextField menjadi rata kiri
+                                              .left, 
                                         ),
                                       ],
                                     ),
@@ -137,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 const Padding(
                                   padding: EdgeInsets.only(
-                                      bottom: 10), // Tambahkan margin bawah
+                                      bottom: 10), 
                                   child: Text(
                                     'Kata Sandi',
                                     style: TextStyle(
@@ -148,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                                   ),
                                 ),
                                 Container(
-                                  height: 55, // Atur tinggi container
+                                  height: 55, 
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     boxShadow: [
@@ -205,7 +205,7 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                                 const SizedBox(
                                   height: 30,
-                                ), // Mengurangi jarak antara tombol
+                                ), 
                                 ElevatedButton(
                                   onPressed: () {
                                     final String email =
@@ -219,10 +219,10 @@ class _LoginPageState extends State<LoginPage> {
                                   },
                                   style: ButtonStyle(
                                     minimumSize: WidgetStateProperty.all<Size>(
-                                        Size(180, 60)), // Ukuran minimum tombol
+                                        Size(180, 60)), 
                                     padding: WidgetStateProperty.all<
                                             EdgeInsetsGeometry>(
-                                        EdgeInsets.all(12)), // Padding tombol
+                                        EdgeInsets.all(12)), 
                                     backgroundColor:
                                         WidgetStateProperty.all<Color>(
                                             Color.fromRGBO(78, 59, 33, 1)),
@@ -230,7 +230,7 @@ class _LoginPageState extends State<LoginPage> {
                                         WidgetStateProperty.all<OutlinedBorder>(
                                       RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(
-                                            10), // Atur border radius di sini
+                                            10), 
                                       ),
                                     ),
                                   ),
@@ -239,7 +239,7 @@ class _LoginPageState extends State<LoginPage> {
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize:
-                                            18 // Ubah warna teks menjadi putih
+                                            18 
                                         ),
                                   ),
                                 ),

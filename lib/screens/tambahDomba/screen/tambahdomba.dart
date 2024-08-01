@@ -46,7 +46,7 @@ class CreateDomba extends StatelessWidget {
               ),
             ),
 
-            // Title and button
+            
             Positioned(
               top: 60,
               left: 15,
@@ -65,7 +65,7 @@ class CreateDomba extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 15),
-                  // Buttons
+                  
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -234,7 +234,7 @@ class CreateDomba extends StatelessWidget {
               ),
             ),
 
-            // Scrollable content
+            
             Positioned(
               top: 370,
               left: -15,
@@ -266,7 +266,7 @@ class CreateDomba extends StatelessWidget {
                             return Text('No data available');
                           }
 
-                          // Sort the list of documents based on 'kodeDomba'
+                          
                           List<DocumentSnapshot> sortedDocs =
                               snapshot.data!.docs;
                           sortedDocs.sort((a, b) =>
@@ -284,11 +284,11 @@ class CreateDomba extends StatelessWidget {
                                         'Bobot : ${data['bobotDomba']}, Umur : ${data['umurDomba']}, Jenis Kelamin : ${data['jenisKelamin']}',
                                     kodeDomba: data['kodeDomba'],
                                     result1: data[
-                                        'bobotDomba'], // Specific weight value
+                                        'bobotDomba'], 
                                     result2:
-                                        data['umurDomba'], // Specific age value
+                                        data['umurDomba'], 
                                     result3: data[
-                                        'jenisKelamin'], // Specific gender value
+                                        'jenisKelamin'], 
                                   ),
                                   SizedBox(height: 10),
                                 ],
@@ -311,10 +311,10 @@ class CreateDomba extends StatelessWidget {
 
   Widget _buildItem({
     required String title,
-    required String kodeDomba, // Kode domba
-    required String result1, // Weight
-    required String result2, // Age
-    required String result3, // Gender
+    required String kodeDomba, 
+    required String result1, 
+    required String result2, 
+    required String result3, 
   }) {
     bool isJantan = result3 == 'SQ7e1oe2XtoQCQRYOQXe';
     return Container(
@@ -348,7 +348,7 @@ class CreateDomba extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                kodeDomba, // Kode domba
+                kodeDomba, 
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,

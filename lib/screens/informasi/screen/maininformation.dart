@@ -13,7 +13,7 @@ class InformationPage extends StatelessWidget {
           builder: (BuildContext context) {
             return Stack(
               children: [
-                // Background Image
+                
                 Positioned(
                   top: 0,
                   left: 0,
@@ -25,7 +25,7 @@ class InformationPage extends StatelessWidget {
                   ),
                 ),
 
-                // Content
+                
                 Positioned(
                   top: 20,
                   left: 0,
@@ -98,7 +98,7 @@ class InformationPage extends StatelessWidget {
               builder: (context) => Artikel(
                     imageUrl: imageUrl,
                     judulArtikel: judul,
-                  )), // Tambahkan parameter),
+                  )), 
         );
       },
       child: Container(

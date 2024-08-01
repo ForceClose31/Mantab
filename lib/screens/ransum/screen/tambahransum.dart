@@ -3,23 +3,22 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:first/screens/navigasi/navigasi.dart';
 import 'package:flutter/material.dart';
 
-// import 'package:flutter/widgets.dart';
+
 class CreateRansum extends StatefulWidget {
   @override
   _CreateRansumState createState() => _CreateRansumState();
 }
 
 class _CreateRansumState extends State<CreateRansum> {
-  late List<double> totalResults; // Declare totalResults as a late variable
-
+  late List<double> totalResults;
   @override
   void initState() {
     super.initState();
-    initializeTotalResults(); // Initialize totalResults in initState
+    initializeTotalResults();
   }
 
   void initializeTotalResults() {
-    totalResults = [0, 0, 0, 0, 0, 0]; // Initialize totalResults
+    totalResults = [0, 0, 0, 0, 0, 0]; 
   }
 
   @override
@@ -31,7 +30,6 @@ class _CreateRansumState extends State<CreateRansum> {
       child: Scaffold(
         body: Stack(
           children: [
-            // Background batik
             Positioned(
               top: 0,
               left: 0,
@@ -42,9 +40,8 @@ class _CreateRansumState extends State<CreateRansum> {
                 fit: BoxFit.cover,
               ),
             ),
-            // Button Back
             Positioned(
-              top: 25, // Atur posisi teks header di sini
+              top: 25, 
               left: 20,
               right: 20,
               child: Column(
@@ -55,18 +52,18 @@ class _CreateRansumState extends State<CreateRansum> {
                       Navigator.pop(context);
                     },
                     child: Image.asset(
-                      'lib/images/back.png', // Ganti dengan path gambar Anda
+                      'lib/images/back.png', 
                       width:
-                          24, // Sesuaikan ukuran gambar dengan kebutuhan Anda
+                          24, 
                       height: 24,
                     ),
                   ),
-                  SizedBox(height: 10), // Spacer antara gambar dan teks
+                  SizedBox(height: 10), 
                 ],
               ),
             ),
 
-            //Title and button
+            
             Positioned(
               top: 70,
               left: 15,
@@ -141,7 +138,7 @@ class _CreateRansumState extends State<CreateRansum> {
                           return Text('No data available');
                         }
 
-                        // Reset totalResults before calculating
+                        
                         initializeTotalResults();
 
                         snapshot.data!.docs
@@ -193,7 +190,7 @@ class _CreateRansumState extends State<CreateRansum> {
                 ),
               ),
             ),
-            // Scrollable content
+            
             Positioned(
               top: 310,
               left: -15,
@@ -226,7 +223,7 @@ class _CreateRansumState extends State<CreateRansum> {
                             return Text('No data available');
                           }
 
-                          // Sort the list of documents based on 'kodeDomba'
+                          
                           List<DocumentSnapshot> sortedDocs =
                               snapshot.data!.docs;
                           sortedDocs.sort((a, b) =>
@@ -242,8 +239,8 @@ class _CreateRansumState extends State<CreateRansum> {
                                   _buildItem(
                                     kodeDomba: data['kodeDomba'],
                                     result1: data[
-                                        'bobotDomba'], // Specific weight value
-                                    result2: '', // Specific age value
+                                        'bobotDomba'], 
+                                    result2: '', 
                                     result3: '',
                                     result4: '',
                                     result5: '',
@@ -288,7 +285,7 @@ class _CreateRansumState extends State<CreateRansum> {
     double result6Value = 0.15 * bobot * 0.071;
     double result7Value = 0.15 * bobot * 0.112;
 
-    // Menambahkan nilai result ke dalam totalResults
+    
     totalResults[0] += result2Value;
     totalResults[1] += result3Value;
     totalResults[2] += result4Value;
@@ -355,7 +352,7 @@ class _CreateRansumState extends State<CreateRansum> {
                   height: 3,
                 ),
                 Text(
-                  'Tumpi jagung : ${result2Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
+                  'Tumpi jagung : ${result2Value.toStringAsFixed(3)}', 
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -367,7 +364,7 @@ class _CreateRansumState extends State<CreateRansum> {
                   height: 3,
                 ),
                 Text(
-                  'Rumput gajah : ${result3Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
+                  'Rumput gajah : ${result3Value.toStringAsFixed(3)}', 
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -379,7 +376,7 @@ class _CreateRansumState extends State<CreateRansum> {
                   height: 3,
                 ),
                 Text(
-                  'Ampas tebu : ${result4Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
+                  'Ampas tebu : ${result4Value.toStringAsFixed(3)}', 
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -391,7 +388,7 @@ class _CreateRansumState extends State<CreateRansum> {
                   height: 3,
                 ),
                 Text(
-                  'Molases : ${result5Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
+                  'Molases : ${result5Value.toStringAsFixed(3)}', 
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -403,7 +400,7 @@ class _CreateRansumState extends State<CreateRansum> {
                   height: 3,
                 ),
                 Text(
-                  'Rumput lapang : ${result6Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
+                  'Rumput lapang : ${result6Value.toStringAsFixed(3)}', 
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -415,7 +412,7 @@ class _CreateRansumState extends State<CreateRansum> {
                   height: 3,
                 ),
                 Text(
-                  'Bekatul : ${result7Value.toStringAsFixed(3)}', // Menggunakan nilai hasil perhitungan dengan 3 angka dibelakang koma
+                  'Bekatul : ${result7Value.toStringAsFixed(3)}', 
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
@@ -443,7 +440,7 @@ class _CreateRansumState extends State<CreateRansum> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            title, // Judul kategori jenis pakan
+            title, 
             style: TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.bold,
@@ -452,7 +449,7 @@ class _CreateRansumState extends State<CreateRansum> {
             ),
           ),
           Text(
-            value.toStringAsFixed(3), // Nilai atau jumlah pakan
+            value.toStringAsFixed(3), 
             style: TextStyle(
               fontSize: 10,
               fontWeight: FontWeight.bold,

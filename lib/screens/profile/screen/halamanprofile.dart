@@ -24,11 +24,11 @@ class HalamanProfile extends StatelessWidget {
                   decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                          'lib/images/bgbatik.png'), // Ubah dengan path gambar background Anda
-                      fit: BoxFit.cover, // Sesuaikan gambar dengan container
+                          'lib/images/bgbatik.png'), 
+                      fit: BoxFit.cover, 
                     ),
                   ),
-                  height: constraints.maxHeight * 0.4, // 1/3 dari tinggi layar
+                  height: constraints.maxHeight * 0.4, 
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -42,11 +42,11 @@ class HalamanProfile extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(
-                            height: 30), // Jarak antara teks dan gambar
+                            height: 30), 
                         Image.asset(
-                          'lib/images/PP.png', // Ubah dengan path gambar Anda
-                          width: 100, // Sesuaikan dengan ukuran gambar Anda
-                          height: 100, // Sesuaikan dengan ukuran gambar Anda
+                          'lib/images/PP.png', 
+                          width: 100, 
+                          height: 100, 
                         ),
                       ],
                     ),
@@ -55,9 +55,9 @@ class HalamanProfile extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 70, // Menggeser tombol ke atas
-                  left: 20, // Menggeser tombol ke kiri
-                  right: 20, // Menggeser tombol ke kanan
+                  top: 70, 
+                  left: 20, 
+                  right: 20, 
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +70,7 @@ class HalamanProfile extends StatelessWidget {
                         children: [
                           const Padding(
                             padding: EdgeInsets.only(
-                                bottom: 10), // Tambahkan margin bawah
+                                bottom: 10), 
                             child: Text(
                               'Nama',
                               style: TextStyle(
@@ -94,7 +94,7 @@ class HalamanProfile extends StatelessWidget {
 
                               if (userData != null) {
                                 return Container(
-                                  height: 55, // Atur tinggi container
+                                  height: 55, 
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     boxShadow: [
@@ -130,7 +130,7 @@ class HalamanProfile extends StatelessWidget {
                           ),
                           const Padding(
                             padding: EdgeInsets.only(
-                                bottom: 10), // Tambahkan margin bawah
+                                bottom: 10), 
                             child: Text(
                               'Nomor Anggota Kelompok',
                               style: TextStyle(
@@ -154,7 +154,7 @@ class HalamanProfile extends StatelessWidget {
 
                               if (userData != null) {
                                 return Container(
-                                  height: 55, // Atur tinggi container
+                                  height: 55, 
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     boxShadow: [
@@ -187,7 +187,7 @@ class HalamanProfile extends StatelessWidget {
                           ),
                           const SizedBox(
                             height: 30,
-                          ), // Mengurangi jarak antara tombol
+                          ), 
                         ],
                       ),
                     ),
@@ -196,13 +196,13 @@ class HalamanProfile extends StatelessWidget {
               ),
               Padding(
                   padding: const EdgeInsets.only(
-                      left: 20, // Menggeser tombol ke kiri
+                      left: 20, 
                       right: 20,
-                      bottom: 100 // Menggeser tombol ke kanan
+                      bottom: 100 
                       ),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment
-                          .end, // Letakkan konten di bagian bawah
+                          .end, 
                       children: [
                         Padding(
                           padding: EdgeInsets.symmetric(
@@ -220,10 +220,10 @@ class HalamanProfile extends StatelessWidget {
                                 },
                                 style: ButtonStyle(
                                   minimumSize: MaterialStateProperty.all<Size>(
-                                      Size(180, 60)), // Ukuran minimum tombol
+                                      Size(180, 60)), 
                                   padding: MaterialStateProperty.all<
                                           EdgeInsetsGeometry>(
-                                      EdgeInsets.all(12)), // Padding tombol
+                                      EdgeInsets.all(12)), 
                                   backgroundColor:
                                       MaterialStateProperty.all<Color>(
                                           Color.fromRGBO(0, 163, 255, 1)),
@@ -231,7 +231,7 @@ class HalamanProfile extends StatelessWidget {
                                       MaterialStateProperty.all<OutlinedBorder>(
                                     RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(
-                                          10), // Atur border radius di sini
+                                          10), 
                                     ),
                                   ),
                                 ),
@@ -240,7 +240,7 @@ class HalamanProfile extends StatelessWidget {
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize:
-                                          18 // Ubah warna teks menjadi putih
+                                          18 
                                       ),
                                 ),
                               ),
@@ -250,7 +250,7 @@ class HalamanProfile extends StatelessWidget {
                               OutlinedButton(
                                 onPressed: () async {
                                   await FirebaseAuth.instance
-                                      .signOut(); // Logout dari Firebase Auth
+                                      .signOut(); 
                                   Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
@@ -259,10 +259,10 @@ class HalamanProfile extends StatelessWidget {
                                 },
                                 style: ButtonStyle(
                                   minimumSize: MaterialStateProperty.all<Size>(
-                                      Size(180, 60)), // Ukuran minimum tombol
+                                      Size(180, 60)), 
                                   padding: MaterialStateProperty.all<
                                           EdgeInsetsGeometry>(
-                                      EdgeInsets.all(12)), // Padding tombol
+                                      EdgeInsets.all(12)), 
                                   backgroundColor:
                                       MaterialStateProperty.all<Color>(
                                           Color.fromRGBO(255, 0, 0, 1)),
@@ -270,7 +270,7 @@ class HalamanProfile extends StatelessWidget {
                                       MaterialStateProperty.all<OutlinedBorder>(
                                     RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(
-                                          10), // Atur border radius di sini
+                                          10), 
                                     ),
                                   ),
                                 ),
@@ -279,7 +279,7 @@ class HalamanProfile extends StatelessWidget {
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize:
-                                          18 // Ubah warna teks menjadi putih
+                                          18 
                                       ),
                                 ),
                               )
