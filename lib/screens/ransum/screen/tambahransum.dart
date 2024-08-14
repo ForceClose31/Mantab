@@ -152,6 +152,7 @@ class _CreateRansumState extends State<CreateRansum> {
                           double result5Value = 0.15 * bobot * 0.01;
                           double result6Value = 0.15 * bobot * 0.071;
                           double result7Value = 0.15 * bobot * 0.112;
+                          
 
                           totalResults[0] += result2Value;
                           totalResults[1] += result3Value;
