@@ -246,6 +246,7 @@ class _CreateRansumState extends State<CreateRansum> {
                                     result5: '',
                                     result6: '',
                                     result7: '',
+                                    result8: '',
                                   ),
                                   SizedBox(height: 10),
                                 ],
@@ -276,6 +277,7 @@ class _CreateRansumState extends State<CreateRansum> {
     required String result5,
     required String result6,
     required String result7,
+    required String result8,
   }) {
     double bobot = double.parse(result1);
     double result2Value = 0.15 * bobot * 0.122;
@@ -284,7 +286,7 @@ class _CreateRansumState extends State<CreateRansum> {
     double result5Value = 0.15 * bobot * 0.01;
     double result6Value = 0.15 * bobot * 0.071;
     double result7Value = 0.15 * bobot * 0.112;
-
+    double result8Value = result2Value + result3Value + result4Value + result5Value + result6Value + result7Value;
     
     totalResults[0] += result2Value;
     totalResults[1] += result3Value;
@@ -293,7 +295,6 @@ class _CreateRansumState extends State<CreateRansum> {
     totalResults[4] += result6Value;
     totalResults[5] += result7Value;
 
-    print(result7Value);
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -413,6 +414,18 @@ class _CreateRansumState extends State<CreateRansum> {
                 ),
                 Text(
                   'Bekatul : ${result7Value.toStringAsFixed(3)}', 
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    height: 1,
+                  ),
+                ),
+                SizedBox(
+                  height: 3,
+                ),
+                Text(
+                  'Total Kebutuhan Domba : ${result8Value.toStringAsFixed(3)}', 
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,

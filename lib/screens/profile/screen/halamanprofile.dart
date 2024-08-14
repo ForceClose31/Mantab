@@ -1,9 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
 import 'package:first/screens/login/views/login.dart';
 import 'package:first/screens/navigasi/navigasi.dart';
 import 'package:first/screens/profile/screen/halamanubahpassword.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HalamanProfile extends StatelessWidget {
   @override
@@ -194,6 +195,9 @@ class HalamanProfile extends StatelessWidget {
                   ],
                 ),
               ),
+              const SizedBox(
+                height: 30,
+              ),
               Padding(
                   padding: const EdgeInsets.only(
                       left: 20, 
@@ -219,16 +223,16 @@ class HalamanProfile extends StatelessWidget {
                                   );
                                 },
                                 style: ButtonStyle(
-                                  minimumSize: MaterialStateProperty.all<Size>(
+                                  minimumSize: WidgetStateProperty.all<Size>(
                                       Size(180, 60)), 
-                                  padding: MaterialStateProperty.all<
+                                  padding: WidgetStateProperty.all<
                                           EdgeInsetsGeometry>(
                                       EdgeInsets.all(12)), 
                                   backgroundColor:
-                                      MaterialStateProperty.all<Color>(
+                                      WidgetStateProperty.all<Color>(
                                           Color.fromRGBO(0, 163, 255, 1)),
                                   shape:
-                                      MaterialStateProperty.all<OutlinedBorder>(
+                                      WidgetStateProperty.all<OutlinedBorder>(
                                     RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(
                                           10), 
@@ -258,16 +262,16 @@ class HalamanProfile extends StatelessWidget {
                                   );
                                 },
                                 style: ButtonStyle(
-                                  minimumSize: MaterialStateProperty.all<Size>(
+                                  minimumSize: WidgetStateProperty.all<Size>(
                                       Size(180, 60)), 
-                                  padding: MaterialStateProperty.all<
+                                  padding: WidgetStateProperty.all<
                                           EdgeInsetsGeometry>(
                                       EdgeInsets.all(12)), 
                                   backgroundColor:
-                                      MaterialStateProperty.all<Color>(
+                                      WidgetStateProperty.all<Color>(
                                           Color.fromRGBO(255, 0, 0, 1)),
                                   shape:
-                                      MaterialStateProperty.all<OutlinedBorder>(
+                                      WidgetStateProperty.all<OutlinedBorder>(
                                     RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(
                                           10), 
