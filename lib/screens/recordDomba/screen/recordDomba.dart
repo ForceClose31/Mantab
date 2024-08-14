@@ -17,7 +17,7 @@ class RecordDomba extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
-              expandedHeight: 250.0,
+              expandedHeight: 100.0,
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
                   'lib/images/bgbatik.png',
@@ -210,6 +210,8 @@ class RecordDomba extends StatelessWidget {
                               SizedBox(
                                   height: 16), 
                               buttonAddRecord(),
+                              SizedBox(
+                                  height: 20), 
                               topContent(),
                               SizedBox(
                                   height:

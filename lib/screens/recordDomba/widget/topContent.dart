@@ -26,7 +26,7 @@ class _topContentState extends State<topContent> {
       right: -15,
       bottom: 50,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 35),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
