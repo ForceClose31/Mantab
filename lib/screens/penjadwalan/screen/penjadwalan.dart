@@ -106,7 +106,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                           style: TextStyle(
                               color: Color.fromRGBO(104, 119, 68, 1))),
                     ),
-                    SizedBox(width: 8),
+                    SizedBox(width: 6),
                     ElevatedButton(
                       onPressed: () {
                         changeSelectedDay('selasa');
@@ -133,7 +133,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                           style: TextStyle(
                               color: Color.fromRGBO(104, 119, 68, 1))),
                     ),
-                    SizedBox(width: 8),
+                    SizedBox(width: 6),
                     ElevatedButton(
                       onPressed: () {
                         changeSelectedDay('rabu');
@@ -160,7 +160,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                           style: TextStyle(
                               color: Color.fromRGBO(104, 119, 68, 1))),
                     ),
-                    SizedBox(width: 8),
+                    SizedBox(width: 6),
                     ElevatedButton(
                       onPressed: () {
                         changeSelectedDay('kamis');
@@ -187,7 +187,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                           style: TextStyle(
                               color: Color.fromRGBO(104, 119, 68, 1))),
                     ),
-                    SizedBox(width: 8),
+                    SizedBox(width: 6),
                     ElevatedButton(
                       onPressed: () {
                         changeSelectedDay('jumat');
@@ -214,7 +214,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                           style: TextStyle(
                               color: Color.fromRGBO(104, 119, 68, 1))),
                     ),
-                    SizedBox(width: 8),
+                    SizedBox(width: 6),
                     ElevatedButton(
                       onPressed: () {
                         changeSelectedDay('sabtu');
@@ -241,7 +241,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                           style: TextStyle(
                               color: Color.fromRGBO(104, 119, 68, 1))),
                     ),
-                    SizedBox(width: 8),
+                    SizedBox(width: 6),
                     ElevatedButton(
                       onPressed: () {
                         changeSelectedDay('minggu');

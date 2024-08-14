@@ -187,7 +187,7 @@ class HalamanProfile extends StatelessWidget {
                             },
                           ),
                           const SizedBox(
-                            height: 30,
+                            height: 50,
                           ), 
                         ],
                       ),
@@ -196,7 +196,7 @@ class HalamanProfile extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 50,
               ),
               Padding(
                   padding: const EdgeInsets.only(
