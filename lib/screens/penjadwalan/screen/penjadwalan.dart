@@ -8,19 +8,18 @@ class Penjadwalan extends StatefulWidget {
   _PenjadwalanState createState() => _PenjadwalanState();
 }
 
-// ignore: must_be_immutable
 class _PenjadwalanState extends State<Penjadwalan> {
-  String selectedDay = ''; // Menyimpan hari yang dipilih
+  String selectedDay = ''; 
 
   void changeSelectedDay(String day) {
     setState(() {
       selectedDay =
-          day; // Ubah nilai selectedDay sesuai dengan tombol yang diklik
+          day; 
     });
   }
 
   void getData(String hari) {
-    selectedDay = hari; // Simpan hari yang dipilih oleh pengguna
+    selectedDay = hari; 
     FirebaseFirestore.instance
         .collection('penjadwalan')
         .where('hari', isEqualTo: selectedDay)
@@ -32,7 +31,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
           var jadwalData = jadwalSnapshot.docs;
           jadwalData.sort((a, b) => a['jam'].compareTo(b['jam']));
 
-          // Lakukan proses data sesuai kebutuhan
+          
           for (var jadwal in jadwalData) {
             var jam = jadwal['jam'];
             var kegiatan = jadwal['kegiatan'];
@@ -53,7 +52,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
     return Scaffold(
       body: Stack(
         children: [
-          // Bg Batik
+          
           Positioned(
             top: 0,
             left: 0,
@@ -67,7 +66,6 @@ class _PenjadwalanState extends State<Penjadwalan> {
 
           kalender(),
 
-          //Title and button
           Positioned(
             top: 220,
             left: 10,
@@ -75,7 +73,6 @@ class _PenjadwalanState extends State<Penjadwalan> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                //Tombol
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -87,19 +84,19 @@ class _PenjadwalanState extends State<Penjadwalan> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                              10), // Atur radius sesuai keinginan
+                              10), 
                           side: BorderSide(
                               color: Color.fromRGBO(104, 119, 68,
-                                  1)), // Atur border dengan warna hijau
+                                  1)), 
                         ),
                         minimumSize: Size(minButtonWidth,
-                            minButtonHeight), // Atur ukuran minimum tombol
+                            minButtonHeight), 
                         padding: EdgeInsets.symmetric(
-                            horizontal: 0), // Atur padding tombol
+                            horizontal: 0), 
                         textStyle:
-                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                            TextStyle(fontSize: 12), 
                         backgroundColor: Colors
-                            .white, // Atur warna latar belakang menjadi putih
+                            .white, 
                       ),
                       child: Text('Sen',
                           style: TextStyle(
@@ -114,19 +111,19 @@ class _PenjadwalanState extends State<Penjadwalan> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                              10), // Atur radius sesuai keinginan
+                              10), 
                           side: BorderSide(
                               color: Color.fromRGBO(104, 119, 68,
-                                  1)), // Atur border dengan warna hijau
+                                  1)), 
                         ),
                         minimumSize: Size(minButtonWidth,
-                            minButtonHeight), // Atur ukuran minimum tombol
+                            minButtonHeight), 
                         padding: EdgeInsets.symmetric(
-                            horizontal: 0), // Atur padding tombol
+                            horizontal: 0), 
                         textStyle:
-                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                            TextStyle(fontSize: 12), 
                         backgroundColor: Colors
-                            .white, // Atur warna latar belakang menjadi putih
+                            .white, 
                       ),
                       child: Text('Sel',
                           style: TextStyle(
@@ -141,19 +138,19 @@ class _PenjadwalanState extends State<Penjadwalan> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                              10), // Atur radius sesuai keinginan
+                              10), 
                           side: BorderSide(
                               color: Color.fromRGBO(104, 119, 68,
-                                  1)), // Atur border dengan warna hijau
+                                  1)), 
                         ),
                         minimumSize: Size(minButtonWidth,
-                            minButtonHeight), // Atur ukuran minimum tombol
+                            minButtonHeight), 
                         padding: EdgeInsets.symmetric(
-                            horizontal: 0), // Atur padding tombol
+                            horizontal: 0), 
                         textStyle:
-                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                            TextStyle(fontSize: 12), 
                         backgroundColor: Colors
-                            .white, // Atur warna latar belakang menjadi putih
+                            .white, 
                       ),
                       child: Text('Rab',
                           style: TextStyle(
@@ -168,19 +165,19 @@ class _PenjadwalanState extends State<Penjadwalan> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                              10), // Atur radius sesuai keinginan
+                              10), 
                           side: BorderSide(
                               color: Color.fromRGBO(104, 119, 68,
-                                  1)), // Atur border dengan warna hijau
+                                  1)), 
                         ),
                         minimumSize: Size(minButtonWidth,
-                            minButtonHeight), // Atur ukuran minimum tombol
+                            minButtonHeight), 
                         padding: EdgeInsets.symmetric(
-                            horizontal: 0), // Atur padding tombol
+                            horizontal: 0), 
                         textStyle:
-                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                            TextStyle(fontSize: 12), 
                         backgroundColor: Colors
-                            .white, // Atur warna latar belakang menjadi putih
+                            .white, 
                       ),
                       child: Text('Kam',
                           style: TextStyle(
@@ -195,19 +192,19 @@ class _PenjadwalanState extends State<Penjadwalan> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                              10), // Atur radius sesuai keinginan
+                              10), 
                           side: BorderSide(
                               color: Color.fromRGBO(104, 119, 68,
-                                  1)), // Atur border dengan warna hijau
+                                  1)), 
                         ),
                         minimumSize: Size(minButtonWidth,
-                            minButtonHeight), // Atur ukuran minimum tombol
+                            minButtonHeight), 
                         padding: EdgeInsets.symmetric(
-                            horizontal: 0), // Atur padding tombol
+                            horizontal: 0), 
                         textStyle:
-                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                            TextStyle(fontSize: 12), 
                         backgroundColor: Colors
-                            .white, // Atur warna latar belakang menjadi putih
+                            .white, 
                       ),
                       child: Text('Jum',
                           style: TextStyle(
@@ -222,19 +219,19 @@ class _PenjadwalanState extends State<Penjadwalan> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                              10), // Atur radius sesuai keinginan
+                              10), 
                           side: BorderSide(
                               color: Color.fromRGBO(104, 119, 68,
-                                  1)), // Atur border dengan warna hijau
+                                  1)), 
                         ),
                         minimumSize: Size(minButtonWidth,
-                            minButtonHeight), // Atur ukuran minimum tombol
+                            minButtonHeight), 
                         padding: EdgeInsets.symmetric(
-                            horizontal: 0), // Atur padding tombol
+                            horizontal: 0), 
                         textStyle:
-                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                            TextStyle(fontSize: 12), 
                         backgroundColor: Colors
-                            .white, // Atur warna latar belakang menjadi putih
+                            .white, 
                       ),
                       child: Text('Sab',
                           style: TextStyle(
@@ -249,19 +246,19 @@ class _PenjadwalanState extends State<Penjadwalan> {
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(
-                              10), // Atur radius sesuai keinginan
+                              10), 
                           side: BorderSide(
                               color: Color.fromRGBO(104, 119, 68,
-                                  1)), // Atur border dengan warna hijau
+                                  1)), 
                         ),
                         minimumSize: Size(minButtonWidth,
-                            minButtonHeight), // Atur ukuran minimum tombol
+                            minButtonHeight), 
                         padding: EdgeInsets.symmetric(
-                            horizontal: 0), // Atur padding tombol
+                            horizontal: 0), 
                         textStyle:
-                            TextStyle(fontSize: 12), // Atur gaya teks tombol
+                            TextStyle(fontSize: 12), 
                         backgroundColor: Colors
-                            .white, // Atur warna latar belakang menjadi putih
+                            .white, 
                       ),
                       child: Text('Min',
                           style: TextStyle(
@@ -285,7 +282,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Spasi antara kotak nomor dan judul
+                  
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -317,7 +314,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                 padding: const EdgeInsets.symmetric(horizontal: 35),
                 child: Column(
                   children: [
-                    // Display items based on Firestore data
+                    
                     FutureBuilder(
                       future: FirebaseFirestore.instance
                           .collection('penjadwalan')

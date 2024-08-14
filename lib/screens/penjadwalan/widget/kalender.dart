@@ -41,10 +41,10 @@ class kalender extends StatelessWidget {
                     color: Color.fromRGBO(104, 119, 68, 1),
                   ),
                   child: Image.asset(
-                    'lib/images/calendar.png', // Ganti dengan path gambar Anda
-                    width: 40, // Sesuaikan ukuran gambar
-                    height: 40, // Sesuaikan ukuran gambar
-                    fit: BoxFit.contain, // Sesuaikan mode penyesuaian gambar
+                    'lib/images/calendar.png', 
+                    width: 40, 
+                    height: 40, 
+                    fit: BoxFit.contain, 
                   ),
                 ),
               ]),
