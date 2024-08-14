@@ -34,7 +34,7 @@ class _DombaKawinState extends State<DombaKawin> {
             ),
 
             Positioned(
-              top: 20, // Atur posisi teks header di sini
+              top: 20, 
               left: 20,
               right: 20,
               child: Column(
@@ -74,7 +74,7 @@ class _DombaKawinState extends State<DombaKawin> {
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
                     color: Color.fromRGBO(104, 119, 69, 1),
-                  ), // Warna outline hijau
+                  ), 
                   color: Colors.white,
                 ),
                 child: Column(
@@ -112,7 +112,7 @@ class _DombaKawinState extends State<DombaKawin> {
                             offset: Offset(0, 4),
                           ),
                         ],
-                        color: Colors.white, // Warna latar belakang putih
+                        color: Colors.white, 
                       ),
                       child: Center(
                         child: StreamBuilder<QuerySnapshot>(
@@ -166,7 +166,7 @@ class _DombaKawinState extends State<DombaKawin> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
-                          bottom: 10), // Tambahkan margin bawah
+                          bottom: 10), 
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -185,7 +185,7 @@ class _DombaKawinState extends State<DombaKawin> {
                       height: 10,
                     ),
                     Container(
-                      height: 55, // Atur tinggi container
+                      height: 55, 
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
@@ -197,7 +197,7 @@ class _DombaKawinState extends State<DombaKawin> {
                             offset: Offset(0, 4),
                           ),
                         ],
-                        color: Colors.white, // Warna latar belakang putih
+                        color: Colors.white, 
                       ),
                       child: Center(
                         child: GestureDetector(
@@ -240,7 +240,7 @@ class _DombaKawinState extends State<DombaKawin> {
               ),
             ),
 
-            // Tombol Simpan
+            
             Positioned(
               top: 400,
               left: 40,
@@ -251,9 +251,9 @@ class _DombaKawinState extends State<DombaKawin> {
                 },
                 style: ButtonStyle(
                   minimumSize: WidgetStateProperty.all<Size>(
-                      Size(180, 60)), // Ukuran minimum tombol
+                      Size(180, 60)), 
                   padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-                      EdgeInsets.all(12)), // Padding tombol
+                      EdgeInsets.all(12)), 
                   backgroundColor: WidgetStateProperty.all<Color>(
                       Color.fromRGBO(104, 119, 68, 1)),
                   shape: WidgetStateProperty.all<OutlinedBorder>(

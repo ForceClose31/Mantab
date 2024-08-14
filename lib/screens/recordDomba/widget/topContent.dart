@@ -19,7 +19,7 @@ class _topContentState extends State<topContent> {
 
   @override
   Widget build(BuildContext context) {
-    double borderWidth = 2.0; // Lebar border
+    double borderWidth = 2.0; 
     double totalBorderWidth = borderWidth * 2;
     return Positioned(
       top: 500,
@@ -33,7 +33,7 @@ class _topContentState extends State<topContent> {
             children: [
               Container(
                 margin: EdgeInsets.all(0),
-                // Tambahkan padding untuk mengimbangi border
+                
                 padding: EdgeInsets.all(totalBorderWidth + 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -71,7 +71,7 @@ class _topContentState extends State<topContent> {
                                 offset: Offset(0, 4),
                               ),
                             ],
-                            color: Colors.white, // Warna latar belakang putih
+                            color: Colors.white, 
                           ),
                           child: Center(
                             child: Column(
@@ -95,7 +95,7 @@ class _topContentState extends State<topContent> {
                                     });
                                   },
                                   textAlign: TextAlign
-                                      .left, // Teks dalam TextField menjadi rata kiri
+                                      .left, 
                                 ),
                               ],
                             ),
@@ -124,11 +124,11 @@ class _topContentState extends State<topContent> {
                             shape: WidgetStateProperty.all<OutlinedBorder>(
                               RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(
-                                    10), // Atur border radius di sini
+                                    10), 
                               ),
                             ),
                             elevation: WidgetStateProperty.all<double>(
-                                15), // Memberikan elevasi
+                                15), 
                             shadowColor: WidgetStateProperty.all<Color>(
                                 Colors.black.withOpacity(1)),
                           ),
@@ -136,7 +136,7 @@ class _topContentState extends State<topContent> {
                             'Cari',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 16 // Ubah warna teks menjadi putih
+                                fontSize: 16 
                                 ),
                           ),
                         ),
@@ -191,7 +191,7 @@ class _topContentState extends State<topContent> {
                     SizedBox(
                       height: 10,
                     ),
-                    // Tabel data kawin
+                    
                     if (_dataKawin != null && _dataKawin!.isNotEmpty)
                       Table(
                         border: TableBorder.all(
@@ -225,8 +225,8 @@ class _topContentState extends State<topContent> {
                           color: Colors.red,
                         ),
                       ),
-                    SizedBox(height: 20), // Spacer antara dua tabel
-                    // Tabel kedua
+                    SizedBox(height: 20), 
+                    
                     Text(
                       'Domba Bunting',
                       style:
@@ -269,8 +269,8 @@ class _topContentState extends State<topContent> {
                         ),
                       ),
 
-                    SizedBox(height: 20), // Spacer antara dua tabel
-                    // Tabel ketiga
+                    SizedBox(height: 20), 
+                    
                     Text(
                       'Domba Beranak',
                       style:
@@ -330,14 +330,14 @@ class _topContentState extends State<topContent> {
     return TableCell(
       child: Container(
         padding: EdgeInsets.all(10.0),
-        color: tableHeader, // Menambahkan warna latar belakang
+        color: tableHeader, 
         child: Text(
           text,
           style: TextStyle(
             fontSize: 14,
             color: const Color.fromARGB(255, 255, 255, 255),
             fontWeight: FontWeight.w400,
-          ), // Menambahkan warna teks
+          ), 
           textAlign: TextAlign.center,
         ),
       ),
@@ -348,13 +348,13 @@ class _topContentState extends State<topContent> {
     return TableCell(
       child: Container(
         padding: EdgeInsets.all(8.0),
-        color: backgroundColor, // Menambahkan warna latar belakang
+        color: backgroundColor, 
         child: FractionallySizedBox(
           widthFactor: 1.0,
           child: Text(
             text,
             style: TextStyle(
-                fontSize: 14, color: Colors.black), // Menambahkan warna teks
+                fontSize: 14, color: Colors.black), 
             textAlign: TextAlign.center,
           ),
         ),
@@ -382,11 +382,11 @@ class _topContentState extends State<topContent> {
         setState(() {
           _kodeDombaData = dataDomba as Map<String, dynamic>?;
         });
-        // Ambil data kawin dari subcollection
+        
         await _fetchDataKawin(user.uid, kodeDombaInput);
-        // Ambil data bunting dari subcollection
+        
         await _fetchDataBunting(user.uid, kodeDombaInput);
-        // Ambil data beranak dari subcollection
+        
         await _fetchDataBeranak(user.uid, kodeDombaInput);
       } else {
         setState(() {
@@ -414,7 +414,7 @@ class _topContentState extends State<topContent> {
         .doc(user!.uid)
         .collection('dataKawin')
         .where('kodeDomba',
-            isEqualTo: kodeDomba) // Filter berdasarkan kodeDomba yang sesuai
+            isEqualTo: kodeDomba) 
         .get();
 
     if (snapshot.docs.isNotEmpty) {
@@ -422,7 +422,7 @@ class _topContentState extends State<topContent> {
           .map((doc) => doc.data() as Map<String, dynamic>)
           .toList();
 
-      // Atur urutan kawin berdasarkan penambahan data
+      
       for (int i = 0; i < dataKawin.length; i++) {
         dataKawin[i]['urutanKawin'] = i + 1;
       }
@@ -445,7 +445,7 @@ class _topContentState extends State<topContent> {
         .doc(user!.uid)
         .collection('dataBunting')
         .where('kodeDomba',
-            isEqualTo: kodeDomba) // Filter berdasarkan kodeDomba yang sesuai
+            isEqualTo: kodeDomba) 
         .get();
 
     if (snapshot.docs.isNotEmpty) {
@@ -453,7 +453,7 @@ class _topContentState extends State<topContent> {
           .map((doc) => doc.data() as Map<String, dynamic>)
           .toList();
 
-      // Atur urutan bunting berdasarkan penambahan data
+      
       for (int i = 0; i < dataBunting.length; i++) {
         dataBunting[i]['urutanBunting'] = i + 1;
       }
@@ -476,7 +476,7 @@ class _topContentState extends State<topContent> {
         .doc(user!.uid)
         .collection('dataBeranak')
         .where('kodeDomba',
-            isEqualTo: kodeDomba) // Filter berdasarkan kodeDomba yang sesuai
+            isEqualTo: kodeDomba) 
         .get();
 
     if (snapshot.docs.isNotEmpty) {
@@ -497,24 +497,24 @@ class _topContentState extends State<topContent> {
   }
 
   String _formatDate(Timestamp timestamp) {
-    // Mengubah Timestamp menjadi DateTime
+    
     final dateTime = timestamp.toDate();
-    // Mengambil tanggal dengan format tertentu (tanggal/bulan/tahun)
+    
     return '${dateTime.day}/${dateTime.month}/${dateTime.year}';
   }
 
   Widget _buildNumberBox(String title, String value, String image) {
     String jenisKelaminText =
-        ''; // Variabel untuk menyimpan teks jenis kelamin yang akan ditampilkan
+        ''; 
 
-    // Logika untuk menentukan teks jenis kelamin
+    
     if (value == 'MJdiCLP726Un0p4A8vu2') {
       jenisKelaminText = 'Betina';
     } else if (value == 'SQ7e1oe2XtoQCQRYOQXe') {
       jenisKelaminText = 'Jantan';
     } else {
       jenisKelaminText =
-          value; // Jika tidak sesuai dengan kriteria di atas, tampilkan nilai langsung
+          value; 
     }
 
     return Container(
@@ -558,7 +558,7 @@ class _topContentState extends State<topContent> {
           ),
           SizedBox(width: 5),
           Text(
-            jenisKelaminText, // Gunakan variabel jenisKelaminText sebagai nilai teks jenis kelamin
+            jenisKelaminText, 
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.bold,

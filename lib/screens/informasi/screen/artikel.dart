@@ -17,7 +17,7 @@ class Artikel extends StatelessWidget {
       child: Scaffold(
         body: Stack(
           children: [
-            // Background Image
+            
             Positioned(
               top: -30,
               left: 0,
@@ -25,12 +25,12 @@ class Artikel extends StatelessWidget {
                 imageUrl,
                 width: 430,
                 height: 341.5,
-                // fit: BoxFit.cover,
+                
               ),
             ),
 
             Positioned(
-              top: 20, // Atur posisi teks header di sini
+              top: 20, 
               left: 20,
               right: 20,
               child: Column(
@@ -41,19 +41,19 @@ class Artikel extends StatelessWidget {
                       Navigator.pop(context);
                     },
                     child: Image.asset(
-                      'lib/images/back.png', // Ganti dengan path gambar Anda
+                      'lib/images/back.png', 
                       width:
-                          24, // Sesuaikan ukuran gambar dengan kebutuhan Anda
+                          24, 
                       height: 24,
                     ),
                   ),
-                  SizedBox(height: 10), // Spacer antara gambar dan teks
+                  SizedBox(height: 10), 
                 ],
               ),
             ),
 
             Positioned(
-              top: 320, // Atur posisi teks header di sini
+              top: 320, 
               left: 20,
               right: 20,
               child: Column(
@@ -71,7 +71,7 @@ class Artikel extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 400, // Atur posisi box di sini
+              top: 400, 
               left: 20,
               right: 20,
               bottom: 0,
@@ -84,30 +84,30 @@ class Artikel extends StatelessWidget {
                     BoxShadow(
                       color: Colors.white.withOpacity(0.5),
                       spreadRadius: 2,
-                      blurRadius: 1, // Atur blurRadius kecil
+                      blurRadius: 1, 
                       offset: Offset(0,
-                          1), // Offset ke bawah untuk shadow hanya muncul di atas
+                          1), 
                     ),
                     BoxShadow(
                       color: Colors.white.withOpacity(0.5),
                       spreadRadius: 2,
-                      blurRadius: 1, // Atur blurRadius kecil
+                      blurRadius: 1, 
                       offset: Offset(0,
-                          -1), // Offset ke atas untuk shadow hanya muncul di bawah
+                          -1), 
                     ),
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
-                      blurRadius: 1, // Atur blurRadius kecil
+                      blurRadius: 1, 
                       offset: Offset(-1,
-                          0), // Offset ke kiri untuk shadow hanya muncul di kanan
+                          0), 
                     ),
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
                       spreadRadius: 2,
-                      blurRadius: 1, // Atur blurRadius kecil
+                      blurRadius: 1, 
                       offset: Offset(1,
-                          0), // Offset ke kanan untuk shadow hanya muncul di kiri
+                          0), 
                     ),
                   ],
                 ),

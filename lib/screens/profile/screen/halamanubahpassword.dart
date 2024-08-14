@@ -18,7 +18,7 @@ class _ChangePasswordState extends State<ChangePassword> {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image dan UI lainnya
+          
 
           Positioned(
             top: 150,
@@ -29,7 +29,7 @@ class _ChangePasswordState extends State<ChangePassword> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // TextField untuk password lama
+                  
                   Container(
                     height: 55,
                     decoration: BoxDecoration(
@@ -59,7 +59,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                     ),
                   ),
                   SizedBox(height: 25),
-                  // TextField untuk password baru
+                  
                   Container(
                     height: 55,
                     decoration: BoxDecoration(
@@ -89,7 +89,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                     ),
                   ),
                   SizedBox(height: 25),
-                  // TextField untuk konfirmasi password baru
+                  
                   Container(
                     height: 55,
                     decoration: BoxDecoration(
@@ -119,15 +119,15 @@ class _ChangePasswordState extends State<ChangePassword> {
                     ),
                   ),
                   SizedBox(height: 30),
-                  // Tombol "Ganti Password"
+                  
                   ElevatedButton(
                     onPressed: () async {
-                      // Ambil nilai dari TextField
+                      
                       String oldPassword = oldPasswordController.text;
                       String newPassword = newPasswordController.text;
                       String confirmPassword = confirmPasswordController.text;
 
-                      // Verifikasi password baru dan konfirmasi password baru
+                      
                       if (newPassword != confirmPassword) {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content:
@@ -137,21 +137,21 @@ class _ChangePasswordState extends State<ChangePassword> {
                         return;
                       }
 
-                      // Autentikasi pengguna dengan password lama
+                      
                       try {
                         User? user = FirebaseAuth.instance.currentUser;
                         if (user != null) {
-                          // Buat credential dari email dan password lama
+                          
                           AuthCredential credential =
                               EmailAuthProvider.credential(
                             email: user.email!,
                             password: oldPassword,
                           );
 
-                          // Reauthenticate pengguna dengan credential
+                          
                           await user.reauthenticateWithCredential(credential);
 
-                          // Jika autentikasi berhasil, update password baru
+                          
                           await user.updatePassword(newPassword);
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content: Text('Password berhasil diubah.'),

@@ -22,19 +22,19 @@ class LogRegPage extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  height: constraints.maxHeight * 0.33, // 1/3 dari tinggi layar
+                  height: constraints.maxHeight * 0.33, 
                   child: Center(
                     child: Padding(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 42), // Tambahkan padding horizontal
+                          horizontal: 42), 
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment:
-                            CrossAxisAlignment.start, // Geser teks ke kiri
+                            CrossAxisAlignment.start, 
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
-                                bottom: 8.0), // Tambahkan padding bawah
+                                bottom: 8.0), 
                             child: Text(
                               'Selamat datang di MANTAB!',
                               style: TextStyle(
@@ -60,20 +60,20 @@ class LogRegPage extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.only(
-                  top: 10, // Menggeser tombol ke atas
-                  left: 20, // Menggeser tombol ke kiri
-                  right: 20, // Menggeser tombol ke kanan
+                  top: 10, 
+                  left: 20, 
+                  right: 20, 
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      'lib/images/logo.png', // Ubah dengan path gambar logo Anda
+                      'lib/images/logo.png', 
                       width: 250,
                       height: 150,
                     ),
                     SizedBox(
-                      height: 10, // Mengurangi jarak antara logo dan tombol
+                      height: 10, 
                     ),
                     Padding(
                       padding:
@@ -92,16 +92,16 @@ class LogRegPage extends StatelessWidget {
                             },
                             style: ButtonStyle(
                               minimumSize: WidgetStateProperty.all<Size>(
-                                  Size(180, 50)), // Ukuran minimum tombol
+                                  Size(180, 50)), 
                               padding:
                                   WidgetStateProperty.all<EdgeInsetsGeometry>(
-                                      EdgeInsets.all(12)), // Padding tombol
+                                      EdgeInsets.all(12)), 
                               backgroundColor: WidgetStateProperty.all<Color>(
                                   Color.fromRGBO(78, 59, 33, 1)),
                               shape: WidgetStateProperty.all<OutlinedBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(
-                                      10), // Atur border radius di sini
+                                      10), 
                                 ),
                               ),
                             ),
@@ -109,13 +109,13 @@ class LogRegPage extends StatelessWidget {
                               'Masuk',
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16 // Ubah warna teks menjadi putih
+                                  fontSize: 16 
                                   ),
                             ),
                           ),
                           SizedBox(
                             height: 10,
-                          ), // Mengurangi jarak antara tombol
+                          ), 
                           OutlinedButton(
                             onPressed: () {
                               Navigator.push(
@@ -127,16 +127,16 @@ class LogRegPage extends StatelessWidget {
                             },
                             style: ButtonStyle(
                               minimumSize: WidgetStateProperty.all<Size>(
-                                  Size(180, 50)), // Ukuran minimum tombol
+                                  Size(180, 50)), 
                               padding:
                                   WidgetStateProperty.all<EdgeInsetsGeometry>(
-                                      EdgeInsets.all(12)), // Padding tombol
+                                      EdgeInsets.all(12)), 
                               backgroundColor: WidgetStateProperty.all<Color>(
                                   Color.fromRGBO(104, 119, 68, 1)),
                               shape: WidgetStateProperty.all<OutlinedBorder>(
                                 RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(
-                                      10), // Atur border radius di sini
+                                      10), 
                                 ),
                               ),
                             ),
@@ -144,7 +144,7 @@ class LogRegPage extends StatelessWidget {
                               'Daftar',
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 16 // Ubah warna teks menjadi putih
+                                  fontSize: 16 
                                   ),
                             ),
                           ),

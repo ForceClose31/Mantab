@@ -33,13 +33,13 @@ class _RegistrationPageState extends State<RegistrationPage> {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
-                                'lib/images/bglogreg.png'), // Ubah dengan path gambar background Anda
+                                'lib/images/bglogreg.png'), 
                             fit: BoxFit
-                                .cover, // Sesuaikan gambar dengan container
+                                .cover, 
                           ),
                         ),
                         height: constraints.maxHeight *
-                            0.35, // 1/3 dari tinggi layar
+                            0.35, 
                         child: Center(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -60,21 +60,21 @@ class _RegistrationPageState extends State<RegistrationPage> {
                     Padding(
                       padding: EdgeInsets.only(
                         top: constraints.maxHeight * 0.31 +
-                            20, // Adjust the top padding based on the height of the image
-                        left: 20, // Menggeser tombol ke kiri
-                        right: 20, // Menggeser tombol ke kanan
+                            20, 
+                        left: 20, 
+                        right: 20, 
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset(
-                            'lib/images/logo.png', // Ubah dengan path gambar logo Anda
+                            'lib/images/logo.png', 
                             width: 250,
                             height: 150,
                           ),
                           SizedBox(
                             height:
-                                10, // Mengurangi jarak antara logo dan tombol
+                                10, 
                           ),
                           Padding(
                             padding: EdgeInsets.symmetric(
@@ -84,7 +84,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      bottom: 10), // Tambahkan margin bawah
+                                      bottom: 10), 
                                   child: Text(
                                     'Nama',
                                     style: TextStyle(
@@ -95,7 +95,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   ),
                                 ),
                                 Container(
-                                  height: 55, // Atur tinggi container
+                                  height: 55, 
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     boxShadow: [
@@ -109,7 +109,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                       ),
                                     ],
                                     color: Colors
-                                        .white, // Warna latar belakang putih
+                                        .white, 
                                   ),
                                   child: Center(
                                     child: Column(
@@ -132,7 +132,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                                     117, 117, 117, 100)),
                                           ),
                                           textAlign: TextAlign
-                                              .left, // Teks dalam TextField menjadi rata kiri
+                                              .left, 
                                         ),
                                       ],
                                     ),
@@ -141,7 +141,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 SizedBox(height: 20),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      bottom: 10), // Tambahkan margin bawah
+                                      bottom: 10), 
                                   child: Text(
                                     'Nomor Anggota Kelompok',
                                     style: TextStyle(
@@ -152,7 +152,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   ),
                                 ),
                                 Container(
-                                  height: 55, // Atur tinggi container
+                                  height: 55, 
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     boxShadow: [
@@ -166,7 +166,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                       ),
                                     ],
                                     color: Colors
-                                        .white, // Warna latar belakang putih
+                                        .white, 
                                   ),
                                   child: Center(
                                     child: Column(
@@ -189,7 +189,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                                     117, 117, 117, 100)),
                                           ),
                                           textAlign: TextAlign
-                                              .left, // Teks dalam TextField menjadi rata kiri
+                                              .left, 
                                         ),
                                       ],
                                     ),
@@ -198,7 +198,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                 SizedBox(height: 20),
                                 Padding(
                                   padding: const EdgeInsets.only(
-                                      bottom: 10), // Tambahkan margin bawah
+                                      bottom: 10), 
                                   child: Text(
                                     'Kata Sandi',
                                     style: TextStyle(
@@ -209,7 +209,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   ),
                                 ),
                                 Container(
-                                  height: 55, // Atur tinggi container
+                                  height: 55, 
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
                                     boxShadow: [
@@ -223,7 +223,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                       ),
                                     ],
                                     color: Colors
-                                        .white, // Warna latar belakang putih
+                                        .white, 
                                   ),
                                   child: Center(
                                     child: Column(
@@ -260,7 +260,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                             ),
                                           ),
                                           textAlign: TextAlign
-                                              .left, // Teks dalam TextField menjadi rata kiri
+                                              .left, 
                                         ),
                                       ],
                                     ),
@@ -284,10 +284,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                   },
                                   style: ButtonStyle(
                                     minimumSize: WidgetStateProperty.all<Size>(
-                                        Size(180, 60)), // Ukuran minimum tombol
+                                        Size(180, 60)), 
                                     padding: WidgetStateProperty.all<
                                             EdgeInsetsGeometry>(
-                                        EdgeInsets.all(12)), // Padding tombol
+                                        EdgeInsets.all(12)), 
                                     backgroundColor:
                                         WidgetStateProperty.all<Color>(
                                             Color.fromRGBO(104, 119, 68, 1)),
@@ -295,7 +295,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                         WidgetStateProperty.all<OutlinedBorder>(
                                       RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(
-                                            10), // Atur border radius di sini
+                                            10), 
                                       ),
                                     ),
                                   ),
@@ -304,7 +304,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize:
-                                          18, // Ubah warna teks menjadi putih
+                                          18, 
                                     ),
                                   ),
                                 ),
