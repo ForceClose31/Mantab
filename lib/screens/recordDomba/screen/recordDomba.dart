@@ -81,6 +81,7 @@ class RecordDomba extends StatelessWidget {
                             children: [
                               Container(
                                 padding: EdgeInsets.all(12),
+                                margin: EdgeInsets.only(left: 10, right: 10),
                                 height: 148,
                                 width: double.infinity,
                                 decoration: BoxDecoration(
