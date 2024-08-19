@@ -9,19 +9,19 @@ class Penjadwalan extends StatefulWidget {
   _PenjadwalanState createState() => _PenjadwalanState();
 }
 
-
 class _PenjadwalanState extends State<Penjadwalan> {
-  String selectedDay = ''; 
+  String selectedDay = '';
+  String activeDay = ''; // Untuk melacak hari aktif
 
   void changeSelectedDay(String day) {
     setState(() {
-      selectedDay =
-          day; 
+      selectedDay = day;
+      activeDay = day; // Set hari yang di klik sebagai aktif
     });
   }
 
   void getData(String hari) {
-    selectedDay = hari; 
+    selectedDay = hari;
     FirebaseFirestore.instance
         .collection('penjadwalan')
         .where('hari', isEqualTo: selectedDay)
@@ -33,7 +33,6 @@ class _PenjadwalanState extends State<Penjadwalan> {
           var jadwalData = jadwalSnapshot.docs;
           jadwalData.sort((a, b) => a['jam'].compareTo(b['jam']));
 
-          
           for (var jadwal in jadwalData) {
             var jam = jadwal['jam'];
             var kegiatan = jadwal['kegiatan'];
@@ -51,10 +50,14 @@ class _PenjadwalanState extends State<Penjadwalan> {
 
     double minButtonWidth = screenWidth * 0.11;
     double minButtonHeight = screenHeight * 0.11;
+
+    // Define button color
+    Color defaultButtonColor = Colors.white;
+    Color activeButtonColor = Color.fromRGBO(104, 119, 68, 1); // Hijau armi
+
     return Scaffold(
       body: Stack(
         children: [
-          
           Positioned(
             top: 0,
             left: 0,
@@ -65,10 +68,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
               fit: BoxFit.cover,
             ),
           ),
-
           kalender(),
-
-          
           Positioned(
             top: 220,
             left: 10,
@@ -76,205 +76,35 @@ class _PenjadwalanState extends State<Penjadwalan> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        changeSelectedDay('senin');
-                        getData('senin');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              10), 
-                          side: BorderSide(
-                              color: Color.fromRGBO(104, 119, 68,
-                                  1)), 
-                        ),
-                        minimumSize: Size(minButtonWidth,
-                            minButtonHeight), 
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 0), 
-                        textStyle:
-                            TextStyle(fontSize: 12), 
-                        backgroundColor: Colors
-                            .white, 
-                      ),
-                      child: Text('Sen',
-                          style: TextStyle(
-                              color: Color.fromRGBO(104, 119, 68, 1))),
-                    ),
-                    SizedBox(width: 6),
-                    ElevatedButton(
-                      onPressed: () {
-                        changeSelectedDay('selasa');
-                        getData('selasa');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              10), 
-                          side: BorderSide(
-                              color: Color.fromRGBO(104, 119, 68,
-                                  1)), 
-                        ),
-                        minimumSize: Size(minButtonWidth,
-                            minButtonHeight), 
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 0), 
-                        textStyle:
-                            TextStyle(fontSize: 12), 
-                        backgroundColor: Colors
-                            .white, 
-                      ),
-                      child: Text('Sel',
-                          style: TextStyle(
-                              color: Color.fromRGBO(104, 119, 68, 1))),
-                    ),
-                    SizedBox(width: 6),
-                    ElevatedButton(
-                      onPressed: () {
-                        changeSelectedDay('rabu');
-                        getData('rabu');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              10), 
-                          side: BorderSide(
-                              color: Color.fromRGBO(104, 119, 68,
-                                  1)), 
-                        ),
-                        minimumSize: Size(minButtonWidth,
-                            minButtonHeight), 
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 0), 
-                        textStyle:
-                            TextStyle(fontSize: 12), 
-                        backgroundColor: Colors
-                            .white, 
-                      ),
-                      child: Text('Rab',
-                          style: TextStyle(
-                              color: Color.fromRGBO(104, 119, 68, 1))),
-                    ),
-                    SizedBox(width: 6),
-                    ElevatedButton(
-                      onPressed: () {
-                        changeSelectedDay('kamis');
-                        getData('kamis');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              10), 
-                          side: BorderSide(
-                              color: Color.fromRGBO(104, 119, 68,
-                                  1)), 
-                        ),
-                        minimumSize: Size(minButtonWidth,
-                            minButtonHeight), 
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 0), 
-                        textStyle:
-                            TextStyle(fontSize: 12), 
-                        backgroundColor: Colors
-                            .white, 
-                      ),
-                      child: Text('Kam',
-                          style: TextStyle(
-                              color: Color.fromRGBO(104, 119, 68, 1))),
-                    ),
-                    SizedBox(width: 6),
-                    ElevatedButton(
-                      onPressed: () {
-                        changeSelectedDay('jumat');
-                        getData('jumat');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              10), 
-                          side: BorderSide(
-                              color: Color.fromRGBO(104, 119, 68,
-                                  1)), 
-                        ),
-                        minimumSize: Size(minButtonWidth,
-                            minButtonHeight), 
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 0), 
-                        textStyle:
-                            TextStyle(fontSize: 12), 
-                        backgroundColor: Colors
-                            .white, 
-                      ),
-                      child: Text('Jum',
-                          style: TextStyle(
-                              color: Color.fromRGBO(104, 119, 68, 1))),
-                    ),
-                    SizedBox(width: 6),
-                    ElevatedButton(
-                      onPressed: () {
-                        changeSelectedDay('sabtu');
-                        getData('sabtu');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              10), 
-                          side: BorderSide(
-                              color: Color.fromRGBO(104, 119, 68,
-                                  1)), 
-                        ),
-                        minimumSize: Size(minButtonWidth,
-                            minButtonHeight), 
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 0), 
-                        textStyle:
-                            TextStyle(fontSize: 12), 
-                        backgroundColor: Colors
-                            .white, 
-                      ),
-                      child: Text('Sab',
-                          style: TextStyle(
-                              color: Color.fromRGBO(104, 119, 68, 1))),
-                    ),
-                    SizedBox(width: 6),
-                    ElevatedButton(
-                      onPressed: () {
-                        changeSelectedDay('minggu');
-                        getData('minggu');
-                      },
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              10), 
-                          side: BorderSide(
-                              color: Color.fromRGBO(104, 119, 68,
-                                  1)), 
-                        ),
-                        minimumSize: Size(minButtonWidth,
-                            minButtonHeight), 
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 0), 
-                        textStyle:
-                            TextStyle(fontSize: 12), 
-                        backgroundColor: Colors
-                            .white, 
-                      ),
-                      child: Text('Min',
-                          style: TextStyle(
-                              color: Color.fromRGBO(104, 119, 68, 1))),
-                    ),
+                    _buildDayButton('senin', 'Sen', minButtonWidth,
+                        minButtonHeight, defaultButtonColor, activeButtonColor),
+                    SizedBox(width: 4),
+                    _buildDayButton('selasa', 'Sel', minButtonWidth,
+                        minButtonHeight, defaultButtonColor, activeButtonColor),
+                    SizedBox(width: 4),
+                    _buildDayButton('rabu', 'Rab', minButtonWidth,
+                        minButtonHeight, defaultButtonColor, activeButtonColor),
+                    SizedBox(width: 4),
+                    _buildDayButton('kamis', 'Kam', minButtonWidth,
+                        minButtonHeight, defaultButtonColor, activeButtonColor),
+                    SizedBox(width: 4),
+                    _buildDayButton('jumat', 'Jum', minButtonWidth,
+                        minButtonHeight, defaultButtonColor, activeButtonColor),
+                    SizedBox(width: 4),
+                    _buildDayButton('sabtu', 'Sab', minButtonWidth,
+                        minButtonHeight, defaultButtonColor, activeButtonColor),
+                    SizedBox(width: 4),
+                    _buildDayButton('minggu', 'Min', minButtonWidth,
+                        minButtonHeight, defaultButtonColor, activeButtonColor),
                   ],
                 ),
                 SizedBox(height: 20),
               ],
             ),
           ),
-
           Positioned(
             top: 340,
             left: 20,
@@ -286,7 +116,6 @@ class _PenjadwalanState extends State<Penjadwalan> {
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -307,7 +136,6 @@ class _PenjadwalanState extends State<Penjadwalan> {
               ),
             ),
           ),
-
           Positioned(
             top: 400,
             left: -20,
@@ -318,7 +146,6 @@ class _PenjadwalanState extends State<Penjadwalan> {
                 padding: const EdgeInsets.symmetric(horizontal: 35),
                 child: Column(
                   children: [
-                    
                     FutureBuilder(
                       future: FirebaseFirestore.instance
                           .collection('penjadwalan')
@@ -352,9 +179,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                                       var jam = jadwal['jam'];
                                       var kegiatan = jadwal['kegiatan'];
                                       return _buildItem(
-                                        time: jam,
-                                        result1: kegiatan,
-                                      );
+                                          time: jam, result1: kegiatan);
                                     }).toList(),
                                   );
                                 }
@@ -372,6 +197,33 @@ class _PenjadwalanState extends State<Penjadwalan> {
         ],
       ),
       bottomNavigationBar: navigasi(),
+    );
+  }
+
+  Widget _buildDayButton(String day, String label, double width, double height,
+      Color defaultColor, Color activeColor) {
+    return ElevatedButton(
+      onPressed: () {
+        changeSelectedDay(day);
+        getData(day);
+      },
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(color: Color.fromRGBO(104, 119, 68, 1)),
+        ),
+        minimumSize: Size(width, height),
+        padding: EdgeInsets.symmetric(horizontal: 0),
+        textStyle: TextStyle(fontSize: 12),
+        backgroundColor: activeDay == day ? activeColor : defaultColor,
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+            color: activeDay == day
+                ? Colors.white
+                : Color.fromRGBO(104, 119, 68, 1)),
+      ),
     );
   }
 
@@ -412,9 +264,7 @@ class _PenjadwalanState extends State<Penjadwalan> {
                         height: 1,
                       ),
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
+                    SizedBox(width: 20),
                     Text(
                       '$result1',
                       style: TextStyle(
