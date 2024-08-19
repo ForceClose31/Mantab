@@ -224,11 +224,7 @@ class _RecordDombaState extends State<RecordDomba> {
                                 ),
                               ),
                               SizedBox(height: 16),
-                              Positioned(
-                                top: 300,
-                                left: 15,
-                                right: 20,
-                                child: Column(
+                              Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Column(
@@ -376,14 +372,8 @@ class _RecordDombaState extends State<RecordDomba> {
                                 ),
                               ),
                               SizedBox(height: 20),
-                              Positioned(
-                                top: 500,
-                                left: -15,
-                                right: -15,
-                                bottom: 50,
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10),
+                              Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 10),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
@@ -546,13 +536,9 @@ class _RecordDombaState extends State<RecordDomba> {
                                                 ),
                                               ],
                                             ),
-                                            Positioned(
-                                              top: 0,
-                                              left: 20,
-                                              right: 20,
-                                              child: Container(
+                                            Container(
                                                 padding:
-                                                    EdgeInsets.only(top: 20),
+                                                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.min,
