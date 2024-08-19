@@ -225,535 +225,533 @@ class _RecordDombaState extends State<RecordDomba> {
                               ),
                               SizedBox(height: 16),
                               Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        ElevatedButton(
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      DombaKawin()),
-                                            );
-                                          },
-                                          style: ButtonStyle(
-                                            minimumSize:
-                                                WidgetStateProperty.all<Size>(
-                                                    Size(400, 55)),
-                                            padding: WidgetStateProperty.all<
-                                                    EdgeInsetsGeometry>(
-                                                EdgeInsets.all(12)),
-                                            backgroundColor:
-                                                WidgetStateProperty.all<Color>(
-                                                    Color.fromRGBO(
-                                                        0, 163, 255, 1)),
-                                            shape: WidgetStateProperty.all<
-                                                OutlinedBorder>(
-                                              RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                            ),
-                                            elevation:
-                                                WidgetStateProperty.all<double>(
-                                                    15),
-                                            shadowColor:
-                                                WidgetStateProperty.all<Color>(
-                                                    Colors.black
-                                                        .withOpacity(1)),
-                                          ),
-                                          child: Text(
-                                            'Tambah Domba Kawin',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        ElevatedButton(
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      DombaHamil()),
-                                            );
-                                          },
-                                          style: ButtonStyle(
-                                            minimumSize:
-                                                WidgetStateProperty.all<Size>(
-                                                    Size(400, 55)),
-                                            padding: WidgetStateProperty.all<
-                                                    EdgeInsetsGeometry>(
-                                                EdgeInsets.all(12)),
-                                            backgroundColor:
-                                                WidgetStateProperty.all<Color>(
-                                                    Color.fromRGBO(
-                                                        0, 163, 255, 1)),
-                                            shape: WidgetStateProperty.all<
-                                                OutlinedBorder>(
-                                              RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                            ),
-                                            elevation:
-                                                WidgetStateProperty.all<double>(
-                                                    15),
-                                            shadowColor:
-                                                WidgetStateProperty.all<Color>(
-                                                    Colors.black
-                                                        .withOpacity(1)),
-                                          ),
-                                          child: Text(
-                                            'Tambah Domba Bunting',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                            ),
-                                          ),
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        ElevatedButton(
-                                          onPressed: () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      DombaChild()),
-                                            );
-                                          },
-                                          style: ButtonStyle(
-                                            minimumSize:
-                                                WidgetStateProperty.all<Size>(
-                                                    Size(400, 55)),
-                                            padding: WidgetStateProperty.all<
-                                                    EdgeInsetsGeometry>(
-                                                EdgeInsets.all(12)),
-                                            backgroundColor:
-                                                WidgetStateProperty.all<Color>(
-                                                    Color.fromRGBO(
-                                                        0, 163, 255, 1)),
-                                            shape: WidgetStateProperty.all<
-                                                OutlinedBorder>(
-                                              RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                            ),
-                                            elevation:
-                                                WidgetStateProperty.all<double>(
-                                                    15),
-                                            shadowColor:
-                                                WidgetStateProperty.all<Color>(
-                                                    Colors.black
-                                                        .withOpacity(1)),
-                                          ),
-                                          child: Text(
-                                            'Tambah Domba Beranak',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              SizedBox(height: 20),
-                              Padding(
-                                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
                                     children: [
-                                      Container(
-                                        margin: EdgeInsets.all(0),
-                                        padding: EdgeInsets.all(
-                                            totalBorderWidth + 10),
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          border: Border.all(
-                                              color: Colors.black,
-                                              width: borderWidth),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DombaKawin()),
+                                          );
+                                        },
+                                        style: ButtonStyle(
+                                          minimumSize:
+                                              WidgetStateProperty.all<Size>(
+                                                  Size(400, 55)),
+                                          padding: WidgetStateProperty.all<
+                                                  EdgeInsetsGeometry>(
+                                              EdgeInsets.all(12)),
+                                          backgroundColor:
+                                              WidgetStateProperty.all<Color>(
+                                                  Color.fromRGBO(
+                                                      0, 163, 255, 1)),
+                                          shape: WidgetStateProperty.all<
+                                              OutlinedBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                          ),
+                                          elevation:
+                                              WidgetStateProperty.all<double>(
+                                                  15),
+                                          shadowColor:
+                                              WidgetStateProperty.all<Color>(
+                                                  Colors.black
+                                                      .withOpacity(1)),
                                         ),
-                                        child: Column(
-                                          children: [
-                                            Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Cari domba',
-                                                    style: TextStyle(
-                                                      fontSize: 18,
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                      color: Color.fromRGBO(
-                                                          0, 0, 0, 1),
-                                                    ),
-                                                  ),
-                                                ]),
-                                            SizedBox(
-                                              height: 10,
+                                        child: Text(
+                                          'Tambah Domba Kawin',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DombaHamil()),
+                                          );
+                                        },
+                                        style: ButtonStyle(
+                                          minimumSize:
+                                              WidgetStateProperty.all<Size>(
+                                                  Size(400, 55)),
+                                          padding: WidgetStateProperty.all<
+                                                  EdgeInsetsGeometry>(
+                                              EdgeInsets.all(12)),
+                                          backgroundColor:
+                                              WidgetStateProperty.all<Color>(
+                                                  Color.fromRGBO(
+                                                      0, 163, 255, 1)),
+                                          shape: WidgetStateProperty.all<
+                                              OutlinedBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
                                             ),
-                                            Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceAround,
-                                              children: [
-                                                Container(
-                                                  height: MediaQuery.of(context)
-                                                          .size
-                                                          .height *
-                                                      0.06,
-                                                  width: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                      0.5,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                    boxShadow: [
-                                                      BoxShadow(
-                                                        color: const Color
-                                                                .fromARGB(255,
-                                                                158, 158, 158)
-                                                            .withOpacity(0.5),
-                                                        spreadRadius: 0,
-                                                        blurRadius: 4,
-                                                        offset: Offset(0, 4),
-                                                      ),
-                                                    ],
-                                                    color: Colors.white,
-                                                  ),
-                                                  child: Center(
-                                                    child: Column(
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .center,
-                                                      children: [
-                                                        TextField(
-                                                          controller:
-                                                              _kodeDombaController,
-                                                          decoration: InputDecoration(
-                                                              hintText: 'Kode',
-                                                              border:
-                                                                  InputBorder
-                                                                      .none,
-                                                              contentPadding:
-                                                                  EdgeInsets.symmetric(
-                                                                      vertical:
-                                                                          10,
-                                                                      horizontal:
-                                                                          20),
-                                                              isDense: true,
-                                                              alignLabelWithHint:
-                                                                  true,
-                                                              hintStyle: TextStyle(
-                                                                  color: Color
-                                                                      .fromRGBO(
-                                                                          117,
-                                                                          117,
-                                                                          117,
-                                                                          100))),
-                                                          onChanged: (value) {
-                                                            setState(() {
-                                                              _kodeDombaInput =
-                                                                  value.trim();
-                                                            });
-                                                          },
-                                                          textAlign:
-                                                              TextAlign.left,
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                                SizedBox(width: 2),
-                                                ElevatedButton(
-                                                  onPressed: () {
-                                                    _searchDomba();
-                                                  },
-                                                  style: ButtonStyle(
-                                                    minimumSize:
-                                                        WidgetStateProperty
-                                                            .resolveWith(
-                                                                (states) {
-                                                      final screenWidth =
-                                                          MediaQuery.of(context)
-                                                              .size
-                                                              .width;
-                                                      final buttonWidth =
-                                                          screenWidth * 0.3;
-                                                      return Size(
-                                                          buttonWidth, 55);
-                                                    }),
-                                                    padding: WidgetStateProperty
-                                                        .all<EdgeInsetsGeometry>(
-                                                            EdgeInsets.all(12)),
-                                                    backgroundColor:
-                                                        WidgetStateProperty.all<
-                                                                Color>(
-                                                            Color.fromRGBO(0,
-                                                                163, 255, 1)),
-                                                    shape: WidgetStateProperty
-                                                        .all<OutlinedBorder>(
-                                                      RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(10),
-                                                      ),
-                                                    ),
-                                                    elevation:
-                                                        WidgetStateProperty.all<
-                                                            double>(15),
-                                                    shadowColor:
-                                                        WidgetStateProperty.all<
-                                                                Color>(
-                                                            Colors.black
-                                                                .withOpacity(
-                                                                    1)),
-                                                  ),
-                                                  child: Text(
-                                                    'Cari',
-                                                    style: TextStyle(
-                                                        color: Colors.white,
-                                                        fontSize: 16),
-                                                  ),
-                                                ),
-                                              ],
+                                          ),
+                                          elevation:
+                                              WidgetStateProperty.all<double>(
+                                                  15),
+                                          shadowColor:
+                                              WidgetStateProperty.all<Color>(
+                                                  Colors.black
+                                                      .withOpacity(1)),
+                                        ),
+                                        child: Text(
+                                          'Tambah Domba Bunting',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                          ),
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    DombaChild()),
+                                          );
+                                        },
+                                        style: ButtonStyle(
+                                          minimumSize:
+                                              WidgetStateProperty.all<Size>(
+                                                  Size(400, 55)),
+                                          padding: WidgetStateProperty.all<
+                                                  EdgeInsetsGeometry>(
+                                              EdgeInsets.all(12)),
+                                          backgroundColor:
+                                              WidgetStateProperty.all<Color>(
+                                                  Color.fromRGBO(
+                                                      0, 163, 255, 1)),
+                                          shape: WidgetStateProperty.all<
+                                              OutlinedBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
                                             ),
-                                            Container(
-                                                padding:
-                                                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    GridView.count(
-                                                      crossAxisCount: 2,
-                                                      crossAxisSpacing: 10,
-                                                      mainAxisSpacing: 10,
-                                                      physics:
-                                                          NeverScrollableScrollPhysics(),
-                                                      shrinkWrap: true,
-                                                      childAspectRatio:
-                                                          (88 / 22),
-                                                      children: [
-                                                        _buildNumberBox(
-                                                            'Kode Domba ',
-                                                            _kodeDombaData?[
-                                                                    'kodeDomba'] ??
-                                                                '',
-                                                            'lib/images/tag.png'),
-                                                        _buildNumberBox(
-                                                            'Bobot (kg) : ',
-                                                            _kodeDombaData?[
-                                                                    'bobotDomba'] ??
-                                                                '',
-                                                            'lib/images/scale.png'),
-                                                        _buildNumberBox(
-                                                            'Umur (Bulan) : ',
-                                                            _kodeDombaData?[
-                                                                    'umurDomba'] ??
-                                                                '',
-                                                            'lib/images/age.png'),
-                                                        _buildNumberBox(
-                                                            '',
-                                                            _kodeDombaData?[
-                                                                    'jenisKelamin'] ??
-                                                                '',
-                                                            'lib/images/gen.png'),
-                                                      ],
-                                                    ),
-                                                    SizedBox(height: 20)
-                                                  ],
-                                                ),
-                                              ),
-                                            ),
-                                            Text(
-                                              'Domba Kawin',
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            if (_dataKawin != null &&
-                                                _dataKawin!.isNotEmpty)
-                                              Table(
-                                                border: TableBorder.all(
-                                                  color: Colors.black,
-                                                  style: BorderStyle.solid,
-                                                  width: borderWidth,
-                                                ),
-                                                children: [
-                                                  TableRow(children: [
-                                                    _buildTableHeader(
-                                                        'Tanggal',
-                                                        Color.fromARGB(
-                                                            239, 40, 54, 42)),
-                                                    _buildTableHeader(
-                                                        'Urutan Kawin',
-                                                        Color.fromARGB(
-                                                            239, 40, 54, 42)),
-                                                  ]),
-                                                  if (_dataKawin != null)
-                                                    ..._dataKawin!.map((data) =>
-                                                        TableRow(children: [
-                                                          _buildTableText(
-                                                              _formatDate(data[
-                                                                  'tanggalKawin']),
-                                                              Colors.white),
-                                                          _buildTableText(
-                                                              data['urutanKawin']
-                                                                  .toString(),
-                                                              Colors.white),
-                                                        ])),
-                                                ],
-                                              ),
-                                            if (_dataKawin != null &&
-                                                _dataKawin!.isEmpty)
-                                              Text(
-                                                'Tidak ada data',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  color: Colors.red,
-                                                ),
-                                              ),
-                                            SizedBox(height: 20),
-                                            Text(
-                                              'Domba Bunting',
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            if (_dataBunting != null &&
-                                                _dataBunting!.isNotEmpty)
-                                              Table(
-                                                border: TableBorder.all(
-                                                  color: Colors.black,
-                                                  style: BorderStyle.solid,
-                                                  width: borderWidth,
-                                                ),
-                                                children: [
-                                                  TableRow(children: [
-                                                    _buildTableHeader(
-                                                        'Tanggal',
-                                                        Color.fromARGB(255, 255,
-                                                            104, 104)),
-                                                    _buildTableHeader(
-                                                        'Urutan Bunting',
-                                                        Color.fromARGB(255, 255,
-                                                            104, 104)),
-                                                  ]),
-                                                  if (_dataBunting != null)
-                                                    ..._dataBunting!.map(
-                                                        (data) =>
-                                                            TableRow(children: [
-                                                              _buildTableText(
-                                                                  _formatDate(data[
-                                                                      'tanggalBunting']),
-                                                                  Colors.white),
-                                                              _buildTableText(
-                                                                  data['urutanBunting']
-                                                                      .toString(),
-                                                                  Colors.white),
-                                                            ])),
-                                                ],
-                                              ),
-                                            if (_dataBunting != null &&
-                                                _dataBunting!.isEmpty)
-                                              Text(
-                                                'Tidak ada data',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  color: Colors.red,
-                                                ),
-                                              ),
-                                            SizedBox(height: 20),
-                                            Text(
-                                              'Domba Beranak',
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            if (_dataBeranak != null &&
-                                                _dataBeranak!.isNotEmpty)
-                                              Table(
-                                                border: TableBorder.all(
-                                                  color: Colors.black,
-                                                  style: BorderStyle.solid,
-                                                  width: borderWidth,
-                                                ),
-                                                children: [
-                                                  TableRow(children: [
-                                                    _buildTableHeader(
-                                                        'Tanggal',
-                                                        Color.fromARGB(
-                                                            255, 255, 209, 60)),
-                                                    _buildTableHeader(
-                                                        'Urutan Beranak',
-                                                        Color.fromARGB(
-                                                            255, 255, 209, 60)),
-                                                    _buildTableHeader(
-                                                        'Jumlah Anak',
-                                                        Color.fromARGB(
-                                                            255, 255, 209, 60)),
-                                                  ]),
-                                                  if (_dataBeranak != null)
-                                                    ..._dataBeranak!.map(
-                                                        (data) =>
-                                                            TableRow(children: [
-                                                              _buildTableText(
-                                                                  _formatDate(data[
-                                                                      'tanggalBeranak']),
-                                                                  Colors.white),
-                                                              _buildTableText(
-                                                                  data['urutanBeranak']
-                                                                      .toString(),
-                                                                  Colors.white),
-                                                              _buildTableText(
-                                                                  data['jumlahAnak']
-                                                                      .toString(),
-                                                                  Colors.white),
-                                                            ])),
-                                                ],
-                                              ),
-                                            if (_dataBeranak != null &&
-                                                _dataBeranak!.isEmpty)
-                                              Text(
-                                                'Tidak ada data',
-                                                style: TextStyle(
-                                                  fontSize: 16,
-                                                  color: Colors.red,
-                                                ),
-                                              ),
-                                          ],
+                                          ),
+                                          elevation:
+                                              WidgetStateProperty.all<double>(
+                                                  15),
+                                          shadowColor:
+                                              WidgetStateProperty.all<Color>(
+                                                  Colors.black
+                                                      .withOpacity(1)),
+                                        ),
+                                        child: Text(
+                                          'Tambah Domba Beranak',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 18,
+                                          ),
                                         ),
                                       ),
                                     ],
                                   ),
+                                ],
+                              ),
+                              SizedBox(height: 20),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 10),
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.all(0),
+                                      padding: EdgeInsets.all(
+                                          totalBorderWidth + 10),
+                                      decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(10),
+                                        border: Border.all(
+                                            color: Colors.black,
+                                            width: borderWidth),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  'Cari domba',
+                                                  style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight:
+                                                        FontWeight.bold,
+                                                    color: Color.fromRGBO(
+                                                        0, 0, 0, 1),
+                                                  ),
+                                                ),
+                                              ]),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
+                                            children: [
+                                              Container(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height *
+                                                    0.06,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.5,
+                                                decoration: BoxDecoration(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          10),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: const Color
+                                                              .fromARGB(255,
+                                                              158, 158, 158)
+                                                          .withOpacity(0.5),
+                                                      spreadRadius: 0,
+                                                      blurRadius: 4,
+                                                      offset: Offset(0, 4),
+                                                    ),
+                                                  ],
+                                                  color: Colors.white,
+                                                ),
+                                                child: Center(
+                                                  child: Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      TextField(
+                                                        controller:
+                                                            _kodeDombaController,
+                                                        decoration: InputDecoration(
+                                                            hintText: 'Kode',
+                                                            border:
+                                                                InputBorder
+                                                                    .none,
+                                                            contentPadding:
+                                                                EdgeInsets.symmetric(
+                                                                    vertical:
+                                                                        10,
+                                                                    horizontal:
+                                                                        20),
+                                                            isDense: true,
+                                                            alignLabelWithHint:
+                                                                true,
+                                                            hintStyle: TextStyle(
+                                                                color: Color
+                                                                    .fromRGBO(
+                                                                        117,
+                                                                        117,
+                                                                        117,
+                                                                        100))),
+                                                        onChanged: (value) {
+                                                          setState(() {
+                                                            _kodeDombaInput =
+                                                                value.trim();
+                                                          });
+                                                        },
+                                                        textAlign:
+                                                            TextAlign.left,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(width: 2),
+                                              ElevatedButton(
+                                                onPressed: () {
+                                                  _searchDomba();
+                                                },
+                                                style: ButtonStyle(
+                                                  minimumSize:
+                                                      WidgetStateProperty
+                                                          .resolveWith(
+                                                              (states) {
+                                                    final screenWidth =
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width;
+                                                    final buttonWidth =
+                                                        screenWidth * 0.3;
+                                                    return Size(
+                                                        buttonWidth, 55);
+                                                  }),
+                                                  padding: WidgetStateProperty
+                                                      .all<EdgeInsetsGeometry>(
+                                                          EdgeInsets.all(12)),
+                                                  backgroundColor:
+                                                      WidgetStateProperty.all<
+                                                              Color>(
+                                                          Color.fromRGBO(0,
+                                                              163, 255, 1)),
+                                                  shape: WidgetStateProperty
+                                                      .all<OutlinedBorder>(
+                                                    RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius
+                                                              .circular(10),
+                                                    ),
+                                                  ),
+                                                  elevation:
+                                                      WidgetStateProperty.all<
+                                                          double>(15),
+                                                  shadowColor:
+                                                      WidgetStateProperty.all<
+                                                              Color>(
+                                                          Colors.black
+                                                              .withOpacity(
+                                                                  1)),
+                                                ),
+                                                child: Text(
+                                                  'Cari',
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontSize: 16),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Container(
+                                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                                            child: Column(
+                                              mainAxisSize:
+                                                  MainAxisSize.min,
+                                              children: [
+                                                GridView.count(
+                                                  crossAxisCount: 2,
+                                                  crossAxisSpacing: 10,
+                                                  mainAxisSpacing: 10,
+                                                  physics:
+                                                      NeverScrollableScrollPhysics(),
+                                                  shrinkWrap: true,
+                                                  childAspectRatio:
+                                                      (88 / 22),
+                                                  children: [
+                                                    _buildNumberBox(
+                                                        'Kode Domba ',
+                                                        _kodeDombaData?[
+                                                                'kodeDomba'] ??
+                                                            '',
+                                                        'lib/images/tag.png'),
+                                                    _buildNumberBox(
+                                                        'Bobot (kg) : ',
+                                                        _kodeDombaData?[
+                                                                'bobotDomba'] ??
+                                                            '',
+                                                        'lib/images/scale.png'),
+                                                    _buildNumberBox(
+                                                        'Umur (Bulan) : ',
+                                                        _kodeDombaData?[
+                                                                'umurDomba'] ??
+                                                            '',
+                                                        'lib/images/age.png'),
+                                                    _buildNumberBox(
+                                                        '',
+                                                        _kodeDombaData?[
+                                                                'jenisKelamin'] ??
+                                                            '',
+                                                        'lib/images/gen.png'),
+                                                  ],
+                                                ),
+                                                SizedBox(height: 20)
+                                              ],
+                                            ),
+                                          ),
+                                          
+                                          Text(
+                                            'Domba Kawin',
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          if (_dataKawin != null &&
+                                              _dataKawin!.isNotEmpty)
+                                            Table(
+                                              border: TableBorder.all(
+                                                color: Colors.black,
+                                                style: BorderStyle.solid,
+                                                width: borderWidth,
+                                              ),
+                                              children: [
+                                                TableRow(children: [
+                                                  _buildTableHeader(
+                                                      'Tanggal',
+                                                      Color.fromARGB(
+                                                          239, 40, 54, 42)),
+                                                  _buildTableHeader(
+                                                      'Urutan Kawin',
+                                                      Color.fromARGB(
+                                                          239, 40, 54, 42)),
+                                                ]),
+                                                if (_dataKawin != null)
+                                                  ..._dataKawin!.map((data) =>
+                                                      TableRow(children: [
+                                                        _buildTableText(
+                                                            _formatDate(data[
+                                                                'tanggalKawin']),
+                                                            Colors.white),
+                                                        _buildTableText(
+                                                            data['urutanKawin']
+                                                                .toString(),
+                                                            Colors.white),
+                                                      ])),
+                                              ],
+                                            ),
+                                          if (_dataKawin != null &&
+                                              _dataKawin!.isEmpty)
+                                            Text(
+                                              'Tidak ada data',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.red,
+                                              ),
+                                            ),
+                                          SizedBox(height: 20),
+                                          Text(
+                                            'Domba Bunting',
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          if (_dataBunting != null &&
+                                              _dataBunting!.isNotEmpty)
+                                            Table(
+                                              border: TableBorder.all(
+                                                color: Colors.black,
+                                                style: BorderStyle.solid,
+                                                width: borderWidth,
+                                              ),
+                                              children: [
+                                                TableRow(children: [
+                                                  _buildTableHeader(
+                                                      'Tanggal',
+                                                      Color.fromARGB(255, 255,
+                                                          104, 104)),
+                                                  _buildTableHeader(
+                                                      'Urutan Bunting',
+                                                      Color.fromARGB(255, 255,
+                                                          104, 104)),
+                                                ]),
+                                                if (_dataBunting != null)
+                                                  ..._dataBunting!.map(
+                                                      (data) =>
+                                                          TableRow(children: [
+                                                            _buildTableText(
+                                                                _formatDate(data[
+                                                                    'tanggalBunting']),
+                                                                Colors.white),
+                                                            _buildTableText(
+                                                                data['urutanBunting']
+                                                                    .toString(),
+                                                                Colors.white),
+                                                          ])),
+                                              ],
+                                            ),
+                                          if (_dataBunting != null &&
+                                              _dataBunting!.isEmpty)
+                                            Text(
+                                              'Tidak ada data',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.red,
+                                              ),
+                                            ),
+                                          SizedBox(height: 20),
+                                          Text(
+                                            'Domba Beranak',
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          if (_dataBeranak != null &&
+                                              _dataBeranak!.isNotEmpty)
+                                            Table(
+                                              border: TableBorder.all(
+                                                color: Colors.black,
+                                                style: BorderStyle.solid,
+                                                width: borderWidth,
+                                              ),
+                                              children: [
+                                                TableRow(children: [
+                                                  _buildTableHeader(
+                                                      'Tanggal',
+                                                      Color.fromARGB(
+                                                          255, 255, 209, 60)),
+                                                  _buildTableHeader(
+                                                      'Urutan Beranak',
+                                                      Color.fromARGB(
+                                                          255, 255, 209, 60)),
+                                                  _buildTableHeader(
+                                                      'Jumlah Anak',
+                                                      Color.fromARGB(
+                                                          255, 255, 209, 60)),
+                                                ]),
+                                                if (_dataBeranak != null)
+                                                  ..._dataBeranak!.map(
+                                                      (data) =>
+                                                          TableRow(children: [
+                                                            _buildTableText(
+                                                                _formatDate(data[
+                                                                    'tanggalBeranak']),
+                                                                Colors.white),
+                                                            _buildTableText(
+                                                                data['urutanBeranak']
+                                                                    .toString(),
+                                                                Colors.white),
+                                                            _buildTableText(
+                                                                data['jumlahAnak']
+                                                                    .toString(),
+                                                                Colors.white),
+                                                          ])),
+                                              ],
+                                            ),
+                                          if (_dataBeranak != null &&
+                                              _dataBeranak!.isEmpty)
+                                            Text(
+                                              'Tidak ada data',
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.red,
+                                              ),
+                                            ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               SizedBox(height: 100),
