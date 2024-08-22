@@ -243,7 +243,7 @@ class _RecordDombaState extends State<RecordDomba> {
                                         style: ButtonStyle(
                                           minimumSize:
                                               WidgetStateProperty.all<Size>(
-                                                  Size(400, 55)),
+                                                  Size(360, 55)),
                                           padding: WidgetStateProperty.all<
                                                   EdgeInsetsGeometry>(
                                               EdgeInsets.all(12)),
@@ -289,7 +289,7 @@ class _RecordDombaState extends State<RecordDomba> {
                                         style: ButtonStyle(
                                           minimumSize:
                                               WidgetStateProperty.all<Size>(
-                                                  Size(400, 55)),
+                                                  Size(360, 55)),
                                           padding: WidgetStateProperty.all<
                                                   EdgeInsetsGeometry>(
                                               EdgeInsets.all(12)),
@@ -335,7 +335,7 @@ class _RecordDombaState extends State<RecordDomba> {
                                         style: ButtonStyle(
                                           minimumSize:
                                               WidgetStateProperty.all<Size>(
-                                                  Size(400, 55)),
+                                                  Size(360, 55)),
                                           padding: WidgetStateProperty.all<
                                                   EdgeInsetsGeometry>(
                                               EdgeInsets.all(12)),
@@ -448,36 +448,35 @@ class _RecordDombaState extends State<RecordDomba> {
                                                       TextField(
                                                         controller:
                                                             _kodeDombaController,
-                                                        decoration: InputDecoration(
-                                                            hintText: 'Kode',
-                                                            border:
-                                                                InputBorder
-                                                                    .none,
-                                                            contentPadding:
-                                                                EdgeInsets.symmetric(
-                                                                    vertical:
-                                                                        10,
-                                                                    horizontal:
-                                                                        20),
-                                                            isDense: true,
-                                                            alignLabelWithHint:
-                                                                true,
-                                                            hintStyle: TextStyle(
-                                                                color: Color
-                                                                    .fromRGBO(
-                                                                        117,
-                                                                        117,
-                                                                        117,
-                                                                        100))),
+                                                        decoration:
+                                                            InputDecoration(
+                                                          hintText: 'Kode',
+                                                          border:
+                                                              InputBorder.none,
+                                                          contentPadding:
+                                                              EdgeInsets
+                                                                  .symmetric(
+                                                                      vertical:
+                                                                          10,
+                                                                      horizontal:
+                                                                          20),
+                                                          isDense: true,
+                                                          hintStyle: TextStyle(
+                                                              color: Color
+                                                                  .fromRGBO(
+                                                                      117,
+                                                                      117,
+                                                                      117,
+                                                                      100)),
+                                                        ),
                                                         onChanged: (value) {
-                                                          setState(() {
-                                                            _kodeDombaInput =
-                                                                value.trim();
-                                                          });
+                                                          _kodeDombaInput = value
+                                                              .trim(); // Tidak perlu memanggil setState setiap saat
                                                         },
                                                         textAlign:
                                                             TextAlign.left,
                                                       ),
+
                                                     ],
                                                   ),
                                                 ),
@@ -537,7 +536,8 @@ class _RecordDombaState extends State<RecordDomba> {
                                             ],
                                           ),
                                           Container(
-                                            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                                             padding:
+                                                EdgeInsets.only(top: 20),
                                             child: Column(
                                               mainAxisSize:
                                                   MainAxisSize.min,

@@ -215,12 +215,14 @@ class HalamanProfile extends StatelessWidget {
                           const SizedBox(height: 20),
                           OutlinedButton(
                             onPressed: () async {
-                              await loginProvider.logout();
+                              await loginProvider.logout(context);
                               Navigator.pushReplacement(
                                 context,
-                                MaterialPageRoute(builder: (context) => LoginPage()),
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPage()),
                               );
                             },
+
                             style: ButtonStyle(
                               minimumSize: MaterialStateProperty.all<Size>(Size(180, 60)),
                               padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.all(12)),

@@ -13,7 +13,7 @@ class LoginProvider with ChangeNotifier {
     if (expirationTime != null && DateTime.now().millisecondsSinceEpoch < expirationTime) {
       Navigator.pushReplacementNamed(context, '/home');
     } else {
-      Navigator.pushReplacementNamed(context, '/login');
+      Navigator.pushReplacementNamed(context, '/welcome');
     }
   }
 
@@ -40,7 +40,7 @@ class LoginProvider with ChangeNotifier {
       await FirebaseAuth.instance.signOut();
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.remove('token_expiration'); 
-      Navigator.pushReplacementNamed(context, '/login');
+      Navigator.pushReplacementNamed(context, '/welcome');
     } catch (e) {
       print('Error: $e');
       ScaffoldMessenger.of(context).showSnackBar(

@@ -10,10 +10,7 @@ class buttonAddRecord extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 300,
-      left: 15,
-      right: 20,
+    return Container(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

@@ -103,12 +103,12 @@ class _CreateRansumState extends State<CreateRansum> {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 10),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
                             'Kebutuhan Pakan Keseluruhan Hari Ini',
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 17,
                               fontWeight: FontWeight.bold,
                               color: Color.fromRGBO(117, 117, 117, 1),
                             ),

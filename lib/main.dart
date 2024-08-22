@@ -33,14 +33,24 @@ Future<void> main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    super.initState();
+    _setupAlarmManager();
+  }
+
+  void _setupAlarmManager() async {
     final dombaProvider = Provider.of<DombaProvider>(context, listen: false);
 
-    AndroidAlarmManager.periodic(
+    await AndroidAlarmManager.periodic(
       const Duration(days: 30),
-      0, 
+      0,
       () async {
         await dombaProvider.updateSheepAge();
       },
@@ -48,7 +58,10 @@ class MyApp extends StatelessWidget {
       exact: true,
       wakeup: true,
     );
+  }
 
+  @override
+  Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthenticationProvider()),
@@ -61,17 +74,18 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         routes: {
-           '/': (context) => FutureBuilder<void>(
-            future: _checkLoginStatus(context),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return Scaffold(
-                  body: Center(child: CircularProgressIndicator()),
-                );
-              }
-              return snapshot.hasData ? Homepage() : LogRegPage();
-            },
-          ),
+          '/': (context) => FutureBuilder<void>(
+                future: _checkLoginStatus(context),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return Scaffold(
+                      body: Center(child: CircularProgressIndicator()),
+                    );
+                  }
+                  return snapshot.hasData ? Homepage() : LogRegPage();
+                },
+              ),
+          '/welcome': (context) => LogRegPage(),
           '/login': (context) => LoginPage(),
           '/register': (context) => RegistrationPage(),
           '/home': (context) => Homepage(),
