@@ -216,11 +216,7 @@ class HalamanProfile extends StatelessWidget {
                           OutlinedButton(
                             onPressed: () async {
                               await loginProvider.logout(context);
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => LoginPage()),
-                              );
+                             
                             },
 
                             style: ButtonStyle(
