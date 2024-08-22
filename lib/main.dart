@@ -11,8 +11,9 @@ import 'package:first/screens/homepage/views/homepage.dart';
 import 'package:first/screens/informasi/screen/maininformation.dart';
 import 'package:first/screens/penjadwalan/screen/penjadwalan.dart';
 import 'package:first/screens/welcome/views/logreg.dart';
-import 'providers/auth/authentication_provider.dart';
-import 'screens/register/views/registrasi.dart';
+import 'package:first/providers/auth/authentication_provider.dart';
+import 'package:first/screens/register/views/registrasi.dart';
+import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,12 +26,28 @@ Future<void> main() async {
       storageBucket: 'mantab-8e9eb.appspot.com',
     ),
   );
+
+  await AndroidAlarmManager.initialize();
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final dombaProvider = Provider.of<DombaProvider>(context, listen: false);
+
+    AndroidAlarmManager.periodic(
+      const Duration(days: 30),
+      0, 
+      () async {
+        await dombaProvider.updateSheepAge();
+      },
+      startAt: DateTime(DateTime.now().year, DateTime.now().month + 1, 1, 0, 0),
+      exact: true,
+      wakeup: true,
+    );
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => AuthenticationProvider()),

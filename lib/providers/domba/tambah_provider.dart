@@ -1,5 +1,7 @@
 import 'package:first/services/domba/tambah_service.dart';
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class DombaProvider with ChangeNotifier {
   final DombaService _dombaService = DombaService();
@@ -41,6 +43,36 @@ class DombaProvider with ChangeNotifier {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(errorMessage)),
       );
+    }
+  }
+
+  Future<void> updateSheepAge() async {
+    try {
+      final uid = FirebaseAuth.instance.currentUser!.uid;
+      final firestore = FirebaseFirestore.instance;
+
+      final querySnapshot = await firestore
+          .collection('domba')
+          .where('uid', isEqualTo: uid)
+          .get();
+
+      for (var doc in querySnapshot.docs) {
+        final data = doc.data();
+        final umurSekarang = int.parse(data['umurDomba'].toString());
+        final tanggalInput = (data['tanggalInput'] as Timestamp).toDate();
+
+        final bulanSekarang = DateTime.now().month;
+        final bulanInput = tanggalInput.month;
+        final umurBaru = umurSekarang + (bulanSekarang - bulanInput);
+
+        await doc.reference.update({
+          'umurDomba': umurBaru,
+          'tanggalInput': DateTime.now(),
+        });
+      }
+      print("Umur domba berhasil diperbarui.");
+    } catch (e) {
+      print("Gagal memperbarui umur domba: $e");
     }
   }
 }
