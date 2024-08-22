@@ -14,6 +14,7 @@ import 'package:first/screens/welcome/views/logreg.dart';
 import 'package:first/providers/auth/authentication_provider.dart';
 import 'package:first/screens/register/views/registrasi.dart';
 import 'package:android_alarm_manager_plus/android_alarm_manager_plus.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -60,7 +61,17 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: '/',
         routes: {
-          '/': (context) => LogRegPage(),
+           '/': (context) => FutureBuilder<void>(
+            future: _checkLoginStatus(context),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Scaffold(
+                  body: Center(child: CircularProgressIndicator()),
+                );
+              }
+              return snapshot.hasData ? Homepage() : LogRegPage();
+            },
+          ),
           '/login': (context) => LoginPage(),
           '/register': (context) => RegistrationPage(),
           '/home': (context) => Homepage(),
@@ -70,5 +81,10 @@ class MyApp extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Future<void> _checkLoginStatus(BuildContext context) async {
+    final provider = Provider.of<LoginProvider>(context, listen: false);
+    await provider.checkLoginStatus(context);
   }
 }
